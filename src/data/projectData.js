@@ -42,6 +42,6 @@ export const projectData = [
         imageUrl: process.env.PUBLIC_URL + "/assets/images/fietsateljee_berchem.png",
         linkUrl: "https://fietsateljee-berchem.netlify.app/",
         linkTitle: "Bike Shop Website",
-        shortDescription: " A responsive website, built with HTML, CSS, and JavaScript.t"
+        shortDescription: " A responsive website, built with HTML, CSS, and JavaScript."
     }
 ];
