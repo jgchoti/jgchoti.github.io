@@ -8,6 +8,7 @@ import ScrollReveal from '../logic/ScrollReveal';
 
 import '../style/App.css';
 import ProjectShowcase from './ProjectShowcase';
+import Content from './Content';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Navbar />
       <Hero />
       <SubHeader />
-      <ProjectShowcase />
+      <Content />
       <ContactBox />
       <Footer />
       <ScrollReveal />
