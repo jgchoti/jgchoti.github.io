@@ -7,7 +7,6 @@ import ContactBox from './ContactBox';
 import ScrollReveal from '../logic/ScrollReveal';
 
 import '../style/App.css';
-import ProjectShowcase from './ProjectShowcase';
 import Content from './Content';
 
 function App() {
