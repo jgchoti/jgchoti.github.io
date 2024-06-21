@@ -5,6 +5,7 @@ export const projectData = [
         details: "So, what's the big deal about this project? Well, it's like the start of my journey in web development. Check out the landing page I created – it's where I laid the foundation for all the coding adventures I've been having since then.",
         imageUrl: process.env.PUBLIC_URL + "/assets/images/cv_website.png",
         linkUrl: "https://chotirat.netlify.app/",
+        githubUrl: 'https://github.com/jgchoti/cv',
         linkTitle: "Chotirat's Online Resume",
         shortDescription: "Built with HTML, CSS and JavaScript"
     },
@@ -14,6 +15,7 @@ export const projectData = [
         details: "While working on this, I got the hang of handling requests to the API and even learned how to tackle any hiccups along the way. This project basically shows off my knack for seamlessly putting together live APIs, so that users can get the freshest and most accurate weather details.",
         imageUrl: process.env.PUBLIC_URL + "/assets/images/weather.png",
         linkUrl: "https://weather2023.netlify.app/",
+        githubUrl: 'https://github.com/jgchoti/weather-app',
         linkTitle: "Weather App Project",
         shortDescription: "Exploring the Power of Live API Integration"
     },
@@ -24,6 +26,7 @@ export const projectData = [
         imageUrl: process.env.PUBLIC_URL + "/assets/images/weather2.png",
         alternate_image: process.env.PUBLIC_URL + '/assets/images/weather2_light.png',
         linkUrl: "https://weather2024.netlify.app/",
+        githubUrl: 'https://github.com/jgchoti/weather-react',
         linkTitle: "Weather App Project create with React",
         shortDescription: " Built with HTML, CSS with React"
     },
@@ -33,7 +36,8 @@ export const projectData = [
         details: "Beyond just looking up meanings, users can also get random words thrown their way, making their learning journey exciting and engaging. And hey, the dictionary API integration was a fun challenge to crack.",
         imageUrl: process.env.PUBLIC_URL + "/assets/images/dictionary.png",
         alternate_image: process.env.PUBLIC_URL + "/assets/images/dictionary_dark.png",
-        linkUrl: "https://reactdictionary.netlify.app/",
+        linkUrl: "https://retro-english-dictionary.netlify.app/",
+        githubUrl: "https://github.com/jgchoti/dictionary-react",
         linkTitle: "English Dictionary Project create with React",
         shortDescription: " Built with HTML, CSS with React"
     },
@@ -43,6 +47,7 @@ export const projectData = [
         details: "The goal is to make this site looks great on different devices, and to help the shop connect with customers in a digital world.This project.",
         imageUrl: process.env.PUBLIC_URL + "/assets/images/fietsateljee_berchem.png",
         linkUrl: "https://fietsateljee-berchem.netlify.app/",
+        githubUrl: "https://github.com/jgchoti/fietsateljee-berchem",
         linkTitle: "Bike Shop Website",
         shortDescription: " A responsive website, built with HTML, CSS, and JavaScript."
     }
