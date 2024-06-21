@@ -1,1 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 @import url(./App.css);
+@import url(./typography.css);
+@import url(./layout.css);
+@import url(./components.css);
+@import url(./utilities.css);
+@import url(./media-queries.css);
+
+:root {
+  --head-font-family: "Josefin Sans", cursive;
+  --font-family: "Roboto Mono", monospace;
+  --main-bg-color: beige;
+  --secondary-color: darkolivegreen;
+  --accent-color: #f8f9fa;
+}
