@@ -14,6 +14,7 @@ function Content() {
                         linkUrl={project.linkUrl}
                         linkTitle={project.linkTitle}
                         shortDescription={project.shortDescription}
+                        githubUrl={project.githubUrl}
                     />
                 ))}
             </div>
