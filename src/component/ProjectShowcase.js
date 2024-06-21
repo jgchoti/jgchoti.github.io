@@ -1,8 +1,14 @@
 import React from 'react';
+import { projectData } from '../data/projectData';
 
-function ProjectShowcase({ name, imageUrl, linkUrl, linkTitle, shortDescription }) {
+function ProjectShowcase({ name, imageUrl, linkUrl, linkTitle, shortDescription, index }) {
+    const row = Math.floor(index / 2)
+    const isOddRow = row % 2 !== 0
+    const specialImageUrl = isOddRow ? projectData[index].alternate_image : imageUrl;
+
+    console.log(row)
     return (
-        <div className="col-md-6 mb-5">
+        <div className="col-md-6 mb-5 reveal">
             <a
                 href={linkUrl}
                 title={linkTitle}
@@ -10,7 +16,7 @@ function ProjectShowcase({ name, imageUrl, linkUrl, linkTitle, shortDescription 
                 rel="noopener noreferrer"
             >
                 <img
-                    src={imageUrl}
+                    src={specialImageUrl}
                     alt={linkTitle}
                     className="projects-images img-fluid"
                 />
