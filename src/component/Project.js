@@ -21,6 +21,7 @@ function Project() {
                     imageUrl={project.imageUrl}
                     linkUrl={project.linkUrl}
                     linkTitle={project.linkTitle}
+                    githubUrl={project.githubUrl}
                     index={index}
                 />
             ))}
