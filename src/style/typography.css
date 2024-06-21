@@ -1,0 +1,84 @@
+.hero h1 {
+  font-size: 96px;
+  font-family: var(--head-font-family);
+}
+
+.hero h2 {
+  font-family: var(--font-family);
+}
+
+h3 {
+  font-size: 18px;
+  font-family: var(--font-family);
+  line-height: 2;
+  opacity: 0.5;
+}
+
+h4 {
+  font-size: 18px;
+  font-family: var(--font-family);
+  line-height: 1.5;
+}
+
+p {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.sub-header {
+  font-size: 18px;
+  font-family: var(--font-family);
+  line-height: 2;
+  opacity: 0.5;
+}
+
+.hero h2 {
+  margin-bottom: 50px;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 2;
+  opacity: 0.7;
+}
+
+.hero p {
+  font-family: var(--font-family);
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.content-container h1 {
+  font-size: 60px;
+  line-height: 1.6;
+}
+
+.content-container h2 {
+  font-size: 25px;
+  opacity: 0.8;
+}
+
+.content-container a {
+  font-size: 18px;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.contact-box h4 {
+  font-size: 38px;
+  font-family: var(--head-font-family);
+}
+.contact-box p {
+  margin: 0;
+  font-size: 20px;
+}
+.contact-box a {
+  margin-top: 20px;
+}
+
+footer p,
+footer .copyright {
+  font-size: 14px;
+  padding: 0 50px;
+  font-weight: 100;
+}
