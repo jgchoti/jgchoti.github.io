@@ -1,0 +1,129 @@
+@media (max-width: 900px) {
+  footer svg {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  .hero {
+    padding-top: 110px;
+  }
+  .description p {
+    text-align: center;
+    margin: 0 10px;
+  }
+  .content-container img {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .content-container .btn-branding {
+    margin: 0 auto;
+  }
+  .content-container {
+    margin-top: 90px;
+    text-align: center;
+  }
+  .content {
+    text-align: left;
+    padding-left: 30px;
+  }
+  .contact-box {
+    padding: 30px;
+  }
+
+  .contact-box h4 {
+    font-size: 24px;
+  }
+  .contact-box p {
+    font-size: 14px;
+  }
+  .contact-box a {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 950px) {
+  .hero h1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .hero h2 {
+    font-size: 25px;
+    font-weight: 300;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: 300;
+  }
+
+  .hero p {
+    font-size: 16px;
+    margin: 0 auto;
+    line-height: 2;
+  }
+
+  svg {
+    font-size: 20px;
+  }
+
+  .sub-header {
+    font-size: 16px;
+    font-weight: 200;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  .content-container h1 {
+    font-size: 33px;
+  }
+
+  .content-container h1,
+  .content-container h2 {
+    padding: 0;
+    text-align: center;
+  }
+
+  .content-container h2 {
+    font-size: 20px;
+  }
+  .hero p {
+    font-size: 26px;
+    font-weight: 300;
+  }
+  .project-name {
+    text-align: center;
+    margin-top: 36px;
+    margin-bottom: 15px;
+    font-size: 30px;
+  }
+
+  .btn-branding {
+    font-size: 20px;
+  }
+
+  .btn-branding-outline {
+    font-size: 14px;
+  }
+  .content-container a {
+    font-size: 16px;
+    display: inline;
+  }
+
+  .contact-link {
+    font-size: 14px;
+  }
+
+  .img-wrapper,
+  .projects-images {
+    display: none;
+  }
+
+  .btn-text {
+    display: none;
+  }
+}
