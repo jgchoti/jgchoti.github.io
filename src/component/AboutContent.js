@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function AboutContent() {
     return (
@@ -22,9 +23,9 @@ function AboutContent() {
                         </p>
                     </div>
                     <p className="mb-5">
-                        I present my diverse portfolio of projects, where creativity and determination meet. See what I've created! Curious to explore?
+                        I present my diverse portfolio of projects. See what I've created! Curious to explore?
                     </p>
-                    <a href="/pages/project.html" className="btn btn-branding" title="Choti's Projects">See My Projects</a>
+                    <Link to="/project" className="btn btn-branding" title="Choti's Projects">See My Projects</Link>
                 </div>
             </div>
         </div>
