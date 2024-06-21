@@ -5,8 +5,8 @@ import SubHeader from './SubHeader';
 import Footer from './Footer';
 import ContactBox from './ContactBox';
 import ScrollReveal from '../logic/ScrollReveal';
-
-import '../style/App.css';
+import '../style/index.css';
+import '../style/App.css'
 import Content from './Content';
 
 function App() {
