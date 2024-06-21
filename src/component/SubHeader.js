@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function SubHeader() {
     return (
         <div className="m-5 text-center">
-            <h3>
+            <h3 className='sub-header'>
                 From web development to app design, I've tackled a wide range of coding
                 challenges and have gained invaluable experience along the way. Explore
                 my portfolio to see what I've created OR learn more about "<Link
