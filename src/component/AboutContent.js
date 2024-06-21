@@ -6,7 +6,7 @@ function AboutContent() {
         <div className="container content-container">
             <div className="row">
                 <div className="col-lg-6 mt-5">
-                    <img className="profile-photo img-fluid" src={process.env.PUBLIC_URL + '/assets/images/profile_photo.png'} alt="chotirat photo" />
+                    <img className="profile-photo img-fluid" src={process.env.PUBLIC_URL + '/assets/images/profile_photo.png'} alt="chotirat profile" />
                 </div>
                 <div className="col-lg-6 description">
                     <h1>Hi I am Chotirat Jonggrit</h1>
@@ -25,7 +25,7 @@ function AboutContent() {
                     <p className="mb-5">
                         I present my diverse portfolio of projects. See what I've created! Curious to explore?
                     </p>
-                    <Link to="/project" className="btn btn-branding" title="Choti's Projects">See My Projects</Link>
+                    <Link to="/project" className="btn-branding" title="Choti's Projects">See My Projects</Link>
                 </div>
             </div>
         </div>
