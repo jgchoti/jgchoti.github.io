@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url(./media-queries.css);
 @import url(./typography.css);
 @import url(./layout.css);
 @import url(./components.css);
 @import url(./utilities.css);
-@import url(./media-queries.css);
 
 svg {
   margin-right: 30px;
@@ -39,7 +39,7 @@ a {
 .icon::after {
   content: attr(title);
   position: absolute;
-  bottom: 200px;
+  bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
   color: #fff;
@@ -54,4 +54,17 @@ a {
 .icon:hover::after,
 .icon:focus::after {
   opacity: 1;
+}
+
+@media (min-width: 1200px) {
+  .icon::after {
+    bottom: 140px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .icon::after {
+    bottom: 13px;
+    font-size: 36px;
+  }
 }
