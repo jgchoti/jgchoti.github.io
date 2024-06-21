@@ -9,7 +9,7 @@ function AboutContent() {
                     <img className="profile-photo img-fluid" src={process.env.PUBLIC_URL + '/assets/images/profile_photo.png'} alt="chotirat profile" />
                 </div>
                 <div className="col-lg-6 description">
-                    <h1>Hi I am Chotirat Jonggrit</h1>
+                    <h1>Hi👋🏽 I am Chotirat Jonggrit</h1>
                     <h2>I'm on a Coding Journey</h2>
                     <h2>Based in Belgium 🇧🇪</h2>
                     <br />
