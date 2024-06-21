@@ -1,0 +1,29 @@
+.hero {
+  padding-top: 160px;
+  padding-bottom: 50px;
+  text-align: center;
+  background-color: var(--main-bg-color);
+}
+
+.content-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.description {
+  padding: 36px 20px 0 60px;
+  opacity: 0.9;
+  line-height: 30px;
+}
+
+.navbar {
+  font-family: var(--font-family);
+  background-color: var(--main-bg-color) !important;
+}
+
+.contact-box {
+  padding: 30px 90px;
+  margin: 50px 100px;
+  background-color: var(--main-bg-color);
+  border-radius: 10px;
+}
