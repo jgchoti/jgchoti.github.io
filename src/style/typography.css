@@ -1,8 +1,9 @@
-.hero h1 {
+.hero h1,
+.description h1 {
   font-size: 96px;
   font-family: var(--head-font-family);
 }
-
+.description h2,
 .hero h2 {
   font-family: var(--font-family);
 }
