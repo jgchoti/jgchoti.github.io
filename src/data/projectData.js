@@ -22,6 +22,7 @@ export const projectData = [
         description: "Utilizing my knowledge of HTML, CSS, and JavaScript, I embarked on building the Weather App using React. This project marked my entry into the world of React.",
         details: "Through this project, I deepened my understanding of React's core concepts, such as state, props, and components. This project reflects my growth as a developer and my ability to adapt and apply new technologies.",
         imageUrl: process.env.PUBLIC_URL + "/assets/images/weather2.png",
+        alternate_image: process.env.PUBLIC_URL + '/assets/images/weather2_light.png',
         linkUrl: "https://weather2024.netlify.app/",
         linkTitle: "Weather App Project create with React",
         shortDescription: " Built with HTML, CSS with React"
@@ -31,6 +32,7 @@ export const projectData = [
         description: "Dive into the wordy world with this awesome English Dictionary App. So, I wanted to spice up my web development skills, and what better way than crafting this dictionary using React, right? One of the standout features of the app is the random word function. It's like a surprise button that makes learning fun and unexpected!",
         details: "Beyond just looking up meanings, users can also get random words thrown their way, making their learning journey exciting and engaging. And hey, the dictionary API integration was a fun challenge to crack.",
         imageUrl: process.env.PUBLIC_URL + "/assets/images/dictionary.png",
+        alternate_image: process.env.PUBLIC_URL + "/assets/images/dictionary_dark.png",
         linkUrl: "https://reactdictionary.netlify.app/",
         linkTitle: "English Dictionary Project create with React",
         shortDescription: " Built with HTML, CSS with React"
