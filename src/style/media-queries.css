@@ -90,6 +90,7 @@
 
   .description {
     text-align: center;
+    padding: 46px 12px 24px 12px !important;
   }
 
   .content-container {
