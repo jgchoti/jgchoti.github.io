@@ -1,10 +1,12 @@
 .hero h1,
-.description h1 {
+.description h1,
+.content h1 {
   font-size: 96px;
   font-family: var(--head-font-family);
 }
 .description h2,
-.hero h2 {
+.hero h2,
+.content h2 {
   font-family: var(--font-family);
 }
 
@@ -14,8 +16,8 @@ h3 {
   line-height: 2;
   opacity: 0.5;
 }
-
-h4 {
+h4,
+.content h4 {
   font-size: 18px;
   font-family: var(--font-family);
   line-height: 1.5;
