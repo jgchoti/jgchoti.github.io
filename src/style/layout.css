@@ -16,6 +16,10 @@
   line-height: 30px;
 }
 
+.content {
+  padding-left: 46px !important;
+}
+
 .navbar {
   font-family: var(--font-family);
   background-color: var(--main-bg-color) !important;
