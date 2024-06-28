@@ -13,7 +13,8 @@ svg {
 a {
   text-decoration: none;
   color: var(--secondary-color);
-  font-size: 16px;
+  font-size: 16px !important;
+  font-weight: lighter;
 }
 
 .navbar {
