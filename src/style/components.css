@@ -120,4 +120,5 @@ nav a:hover {
   border-radius: 50% 20% / 10% 40%;
   box-shadow: 12px 12px 2px 1px var(--main-bg-color);
   margin-top: 50px;
+  margin-right: 46px;
 }
