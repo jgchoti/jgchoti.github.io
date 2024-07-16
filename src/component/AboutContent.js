@@ -15,7 +15,7 @@ function AboutContent() {
                     <h3>Learning and Growing in Web Development</h3>
                     <br />
                     <p className="mt-3">
-                        Since June 2024, I've been working as a freelance web developer, collaborating with small businesses to create their online presence. I am currently advancing in full-stack development with <a href="https://www.hackyourfuturebelgium.be/">HackYourFuture Belgium</a>, driven by a passion for continuous learning and embracing new challenges.<br />
+                        Since June 2024, I have been partnering with small businesses as a freelance web developer to build their online presence using website builders and content management systems. I am also currently advancing in full-stack development with <a href="https://www.hackyourfuturebelgium.be/">HackYourFuture Belgium</a>, driven by a passion for continuous learning and embracing new challenges.<br />
                         <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" className="link read-more" title="read more">Read More...</a>
                     </p>
                     <div className="collapse" id="collapseExample">
