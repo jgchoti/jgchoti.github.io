@@ -10,11 +10,12 @@ function AboutContent() {
                 </div>
                 <div className="col-lg-6 description">
                     <h1>Hi👋🏽 I am Chotirat Jonggrit</h1>
-                    <h2>I'm on a Coding Journey</h2>
+                    <br />
                     <h2>Based in Belgium 🇧🇪</h2>
+                    <h3>Learning and Growing in Web Development</h3>
                     <br />
                     <p className="mt-3">
-                        Currently, I'm training in full-stack development with <a href="https://www.hackyourfuturebelgium.be/">HackYourFuture Belgium</a>, driven by a passion for continuous learning and embracing new challenges.
+                        Since June 2024, I've been working as a freelance web developer, collaborating with small businesses to create their online presence. I am currently advancing in full-stack development with <a href="https://www.hackyourfuturebelgium.be/">HackYourFuture Belgium</a>, driven by a passion for continuous learning and embracing new challenges.<br />
                         <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" className="link read-more" title="read more">Read More...</a>
                     </p>
                     <div className="collapse" id="collapseExample">
