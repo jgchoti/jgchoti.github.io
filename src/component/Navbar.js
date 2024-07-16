@@ -1,5 +1,5 @@
 import React from 'react';
-import ScrollToTop from "./ScrollToTop.js"
+import ScrollToTop from "../logic/ScrollToTop.js"
 import { NavLink } from 'react-router-dom';
 
 function Navbar() {
