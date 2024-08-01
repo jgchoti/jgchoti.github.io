@@ -73,13 +73,13 @@ export const projectData = [
     }, {
         name: "Potter Searcher",
         description: "The PotterAPI Searcher is an application developed as part of an assignment during my studies at HackYourFuture Belgium to deepen my understanding of JavaScript and API interactions.",
-        details: "It utilizes the PotterAPI and allow users to explore and discover information about characters, spells, potions, books, and movies. This project served as an opportunity for me to learn about making API calls and managing queries to retrieve specific data from the PotterAPI. One of the key challenges I tackled was implementing server-side filtering to optimize performance and ensure accurate data retrieval.",
+        details: "It utilizes The Potter DB: API and allow users to explore and discover information about characters, spells, potions, books, and movies. This project served as an opportunity for me to learn about making API calls and managing queries to retrieve specific data from The Potter DB: API. One of the key challenges I tackled was implementing server-side filtering to optimize performance and ensure accurate data retrieval.",
         imageUrl: process.env.PUBLIC_URL + "/assets/images/potter.png",
         alternate_image: process.env.PUBLIC_URL + "/assets/images/potter_dark.png",
         linkUrl: "https://jgchoti.github.io/harry-potter-searcher/",
         githubUrl: "https://github.com/jgchoti/harry-potter-searcher",
-        linkTitle: "Studio Ghibli Searcher Application",
-        shortDescription: "A responsive application using the Studio Ghibli API"
+        linkTitle: "Potter Searcher Application",
+        shortDescription: "A responsive application using The Potter DB: API"
     }
 ];
 
