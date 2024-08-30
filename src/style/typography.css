@@ -3,6 +3,7 @@
 .content h1 {
   font-size: 96px;
   font-family: var(--head-font-family);
+  color: var(--secondary-color);
 }
 .description h2,
 .hero h2,
@@ -79,6 +80,15 @@ p {
 }
 .contact-box a {
   margin-top: 20px;
+}
+
+.form-submit-text {
+  font-size: 20px;
+  font-family: var(--font-family);
+  font-weight: normal;
+  line-height: 1.5;
+  opacity: 0.5;
+  text-align: center;
 }
 
 footer p,
