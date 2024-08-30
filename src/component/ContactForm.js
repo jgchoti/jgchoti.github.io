@@ -8,7 +8,7 @@ function ContactForm() {
     if (state.succeeded) {
         return <div className="form-submit-container">
             <p className='form-submit-text'>Thank you for your message!<br /> I’ll get back to you shortly. 👩🏽‍💻</p>
-            <button className="reset-button" onClick={() => window.location.reload()} className="reset-button">
+            <button className="reset-button" onClick={() => window.location.reload()} >
                 <FontAwesomeIcon icon={faRotateRight} />Reset</button>
         </div>;
     }
