@@ -58,6 +58,7 @@ form {
 form input,
 form textarea {
   width: 100%;
+  margin-bottom: 24px;
 }
 
 form label {
@@ -65,17 +66,18 @@ form label {
   opacity: 60%;
 }
 
-form input {
+form input,
+form textarea {
   border: 0;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid var(--secondary-color);
   background: transparent;
   width: 100%;
   padding: 8px 0 5px 0;
   font-size: 16px;
-  margin-bottom: 24px;
 }
 
-form input:focus {
+form input:focus,
+form textarea:focus {
   border: none;
   outline: none;
   border-bottom: 1px solid var(--secondary-color);
@@ -177,4 +179,8 @@ form button:hover,
   box-shadow: 12px 12px 2px 1px var(--main-bg-color);
   margin-top: 50px;
   margin-right: 46px;
+}
+
+.about-logo {
+  width: 145px;
 }
