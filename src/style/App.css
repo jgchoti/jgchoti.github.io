@@ -17,6 +17,10 @@ a {
   font-weight: lighter;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 .navbar {
   font-family: var(--font-family);
   background-color: var(--main-bg-color) !important;
