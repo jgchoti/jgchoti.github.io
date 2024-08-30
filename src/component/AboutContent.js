@@ -12,11 +12,11 @@ function AboutContent() {
                 </div>
                 <div className="col-lg-6 description">
                     <h1>About Me</h1>
-                    <h2>Based in Belgium 🇧🇪</h2>
-                    <br />
-                    <h3>Learning and Growing in Web Development</h3>
+                    <img src={process.env.PUBLIC_URL + '/assets/images/logo_choti.png'} alt="Choti Logo" className="about-logo" />
+                    <h3>Based in Belgium 🇧🇪</h3>
+
                     <p className="mt-3">
-                        Since June 2024, I have been partnering with small businesses as a freelance web developer to build their online presence using website builders and content management systems. I am also currently advancing in full-stack development with <a href="https://www.hackyourfuturebelgium.be/">HackYourFuture Belgium</a>, driven by a passion for continuous learning and embracing new challenges.<br />
+                        Since June 2024, I have been partnering with small businesses as a freelance web developer to build their online presence using website builders. I am also currently advancing in full-stack development with <a href="https://www.hackyourfuturebelgium.be/">HackYourFuture Belgium</a>, driven by a passion for continuous learning.<br />
                         <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" className="link read-more" title="read more">Read More...</a>
                     </p>
                     <div className="collapse" id="collapseExample">
