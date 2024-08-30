@@ -29,6 +29,58 @@ nav a:hover {
   color: var(--secondary-color) !important;
 }
 
+.contact-form-container,
+.form-submit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto 36px;
+  background-color: var(--main-bg-color);
+  border-radius: 10px;
+}
+
+.form-submit-container {
+  padding: 45px;
+}
+
+.form-submit-container svg {
+  margin-right: 8px;
+}
+
+form {
+  text-align: center;
+  margin: 32px;
+  font-family: var(--font-family);
+}
+
+form input,
+form textarea {
+  width: 100%;
+}
+
+form label {
+  font-weight: bold;
+  opacity: 60%;
+}
+
+form input {
+  border: 0;
+  border-bottom: 1px solid #000000;
+  background: transparent;
+  width: 100%;
+  padding: 8px 0 5px 0;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+form input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
 .navbar-nav a.active {
   color: var(--secondary-color) !important;
 }
@@ -38,6 +90,8 @@ nav a:hover {
   margin-right: 40px;
 }
 
+form button,
+.reset-button,
 .btn-branding {
   background-color: var(--secondary-color);
   border: 2px solid var(--secondary-color);
@@ -53,6 +107,8 @@ nav a:hover {
   white-space: nowrap;
 }
 
+form button:hover,
+.reset-button:hover,
 .btn-branding:hover {
   color: var(--secondary-color);
   border: 2px solid var(--secondary-color);
