@@ -16,4 +16,10 @@
   <body>
     <div id="root"></div>
   </body>
+  <script type="text/javascript">
+    var path = window.location.search.substring(1);
+    if (path) {
+      window.history.replaceState({}, "", "/" + path);
+    }
+  </script>
 </html>
