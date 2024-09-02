@@ -99,6 +99,7 @@
   .sub-header-text {
     font-size: 16px;
     font-weight: 200;
+    padding: 0;
   }
 
   .description {
@@ -157,8 +158,9 @@
   }
 
   .sub-header-text h3 {
-    padding: 0px 80px;
+    padding: 12px 40px 16px;
   }
+
   .wave-container {
     width: 110%;
     position: absolute;
