@@ -6,10 +6,6 @@
     font-size: 14px;
   }
 
-  .hero {
-    padding-top: 110px;
-  }
-
   .description p {
     text-align: center;
     margin: 0 10px;
@@ -51,6 +47,10 @@
       font-size: 14px;
     }
   }
+
+  .profile-photo {
+    margin-top: 48px !important;
+  }
 }
 
 /* Media Queries for max-width: 950px */
@@ -84,6 +84,11 @@
   }
 
   .sub-header {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .sub-header-text {
     font-size: 16px;
     font-weight: 200;
   }
@@ -131,9 +136,29 @@
     font-size: 14px;
   }
 
-  .img-wrapper,
-  .projects-images,
   .btn-text {
     display: none;
+  }
+
+  .contact-form-container {
+    width: 90%;
+  }
+
+  .profile-illustration {
+    padding: 0 auto;
+  }
+
+  .sub-header-text h3 {
+    padding: 0px 80px;
+  }
+  .wave-container {
+    width: 110%;
+    position: absolute;
+    bottom: -1;
+  }
+
+  img.about-logo {
+    width: 120px;
+    margin-top: 14px;
   }
 }
