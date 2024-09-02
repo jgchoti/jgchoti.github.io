@@ -15,7 +15,7 @@ h3 {
   font-size: 18px;
   font-family: var(--font-family);
   line-height: 2;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 h4,
@@ -32,11 +32,12 @@ p {
   font-weight: lighter;
 }
 
-.sub-header {
+.sub-header-text h3 {
   font-size: 18px;
   font-family: var(--font-family);
   line-height: 2;
-  opacity: 0.5;
+  color: var(--main-bg-color);
+  padding: 100px 80px;
 }
 
 .hero h2 {
@@ -96,4 +97,16 @@ footer .copyright {
   font-size: 14px;
   padding: 0 50px;
   font-weight: 100;
+}
+
+.link {
+  color: var(--main-bg-color);
+  text-decoration: none;
+  font-size: 18px !important;
+  font-weight: 500;
+}
+
+.link:hover {
+  transform: translateY(-2px);
+  text-decoration: underline;
 }
