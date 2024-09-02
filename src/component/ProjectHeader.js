@@ -4,7 +4,7 @@ import { faAnglesDown } from '@fortawesome/free-solid-svg-icons'
 
 function ProjectHeader() {
     return (
-        <div className="hero">
+        <div className="hero mt-4 mb-4">
             <h1>Explore My Project</h1>
             <div className='scroll-text-wrapper'>
                 <FontAwesomeIcon icon={faAnglesDown} />
