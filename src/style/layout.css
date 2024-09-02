@@ -1,12 +1,50 @@
 .hero {
-  padding-top: 160px;
-  padding-bottom: 50px;
+  padding-top: 150px;
+  padding-bottom: 40px;
   text-align: center;
   background-color: var(--main-bg-color);
+  z-index: 3;
+  position: relative;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.wave {
+  position: absolute;
+  bottom: -1;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.wave-container {
+  width: 110%;
+}
+
+.wave svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sub-header {
+  background-color: var(--secondary-color);
+  padding-top: 160px;
+  margin-top: -10px; /* Adjust to place it correctly below the wave */
+  z-index: 1;
+}
+
+.projects-container {
+  margin-top: 0px;
+  margin-bottom: 100px;
 }
 
 .content-container {
-  margin-top: 100px;
+  margin-top: 140px;
   margin-bottom: 100px;
 }
 
