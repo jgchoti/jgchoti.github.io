@@ -27,7 +27,10 @@ function AboutContent() {
                     <p className="mb-5">
                         I present my diverse portfolio of projects. See what I've created! Curious to explore?
                     </p>
-                    <Link to="/project" className="btn-branding" title="Choti's Projects">See My Projects</Link>
+                    <Link to="/project" className="btn-branding btn-mobile" title="Choti's Projects">See Projects</Link>
+                    <a href="#" className="btn-branding-case btn-mobile" title="Choti's case study" target="_blank" rel="noopener noreferrer">
+                        See Case Study
+                    </a>
                 </div>
             </div>
         </div>
