@@ -51,6 +51,14 @@
   .profile-photo {
     margin-top: 48px !important;
   }
+
+  .btn-mobile {
+    padding: 10px;
+  }
+
+  a.btn-mobile {
+    font-size: 14px !important;
+  }
 }
 
 /* Media Queries for max-width: 950px */
