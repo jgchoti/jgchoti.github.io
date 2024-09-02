@@ -1,6 +1,6 @@
 .hero {
   padding-top: 150px;
-  padding-bottom: 40px;
+  padding-bottom: 10px;
   text-align: center;
   background-color: var(--main-bg-color);
   z-index: 3;
@@ -9,6 +9,7 @@
 
 .content-wrapper {
   position: relative;
+  padding-bottom: 20px;
   z-index: 2;
 }
 
