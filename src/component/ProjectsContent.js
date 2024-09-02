@@ -9,11 +9,11 @@ function ProjectContent({ name, description, details, imageUrl, linkUrl, linkTit
 
     return (
         <div className="container">
-            <div className="d-flex flex-row reveal">
-                <div className={`col mt-3 img-wrapper ${isEvenProject ? 'order-first' : 'order-last'}`}>
+            <div className="d-flex flex-column flex-md-row reveal">
+                <div className={`col-lg-6 mt-3 img-wrapper ${isEvenProject ? 'order-md-first order-sm-first' : 'order-md-last order-sm-first'}`}>
                     {imageUrl && <img src={imageUrl} alt={name} className="img-fluid projects-images" />}
                 </div>
-                <div className={`col mt-3 description ${isEvenProject ? 'order-lg-last' : 'order-first'}`}>
+                <div className={`col-lg-6 mt-3 description ${isEvenProject ? 'order-md-last order-sm-last' : 'order-md-first order-sm-last'}`}>
                     <h2 className="project-name">{name}</h2>
                     <p>{description}</p>
                     <a
