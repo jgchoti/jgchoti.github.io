@@ -36,7 +36,7 @@ function ContactContent() {
                         </p>
                     </div>
                 </div>
-                <div className="col-lg-6 d-none d-lg-block">
+                <div className="col-lg-6">
                     <img
                         className="profile-photo img-fluid"
                         src={process.env.PUBLIC_URL + '/assets/images/choti_photo.jpeg'}
