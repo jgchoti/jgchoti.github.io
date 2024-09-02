@@ -3,7 +3,7 @@ import { projectData } from '../data/projectData.js';
 
 function Content() {
     return (
-        <div className="container content-container">
+        <div className="container projects-container">
             <div className="row mt-5">
                 {projectData.map((project, index) => (
                     <ProjectShowcase
