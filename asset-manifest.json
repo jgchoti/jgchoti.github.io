@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.4b32bf53.css",
-    "main.js": "/static/js/main.61c5678b.js",
+    "main.css": "/static/css/main.4c0bea69.css",
+    "main.js": "/static/js/main.d3b2eb37.js",
     "static/js/453.b4cccf8f.chunk.js": "/static/js/453.b4cccf8f.chunk.js",
     "static/media/studio_ghibli.png": "/static/media/studio_ghibli.db7f075aacbd9f62f22e.png",
     "static/media/studio_ghibli_light.png": "/static/media/studio_ghibli_light.de235751ef6b2737fd6f.png",
@@ -24,7 +24,6 @@
     "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.4d986b00ff9ca3828fbd.woff2",
     "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.455ea818179b4def0c43.woff2",
     "static/media/profile_illustration.png": "/static/media/profile_illustration.7fd42156b541b302a28c.png",
-    "static/media/tech_interface.png": "/static/media/tech_interface.feab5f9e0a734922cd9d.png",
     "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.eb91f7b948a42799f678.ttf",
     "static/media/github.png": "/static/media/github.7eea27e972efca6999dd.png",
     "static/media/bootstrap.png": "/static/media/bootstrap.428579c74fd75c1ff366.png",
@@ -34,12 +33,12 @@
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.c8e090db312b0bea2aa2.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.cf7f5903d06b79ad60f1.woff2",
     "index.html": "/index.html",
-    "main.4b32bf53.css.map": "/static/css/main.4b32bf53.css.map",
-    "main.61c5678b.js.map": "/static/js/main.61c5678b.js.map",
+    "main.4c0bea69.css.map": "/static/css/main.4c0bea69.css.map",
+    "main.d3b2eb37.js.map": "/static/js/main.d3b2eb37.js.map",
     "453.b4cccf8f.chunk.js.map": "/static/js/453.b4cccf8f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b32bf53.css",
-    "static/js/main.61c5678b.js"
+    "static/css/main.4c0bea69.css",
+    "static/js/main.d3b2eb37.js"
   ]
 }
