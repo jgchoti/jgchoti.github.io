@@ -1,0 +1,30 @@
+.tech-badge {
+  position: relative;
+  display: inline-block;
+}
+
+.tech-logo {
+  width: 30px;
+  transition: opacity 0.3s ease;
+  margin: 0 16px;
+}
+
+.tech-name {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 14px;
+  z-index: 10;
+}
+
+.tech-badge:hover .tech-name {
+  opacity: 1;
+}
