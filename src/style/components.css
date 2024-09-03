@@ -206,6 +206,8 @@ form button:hover,
 .profile-illustration {
   width: 400px;
   margin-top: 30px;
+  z-index: 4;
+  position: relative;
 }
 
 .btn-code {
@@ -270,13 +272,8 @@ form button:hover,
   color: #fff;
   padding: 10px;
   margin: 10px auto;
-  overflow: auto;
   height: 120px;
   background-color: #000;
   font-family: "Source Code Pro", monospace;
   margin-bottom: 40px;
-}
-
-.wave-container {
-  min-width: 110%; /* Adjusted width */
 }
