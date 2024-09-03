@@ -12,14 +12,9 @@
   z-index: 2;
 }
 
-.wave-container {
-  height: 60px;
-}
-
 .sub-header {
   background-color: var(--secondary-color);
-  z-index: 3;
-  padding: 0;
+  padding-bottom: 40px;
 }
 
 .projects-container {
