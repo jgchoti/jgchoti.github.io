@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 @import url(./App.css);
-@import url(./typography.css);
-@import url(./layout.css);
-@import url(./components.css);
-@import url(./utilities.css);
+@import url(./Typography.css);
+@import url(./Layout.css);
+@import url(./Components.css);
+@import url(./Utilities.css);
 @import url(./media-queries.css);
+@import url(./TechnologyBadge.css);
+@import url(./TechnologySum.css);
 
 :root {
   --head-font-family: "Josefin Sans", cursive;
