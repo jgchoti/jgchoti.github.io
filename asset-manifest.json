@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.4c0bea69.css",
-    "main.js": "/static/js/main.d3b2eb37.js",
+    "main.css": "/static/css/main.0d1f71c4.css",
+    "main.js": "/static/js/main.3e0f5396.js",
     "static/js/453.b4cccf8f.chunk.js": "/static/js/453.b4cccf8f.chunk.js",
     "static/media/studio_ghibli.png": "/static/media/studio_ghibli.db7f075aacbd9f62f22e.png",
     "static/media/studio_ghibli_light.png": "/static/media/studio_ghibli_light.de235751ef6b2737fd6f.png",
@@ -33,12 +33,12 @@
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.c8e090db312b0bea2aa2.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.cf7f5903d06b79ad60f1.woff2",
     "index.html": "/index.html",
-    "main.4c0bea69.css.map": "/static/css/main.4c0bea69.css.map",
-    "main.d3b2eb37.js.map": "/static/js/main.d3b2eb37.js.map",
+    "main.0d1f71c4.css.map": "/static/css/main.0d1f71c4.css.map",
+    "main.3e0f5396.js.map": "/static/js/main.3e0f5396.js.map",
     "453.b4cccf8f.chunk.js.map": "/static/js/453.b4cccf8f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c0bea69.css",
-    "static/js/main.d3b2eb37.js"
+    "static/css/main.0d1f71c4.css",
+    "static/js/main.3e0f5396.js"
   ]
 }
