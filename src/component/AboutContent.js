@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import profilePhoto from '../assets/images/profile_photo.png';
+import chotiLogo from '../assets/images/logo_choti.png';
 
 
 function AboutContent() {
@@ -8,11 +10,11 @@ function AboutContent() {
         <div className="container content-container">
             <div className="row">
                 <div className="col-lg-6 mt-5">
-                    <img className="profile-photo img-fluid" src={process.env.PUBLIC_URL + '/assets/images/profile_photo.png'} alt="chotirat profile" />
+                    <img className="profile-photo img-fluid" src={profilePhoto} alt="chotirat profile" />
                 </div>
                 <div className="col-lg-6 description">
                     <h1>About Me</h1>
-                    <img src={process.env.PUBLIC_URL + '/assets/images/logo_choti.png'} alt="Choti Logo" className="about-logo" />
+                    <img src={chotiLogo} alt="Choti Logo" className="about-logo" />
                     <h3>Based in Belgium 🇧🇪</h3>
 
                     <p className="mt-3">
