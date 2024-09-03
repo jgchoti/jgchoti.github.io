@@ -33,7 +33,7 @@ function SubHeader() {
                 <div className="col-lg-1">
                 </div>
             </div>
-            <div className='wave-container'>
+            <div className='wave-container container-fluid p-0'>
                 <Wave fill='#F5F5DA'
                     paused={false}
                     style={{ display: 'flex' }}
