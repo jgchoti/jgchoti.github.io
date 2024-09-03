@@ -276,3 +276,7 @@ form button:hover,
   font-family: "Source Code Pro", monospace;
   margin-bottom: 40px;
 }
+
+.wave-container {
+  min-width: 110%; /* Adjusted width */
+}
