@@ -16,7 +16,7 @@ function TechnologySum({ projectData }) {
                     <TechnologyBadge name={tech.name} logoUrl={tech.logoUrl} key={index} />
                 ))}
             </div>
-            <div className='wave-container'>
+            <div className='wave-container container-fluid p-0'>
                 <Wave fill='#fff'
                     paused={false}
                     style={{ display: 'flex' }}
