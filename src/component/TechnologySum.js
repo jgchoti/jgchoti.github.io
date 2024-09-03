@@ -7,7 +7,7 @@ function TechnologySum({ projectData }) {
     const uniqueTechnologies = getUniqueTechnologies(projectData);
 
     return (
-        <div className='technology-sum w-100 m-0'>
+        <div className='technology-sum container-fluid w-100 m-0'>
             <div className=" text-center technology-text">
                 <h3>
                     Technologies I've Worked With
