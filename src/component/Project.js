@@ -7,6 +7,7 @@ import ProjectContent from './ProjectsContent';
 import ScrollReveal from '../logic/ScrollReveal';
 import ProjectHeader from './ProjectHeader';
 
+
 function Project() {
     return (
         <div>
@@ -22,6 +23,7 @@ function Project() {
                     linkUrl={project.linkUrl}
                     linkTitle={project.linkTitle}
                     githubUrl={project.githubUrl}
+                    technologies={project.technologies}
                     index={index}
                 />
             ))}
