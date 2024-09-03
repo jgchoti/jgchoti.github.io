@@ -12,8 +12,8 @@ function TechnologySum({ projectData }) {
                 <h3>
                     Technologies I've Worked With
                 </h3>
-                {uniqueTechnologies.map((tech) => (
-                    <TechnologyBadge name={tech.name} logoUrl={tech.logoUrl} />
+                {uniqueTechnologies.map((tech, index) => (
+                    <TechnologyBadge name={tech.name} logoUrl={tech.logoUrl} key={index} />
                 ))}
             </div>
             <div className='wave-container'>
