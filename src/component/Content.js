@@ -1,11 +1,10 @@
 import ProjectShowcase from './ProjectShowcase';
-import { projectData } from '../data/projectData.js';
 
-function Content() {
+function Content(props) {
     return (
         <div className="container projects-container">
             <div className="row mt-5">
-                {projectData.map((project, index) => (
+                {props.projectData.map((project, index) => (
                     <ProjectShowcase
                         key={index}
                         index={index}
