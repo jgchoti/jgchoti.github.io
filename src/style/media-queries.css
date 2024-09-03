@@ -194,9 +194,18 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 375px) {
+  .hero,
+  .sub-header,
+  .technology-sum {
+    padding-bottom: 12px;
+  }
   .hero h1 {
     font-size: 45px;
+  }
+  .technology-text h3 {
+    margin: 0 20px;
+    font-size: 16px;
   }
   .wave-container {
     display: none;
