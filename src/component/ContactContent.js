@@ -2,6 +2,7 @@ import React from 'react';
 import { contactInfo } from '../data/contactInfo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import chotiPhoto from '../assets/images/choti_photo.jpeg';
 
 function ContactContent() {
     return (
@@ -39,7 +40,7 @@ function ContactContent() {
                 <div className="col-lg-6">
                     <img
                         className="profile-photo img-fluid"
-                        src={process.env.PUBLIC_URL + '/assets/images/choti_photo.jpeg'}
+                        src={chotiPhoto}
                         alt="chotirat profile"
                     />
                 </div>
