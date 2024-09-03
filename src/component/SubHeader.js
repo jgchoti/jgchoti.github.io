@@ -5,7 +5,7 @@ import profileIllustration from '../assets/images/profile_illustration.png';
 
 function SubHeader() {
     return (
-        <div className='sub-header'>
+        <div className='sub-header w-100 p-0 m-0'>
             <div className="row">
                 <div className="col-lg-2 ">
                 </div>
