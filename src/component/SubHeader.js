@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Wave from 'react-wavify'
+import profileIllustration from '../assets/images/profile_illustration.png';
 
 function SubHeader() {
     return (
@@ -11,7 +12,7 @@ function SubHeader() {
                 <div className="col-lg-3 text-center ">
                     <img
                         className="profile-illustration img-fluid"
-                        src={process.env.PUBLIC_URL + '/assets/images/profile_illustration.png'}
+                        src={profileIllustration}
                         alt="chotirat profile illustration"
                     />
                 </div>
@@ -19,7 +20,11 @@ function SubHeader() {
                     <h3>
                         From web development to app design, I've tackled a wide range of coding
                         challenges and have gained invaluable experience along the way. Explore
-                        my portfolio to see what I've created OR learn more about "<Link
+                        "<Link
+                            className="link"
+                            to="/project"
+                            title="projects"
+                        >work</Link>"! to see what I've created OR learn more about "<Link
                             className="link"
                             to="/about"
                             title="About Choti"
@@ -30,7 +35,7 @@ function SubHeader() {
                 </div>
             </div>
             <div className='wave-container'>
-                <Wave fill='#fff'
+                <Wave fill='#F5F5DA'
                     paused={false}
                     style={{ display: 'flex' }}
                     options={{
