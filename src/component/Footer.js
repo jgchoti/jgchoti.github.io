@@ -1,6 +1,7 @@
 import React from 'react';
 import { contactInfo } from '../data/contactInfo.js';
 import SocialMediaLinks from './SocialMediaLinks';
+import chotiLogo from '../assets/images/logo_choti.png';
 
 function Footer() {
 
@@ -20,7 +21,7 @@ function Footer() {
                 </div>
                 <div className="copyright text-center m-5">
                     &copy; 2024 | Designed by
-                    <img src={process.env.PUBLIC_URL + '/assets/images/logo_choti.png'} alt="Choti Logo" className="logo" />
+                    <img src={chotiLogo} alt="Choti Logo" className="logo" />
                     <p className="m-5 d-none d-md-block">
                         Let's keep the creative vibes flowing! This
                         website is
