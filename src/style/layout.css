@@ -24,6 +24,7 @@
 
 .wave-container {
   width: 110%;
+  height: 70px;
 }
 
 .wave svg {
@@ -34,8 +35,8 @@
 
 .sub-header {
   background-color: var(--secondary-color);
-  padding-top: 160px;
-  margin-top: -10px; /* Adjust to place it correctly below the wave */
+  padding-top: 140px;
+  margin-top: -10px;
   z-index: 1;
 }
 
