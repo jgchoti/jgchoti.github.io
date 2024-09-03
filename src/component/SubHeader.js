@@ -7,7 +7,7 @@ function SubHeader() {
     return (
         <div className='sub-header'>
             <div className="row">
-                <div className="col-lg-2">
+                <div className="col-lg-2 ">
                 </div>
                 <div className="col-lg-3 text-center ">
                     <img
@@ -18,13 +18,12 @@ function SubHeader() {
                 </div>
                 <div className="col-lg-6 text-center sub-header-text">
                     <h3>
-                        From web development to app design, I've tackled a wide range of coding
-                        challenges and have gained invaluable experience along the way. Explore
+                        I'm always learning something new. Check
                         "<Link
                             className="link"
                             to="/project"
                             title="projects"
-                        >work</Link>"! to see what I've created OR learn more about "<Link
+                        >work</Link>" to see what I've created OR learn more about "<Link
                             className="link"
                             to="/about"
                             title="About Choti"
