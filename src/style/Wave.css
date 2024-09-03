@@ -1,0 +1,10 @@
+.wave-container {
+  height: 60px;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  width: 108%;
+  right: 0;
+  bottom: -1;
+  z-index: 0;
+}
