@@ -196,6 +196,9 @@
 
 @media (max-width: 320px) {
   .hero h1 {
-    font-size: 60px;
+    font-size: 45px;
+  }
+  .wave-container {
+    display: none;
   }
 }
