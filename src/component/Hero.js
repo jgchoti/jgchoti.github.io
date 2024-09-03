@@ -6,7 +6,7 @@ import CodingExperience from './CodingExperience'
 
 function Hero() {
     return (
-        <div className="hero position-relative text-center">
+        <div className="hero position-relative text-center w-100">
             <div className="content-wrapper container">
                 <p>
                     <ReactTyped
@@ -19,7 +19,7 @@ function Hero() {
                 <CodingExperience />
                 <Link to="/contact" className="btn-branding mb-4" title="Contact Choti">Say Hello</Link>
             </div>
-            <div className='wave-container'>
+            <div className='wave-container container-fluid p-0'>
                 <Wave fill='#546A2F'
                     paused={false}
                     style={{ display: 'flex' }}
