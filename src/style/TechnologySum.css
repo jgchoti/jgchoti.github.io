@@ -27,4 +27,5 @@
 .technology-sum {
   background-color: var(--main-bg-color);
   width: 100%;
+  padding-bottom: 36px;
 }
