@@ -6,7 +6,7 @@ import chotiLogo from '../assets/images/logo_choti.png';
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-sm bg-body-tertiary fixed-top">
-            <div className="container-fluid px-5">
+            <div className="navbar-container container-fluid">
                 <NavLink className="navbar-brand" to="/" title="Homepage">
                     <img src={chotiLogo} alt="Choti Logo" className="logo" />
                 </NavLink>
