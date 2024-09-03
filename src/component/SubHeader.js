@@ -5,8 +5,8 @@ import profileIllustration from '../assets/images/profile_illustration.png';
 
 function SubHeader() {
     return (
-        <div className='sub-header w-100 m-0'>
-            <div className="row">
+        <div className='sub-header container-fluid w-100 m-0'>
+            <div className="row ">
                 <div className="col-lg-2 ">
                 </div>
                 <div className="col-lg-3 text-center ">
@@ -33,7 +33,7 @@ function SubHeader() {
                 <div className="col-lg-1">
                 </div>
             </div>
-            <div className='wave-container container-fluid p-0'>
+            <div className='wave-container container-fluid'>
                 <Wave fill='#F5F5DA'
                     paused={false}
                     style={{ display: 'flex' }}
