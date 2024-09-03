@@ -1,13 +1,14 @@
 import React from 'react';
 import ScrollToTop from "../logic/ScrollToTop.js"
 import { NavLink } from 'react-router-dom';
+import chotiLogo from '../assets/images/logo_choti.png';
 
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-sm bg-body-tertiary fixed-top">
             <div className="container-fluid px-5">
                 <NavLink className="navbar-brand" to="/" title="Homepage">
-                    <img src={process.env.PUBLIC_URL + '/assets/images/logo_choti.png'} alt="Choti Logo" className="logo" />
+                    <img src={chotiLogo} alt="Choti Logo" className="logo" />
                 </NavLink>
                 <button
                     className="navbar-toggler"
