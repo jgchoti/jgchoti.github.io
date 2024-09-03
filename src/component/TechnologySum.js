@@ -1,7 +1,6 @@
 import React from 'react';
 import TechnologyBadge from './TechnologyBadge';
 import { getUniqueTechnologies } from '../logic/getUniqueTechnologies';
-import techInterface from '../assets/images/tech_interface.png'
 import Wave from 'react-wavify';
 
 function TechnologySum({ projectData }) {
@@ -9,26 +8,13 @@ function TechnologySum({ projectData }) {
 
     return (
         <div className='technology-sum'>
-            <div className="row">
-                <div className="col-lg-1">
-                </div>
-                <div className="col-lg-6 text-center technology-text">
-                    <h3>
-                        Technologies I've Worked With
-                    </h3>
-                    {uniqueTechnologies.map((tech) => (
-                        <TechnologyBadge name={tech.name} logoUrl={tech.logoUrl} />
-                    ))}
-                </div>
-                <div className="col-lg-4">
-                    <img
-                        className="tech-interface img-fluid"
-                        src={techInterface}
-                        alt="chotirat profile illustration"
-                    />
-                </div>
-                <div className="col-lg-1">
-                </div>
+            <div className=" text-center technology-text">
+                <h3>
+                    Technologies I've Worked With
+                </h3>
+                {uniqueTechnologies.map((tech) => (
+                    <TechnologyBadge name={tech.name} logoUrl={tech.logoUrl} />
+                ))}
             </div>
             <div className='wave-container'>
                 <Wave fill='#fff'
@@ -43,7 +29,7 @@ function TechnologySum({ projectData }) {
                     }}
                 />
             </div>
-        </div>
+        </div >
     );
 }
 
