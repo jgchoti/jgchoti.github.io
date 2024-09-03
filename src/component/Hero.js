@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ReactTyped } from "react-typed";
-import Wave from './Wave';
+import Wave from 'react-wavify'
+import CodingExperience from './CodingExperience'
 
 function Hero() {
     return (
@@ -15,11 +16,21 @@ function Hero() {
                     />
                 </p>
                 <h1>Chotirat Jonggrit</h1>
-                <h2>Discover My Project Portfolio!</h2>
-                <Link to="/contact" className="btn-branding mb-4" title="Contact Choti">Contact Me</Link>
+                <CodingExperience />
+                <Link to="/contact" className="btn-branding mb-4" title="Contact Choti">Say Hello</Link>
             </div>
-            <div className="wave">
-                <Wave />
+            <div className='wave-container'>
+                <Wave fill='#546A2F'
+                    paused={false}
+                    style={{ display: 'flex' }}
+                    options={{
+                        height: 20,
+                        amplitude: 20,
+                        speed: 0.15,
+                        points: 3,
+
+                    }}
+                />
             </div>
         </div>
     );
