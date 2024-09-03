@@ -1,0 +1,25 @@
+.project-technologies {
+  margin: 14px 16px;
+  padding: 24px;
+  background-color: var(--main-bg-color);
+  border-radius: 14px;
+}
+
+.tech-interface {
+  width: 360px;
+}
+.technology-text {
+  padding-top: 36px;
+}
+.technology-text img {
+  width: 42px;
+  margin: 12px 24px;
+}
+
+.technology-text h3 {
+  margin-bottom: 24px;
+}
+
+.technology-sum {
+  background-color: var(--main-bg-color);
+}
