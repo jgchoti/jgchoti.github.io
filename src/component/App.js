@@ -8,6 +8,8 @@ import ScrollReveal from '../logic/ScrollReveal';
 import '../style/index.css';
 import '../style/App.css'
 import Content from './Content';
+import TechnologySum from './TechnologySum';
+import { projectData } from '../data/projectData.js';
 
 
 function App() {
@@ -16,7 +18,8 @@ function App() {
       <Navbar />
       <Hero />
       <SubHeader />
-      <Content />
+      <TechnologySum projectData={projectData} />
+      <Content projectData={projectData} />
       <ContactBox />
       <Footer />
       <ScrollReveal />
