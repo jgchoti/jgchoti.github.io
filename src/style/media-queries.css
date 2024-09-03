@@ -3,7 +3,7 @@
   footer svg {
     margin-right: 10px;
     margin-left: 10px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .description p {
@@ -104,7 +104,7 @@
 
   .description {
     text-align: center;
-    padding: 46px 12px 24px 12px !important;
+    padding: 0 12px 36px !important;
   }
 
   .content-container {
@@ -128,7 +128,7 @@
 
   .project-name {
     text-align: center;
-    margin-top: 36px;
+    margin-top: 24px;
     margin-bottom: 15px;
     font-size: 30px;
   }
@@ -170,5 +170,25 @@
   img.about-logo {
     width: 120px;
     margin-top: 14px;
+  }
+
+  img.tech-interface {
+    display: none;
+  }
+
+  .technology-text {
+    padding-top: 16px;
+    padding-bottom: 36px;
+  }
+
+  .technology-sum {
+    padding-bottom: 80px;
+  }
+
+  .technology-sum {
+    .tech-badge {
+      margin-top: 8px;
+      margin-left: 12px;
+    }
   }
 }
