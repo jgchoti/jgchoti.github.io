@@ -1,9 +1,10 @@
 import React from 'react';
+import TechnologyBadge from './TechnologyBadge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faDisplay } from '@fortawesome/free-solid-svg-icons'
 
-function ProjectContent({ name, description, details, imageUrl, linkUrl, linkTitle, index, githubUrl }) {
+function ProjectContent({ name, description, details, imageUrl, linkUrl, linkTitle, index, githubUrl, technologies }) {
     const id = name.split(' ').join('').toLowerCase();
     const isEvenProject = index % 2 === 0;
 
@@ -15,6 +16,16 @@ function ProjectContent({ name, description, details, imageUrl, linkUrl, linkTit
                 </div>
                 <div className={`col-lg-6 mt-3 description ${isEvenProject ? 'order-md-last order-sm-last' : 'order-md-first order-sm-last'}`}>
                     <h2 className="project-name">{name}</h2>
+                    <h3>Technologies Used:</h3>
+                    <div className='project-technologies d-flex justify-content-center'>
+                        {technologies.map((technology, index) => (
+                            <TechnologyBadge
+                                key={index}
+                                name={technology.name}
+                                logoUrl={technology.logoUrl}
+                            />
+                        ))}
+                    </div>
                     <p>{description}</p>
                     <a
                         data-bs-toggle="collapse"
@@ -30,6 +41,7 @@ function ProjectContent({ name, description, details, imageUrl, linkUrl, linkTit
                     <div className="collapse multi-collapse" id={id}>
                         <p>{details}</p>
                     </div>
+
                     <div className="mt-4 d-flex justify-content-center">
                         <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="btn-branding-outline" title="GitHub">
                             <FontAwesomeIcon icon={faGithub} /> <p className='btn-text mb-0 ms-3'>GitHub</p>
