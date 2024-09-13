@@ -1,11 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.9e95bf5f.css",
-    "main.js": "/static/js/main.52bd59b9.js",
+    "main.js": "/static/js/main.65076b1c.js",
     "static/js/453.b4cccf8f.chunk.js": "/static/js/453.b4cccf8f.chunk.js",
     "static/media/studio_ghibli.png": "/static/media/studio_ghibli.db7f075aacbd9f62f22e.png",
     "static/media/studio_ghibli_light.png": "/static/media/studio_ghibli_light.de235751ef6b2737fd6f.png",
     "static/media/weather.png": "/static/media/weather.905c5f1fff21e734dca2.png",
+    "static/media/cv_dark.png": "/static/media/cv_dark.6fe381e3cbfbad6d526d.png",
+    "static/media/cv.png": "/static/media/cv.b22f07d0dff612126c60.png",
     "static/media/cv_website.png": "/static/media/cv_website.3b9aef73774f0e617672.png",
     "static/media/profile_photo.png": "/static/media/profile_photo.364b7c3045577423f4a1.png",
     "static/media/calculator_dark.png": "/static/media/calculator_dark.55e56c49256ba31b8905.png",
@@ -13,6 +15,7 @@
     "static/media/calculator.png": "/static/media/calculator.a04a9921f86000e131d7.png",
     "static/media/weather2_light.png": "/static/media/weather2_light.23574f55cf5ec1bc9ee5.png",
     "static/media/dictionary_dark.png": "/static/media/dictionary_dark.67e97951061d9602a8e8.png",
+    "static/media/vite.png": "/static/media/vite.cf2bd784aefc4de003c6.png",
     "static/media/dictionary.png": "/static/media/dictionary.e028dc2865621e1557d4.png",
     "static/media/fietsateljee_berchem.png": "/static/media/fietsateljee_berchem.97b2c68b59d91446715c.png",
     "static/media/potter_dark.png": "/static/media/potter_dark.88daded497e038730939.png",
@@ -21,6 +24,7 @@
     "static/media/todo.png": "/static/media/todo.3fc588fe7b3e44f8dec4.png",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.bacd5de623fb563b961a.ttf",
     "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.60127e352b7a11f7f1bc.ttf",
+    "static/media/tailwind.png": "/static/media/tailwind.3549d9e451d7abb96934.png",
     "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.4d986b00ff9ca3828fbd.woff2",
     "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.455ea818179b4def0c43.woff2",
     "static/media/profile_illustration.png": "/static/media/profile_illustration.7fd42156b541b302a28c.png",
@@ -34,11 +38,11 @@
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.cf7f5903d06b79ad60f1.woff2",
     "index.html": "/index.html",
     "main.9e95bf5f.css.map": "/static/css/main.9e95bf5f.css.map",
-    "main.52bd59b9.js.map": "/static/js/main.52bd59b9.js.map",
+    "main.65076b1c.js.map": "/static/js/main.65076b1c.js.map",
     "453.b4cccf8f.chunk.js.map": "/static/js/453.b4cccf8f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9e95bf5f.css",
-    "static/js/main.52bd59b9.js"
+    "static/js/main.65076b1c.js"
   ]
 }
