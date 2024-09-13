@@ -13,6 +13,8 @@ import potterImage from '../assets/images/potter.png';
 import potterDarkImage from '../assets/images/potter_dark.png';
 import dictionaryImage from '../assets/images/dictionary.png';
 import dictionaryDarkImage from '../assets/images/dictionary_dark.png';
+import cvImage from '../assets/images/cv.png';
+import cvDarkImage from '../assets/images/cv_dark.png';
 
 
 // Importing logos
@@ -23,6 +25,8 @@ import reactLogo from '../assets/logos/react.png';
 import bootstrapLogo from '../assets/logos/bootstrap.png';
 import apiLogo from '../assets/logos/api.png';
 import gitHubLogo from '../assets/logos/github.png';
+import tailwindLogo from '../assets/logos/tailwind.png';
+import viteLogo from '../assets/logos/vite.png';
 
 
 export const projectData = [
@@ -171,7 +175,7 @@ export const projectData = [
         linkUrl: "https://retro-english-dictionary.netlify.app/",
         githubUrl: "https://github.com/jgchoti/dictionary-react",
         linkTitle: "English Dictionary Project create with React",
-        shortDescription: " Built with HTML, CSS with React",
+        shortDescription: "Built with HTML, CSS with React",
         technologies: [
             { name: 'HTML', logoUrl: htmlLogo },
             { name: 'CSS', logoUrl: cssLogo },
@@ -180,4 +184,24 @@ export const projectData = [
             { name: 'React', logoUrl: reactLogo },
             { name: 'API', logoUrl: apiLogo }
         ]
-    }]
+    }
+    , {
+        name: "CV Generator",
+        description: "The CV Generator project was developed using React and Tailwind CSS with Vite. It allows users to quickly generate professional resumes by inputting their personal details and skills.",
+        details: "In addition to creating a well-structured CV, the app provides customizable templates, making the resume-building experience intuitive and user-friendly.",
+        imageUrl: cvImage,
+        alternate_image: cvDarkImage,
+        linkUrl: "https://cv-generator-2024.netlify.app/",
+        githubUrl: "https://github.com/jgchoti/cv-generator",
+        linkTitle: "CV Generator built with React and Tailwind",
+        shortDescription: "Built with HTML, Tailwind CSS, and React using Vite",
+        technologies: [
+            { name: 'HTML', logoUrl: htmlLogo },
+            { name: 'Tailwind CSS', logoUrl: tailwindLogo },
+            { name: 'JavaScript', logoUrl: jsLogo },
+            { name: 'GitHub', logoUrl: gitHubLogo },
+            { name: 'React', logoUrl: reactLogo },
+            { name: 'Vite', logoUrl: viteLogo }
+        ]
+    }
+]
