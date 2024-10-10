@@ -9,6 +9,7 @@ function ContactContent() {
         <div className="container content-container">
             <div className="row">
                 <div className="col-lg-6 content">
+
                     <h1>Get in touch!</h1>
                     <h2 className="mb-5">Contact Me</h2>
 
