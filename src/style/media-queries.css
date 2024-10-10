@@ -106,7 +106,7 @@
 
   .description {
     text-align: center;
-    padding: 0 12px 36px !important;
+    padding: 45px 12px 36px !important;
   }
 
   .content-container {
@@ -114,6 +114,7 @@
       font-size: 33px;
       padding: 0;
       text-align: center;
+      margin-top: 45px;
     }
 
     h2 {
@@ -186,6 +187,13 @@
   .code-box {
     width: 90%;
     font-size: 12px;
+  }
+  .sub-header-text ul {
+    margin-top: 0;
+    margin-left: 40px;
+  }
+  .sub-header-text h3 {
+    font-size: 24px;
   }
 }
 
