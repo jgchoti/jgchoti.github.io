@@ -185,23 +185,23 @@ export const projectData = [
             { name: 'API', logoUrl: apiLogo }
         ]
     }
-    , {
-        name: "CV Generator",
-        description: "The CV Generator project was developed using React and Tailwind CSS with Vite. It allows users to quickly generate professional resumes by inputting their personal details and skills.",
-        details: "In addition to creating a well-structured CV, the app provides customizable templates, making the resume-building experience intuitive and user-friendly.",
-        imageUrl: cvImage,
-        alternate_image: cvDarkImage,
-        linkUrl: "https://cv-generator-2024.netlify.app/",
-        githubUrl: "https://github.com/jgchoti/cv-generator",
-        linkTitle: "CV Generator built with React and Tailwind",
-        shortDescription: "Built with HTML, Tailwind CSS, and React using Vite",
-        technologies: [
-            { name: 'HTML', logoUrl: htmlLogo },
-            { name: 'Tailwind CSS', logoUrl: tailwindLogo },
-            { name: 'JavaScript', logoUrl: jsLogo },
-            { name: 'GitHub', logoUrl: gitHubLogo },
-            { name: 'React', logoUrl: reactLogo },
-            { name: 'Vite', logoUrl: viteLogo }
-        ]
-    }
+    // , {
+    //     name: "CV Generator",
+    //     description: "The CV Generator project was developed using React and Tailwind CSS with Vite. It allows users to quickly generate professional resumes by inputting their personal details and skills.",
+    //     details: "In addition to creating a well-structured CV, the app provides customizable templates, making the resume-building experience intuitive and user-friendly.",
+    //     imageUrl: cvImage,
+    //     alternate_image: cvDarkImage,
+    //     linkUrl: "https://cv-generator-2024.netlify.app/",
+    //     githubUrl: "https://github.com/jgchoti/cv-generator",
+    //     linkTitle: "CV Generator built with React and Tailwind",
+    //     shortDescription: "Built with HTML, Tailwind CSS, and React using Vite",
+    //     technologies: [
+    //         { name: 'HTML', logoUrl: htmlLogo },
+    //         { name: 'Tailwind CSS', logoUrl: tailwindLogo },
+    //         { name: 'JavaScript', logoUrl: jsLogo },
+    //         { name: 'GitHub', logoUrl: gitHubLogo },
+    //         { name: 'React', logoUrl: reactLogo },
+    //         { name: 'Vite', logoUrl: viteLogo }
+    //     ]
+    // }
 ]
