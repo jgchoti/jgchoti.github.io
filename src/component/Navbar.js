@@ -25,6 +25,7 @@ function Navbar() {
                     <div className="navbar-nav">
                         <NavLink exact className="nav-link" to="/" title="Homepage">Home</NavLink>
                         <NavLink className="nav-link" to="/project" title="Choti's Projects">Work</NavLink>
+                        <NavLink className="nav-link" to="/blog" title="Choti's Blogs">Blog</NavLink>
                         <NavLink className="nav-link" to="/about" title="About Choti">About</NavLink>
                         <NavLink className="nav-link" to="/contact" title="Contact Choti">Contact</NavLink>
                     </div>
