@@ -1,11 +1,13 @@
 // Importing project images
 import cvWebsiteImage from '../assets/images/cv_website.png';
+import cvWebsiteImageAlt from '../assets/images/cv_website_light.png';
 import weatherImage from '../assets/images/weather.png';
 import weather2Image from '../assets/images/weather2.png';
 import weather2LightImage from '../assets/images/weather2_light.png';
 import calculatorImage from '../assets/images/calculator.png';
 import calculatorDarkImage from '../assets/images/calculator_dark.png';
 import fietsateljeeBerchemImage from '../assets/images/fietsateljee_berchem.png';
+import fietsateljeeBerchemImageAlt from '../assets/images/fietsateljee_berchem_light.png'
 import todoImage from '../assets/images/todo.png';
 import studioGhibliImage from '../assets/images/studio_ghibli.png';
 import studioGhibliLightImage from '../assets/images/studio_ghibli_light.png';
@@ -15,7 +17,10 @@ import dictionaryImage from '../assets/images/dictionary.png';
 import dictionaryDarkImage from '../assets/images/dictionary_dark.png';
 import cvImage from '../assets/images/cv.png';
 import cvDarkImage from '../assets/images/cv_dark.png';
-
+import gameImage from '../assets/images/game_light.png';
+import gameImageAlt from '../assets/images/game_dark.png';
+import dashboardImage from '../assets/images/dashboard_dark.png';
+import dashboardImageAlt from '../assets/images/dashboard_light.png';
 
 // Importing logos
 import htmlLogo from '../assets/logos/html.png';
@@ -27,7 +32,9 @@ import apiLogo from '../assets/logos/api.png';
 import gitHubLogo from '../assets/logos/github.png';
 import tailwindLogo from '../assets/logos/tailwind.png';
 import viteLogo from '../assets/logos/vite.png';
-
+import twineLogo from '../assets/logos/twine.png';
+import chartJsLogo from '../assets/logos/Chart.js_logo.svg';
+import leafletLogo from '../assets/logos/leaflet.png';
 
 export const projectData = [
     {
@@ -35,6 +42,7 @@ export const projectData = [
         description: "My first ever landing page! This project marks my initial steps into the exciting world of web development, primarily using vanilla HTML and CSS with a bit of JavaScript. I learned the basics of HTML, CSS, and JavaScript while creating my very own landing page.",
         details: "So, what's the big deal about this project? Well, it's like the start of my journey in web development. It may not be the most thrilling, but you can still check out my CV and see the landing page I created! It's where I laid the foundation for all the coding adventures I've been having since then.",
         imageUrl: cvWebsiteImage,
+        alternate_image: cvWebsiteImageAlt,
         linkUrl: "https://chotirat.netlify.app/",
         githubUrl: 'https://github.com/jgchoti/cv',
         linkTitle: "Chotirat's Online Resume",
@@ -104,6 +112,7 @@ export const projectData = [
         description: "I made a website for a local Bike Repair Shop. I used HTML, CSS, JavaScript, and Bootstrap to make this site user-friendly and responsive.",
         details: "The goal is to make this site looks great on different devices, and to help the shop connect with customers in a digital world.This project.",
         imageUrl: fietsateljeeBerchemImage,
+        alternate_image: fietsateljeeBerchemImageAlt,
         linkUrl: "https://fietsateljee-berchem.netlify.app/",
         githubUrl: "https://github.com/jgchoti/fietsateljee-berchem",
         linkTitle: "Bike Shop Website",
@@ -184,24 +193,63 @@ export const projectData = [
             { name: 'React', logoUrl: reactLogo },
             { name: 'API', logoUrl: apiLogo }
         ]
+    }, {
+        name: "Save Corals - Interactive Game",
+        description: "An engaging educational game built to raise awareness about coral reef conservation using interactive storytelling.",
+        details: "Developed using Twine, this game allows users to explore scenarios impacting coral reefs and learn about the importance of real-time data monitoring. The game uses HTML, CSS, and JavaScript to enhance interactivity and user experience.",
+        imageUrl: gameImage,
+        alternate_image: gameImageAlt,
+        linkUrl: "https://coral-game.netlify.app/",
+        githubUrl: "https://github.com/jgchoti/coral-game",
+        linkTitle: "Can you save coral reefs?",
+        shortDescription: "Built with Twine, HTML, CSS, and JavaScript.",
+        technologies: [
+            { name: 'Twine', logoUrl: twineLogo },
+            { name: 'HTML', logoUrl: htmlLogo },
+            { name: 'CSS', logoUrl: cssLogo },
+            { name: 'JavaScript', logoUrl: jsLogo },
+            { name: 'GitHub', logoUrl: gitHubLogo }
+        ]
+    },
+    {
+        name: "Monitoring Dashboard",
+        description: "A data visualization tool designed to monitor coral health using data from Smart Buoy sensors.",
+        details: "Developed as part of Tech4Sustainable Futures Challenge's presentation, this dashboard leverages Chart.js for real-time data visualization and Leaflet.js for interactive mapping. It provides insights into key coral health metrics like temperature and pH levels, helping communities and researchers make informed decisions to protect coral reefs.",
+        imageUrl: dashboardImage,
+        alternate_image: dashboardImageAlt,
+        linkUrl: "https://coral-game.netlify.app/map",
+        githubUrl: "https://github.com/jgchoti/coral-game",
+        linkTitle: "Explore the Coral Reef Monitoring Dashboard",
+        shortDescription: "Built with HTML, CSS, JavaScript, Chart.js, and Leaflet.js.",
+        technologies: [
+            { name: 'HTML', logoUrl: htmlLogo },
+            { name: 'CSS', logoUrl: cssLogo },
+            { name: 'JavaScript', logoUrl: jsLogo },
+            { name: 'Chart.js', logoUrl: chartJsLogo },
+            { name: 'Leaflet.js', logoUrl: leafletLogo },
+            { name: 'GitHub', logoUrl: gitHubLogo }
+        ]
     }
-    // , {
-    //     name: "CV Generator",
-    //     description: "The CV Generator project was developed using React and Tailwind CSS with Vite. It allows users to quickly generate professional resumes by inputting their personal details and skills.",
-    //     details: "In addition to creating a well-structured CV, the app provides customizable templates, making the resume-building experience intuitive and user-friendly.",
-    //     imageUrl: cvImage,
-    //     alternate_image: cvDarkImage,
-    //     linkUrl: "https://cv-generator-2024.netlify.app/",
-    //     githubUrl: "https://github.com/jgchoti/cv-generator",
-    //     linkTitle: "CV Generator built with React and Tailwind",
-    //     shortDescription: "Built with HTML, Tailwind CSS, and React using Vite",
-    //     technologies: [
-    //         { name: 'HTML', logoUrl: htmlLogo },
-    //         { name: 'Tailwind CSS', logoUrl: tailwindLogo },
-    //         { name: 'JavaScript', logoUrl: jsLogo },
-    //         { name: 'GitHub', logoUrl: gitHubLogo },
-    //         { name: 'React', logoUrl: reactLogo },
-    //         { name: 'Vite', logoUrl: viteLogo }
-    //     ]
-    // }
-]
+].reverse();
+
+
+
+// , {
+//     name: "CV Generator",
+//     description: "The CV Generator project was developed using React and Tailwind CSS with Vite. It allows users to quickly generate professional resumes by inputting their personal details and skills.",
+//     details: "In addition to creating a well-structured CV, the app provides customizable templates, making the resume-building experience intuitive and user-friendly.",
+//     imageUrl: cvImage,
+//     alternate_image: cvDarkImage,
+//     linkUrl: "https://cv-generator-2024.netlify.app/",
+//     githubUrl: "https://github.com/jgchoti/cv-generator",
+//     linkTitle: "CV Generator built with React and Tailwind",
+//     shortDescription: "Built with HTML, Tailwind CSS, and React using Vite",
+//     technologies: [
+//         { name: 'HTML', logoUrl: htmlLogo },
+//         { name: 'Tailwind CSS', logoUrl: tailwindLogo },
+//         { name: 'JavaScript', logoUrl: jsLogo },
+//         { name: 'GitHub', logoUrl: gitHubLogo },
+//         { name: 'React', logoUrl: reactLogo },
+//         { name: 'Vite', logoUrl: viteLogo }
+//     ]
+// }
