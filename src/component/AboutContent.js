@@ -31,11 +31,11 @@ function AboutContent() {
                                 </button>
                             </h2>
                             <div id="collapseJourney" className="accordion-collapse collapse" aria-labelledby="headingJourney" data-bs-parent="#aboutAccordion">
-                                <div className="accordion-body">
+                                <div className="accordion-body"><p>
                                     <strong>🌱 My Journey</strong><br />
                                     Since June 2024, I've worked as a freelance <strong>web developer</strong>, helping small businesses build engaging websites and elevate their online presence. Currently, I am further advancing my skills in <strong>full-stack development</strong> at <a href="https://www.hackyourfuture.be/" target="_blank" rel="noopener noreferrer"><strong>HackYourFuture Belgium</strong></a>, driven by a commitment to continuous learning and growth in the tech space.
                                     <br /><br />
-                                    My career has taken me across <strong>Switzerland 🇨🇭, Denmark 🇩🇰, Slovenia 🇸🇮, Spain 🇪🇸, the Maldives 🇲🇻, and Malaysia 🇲🇾</strong>, where I gained intercultural insights and honed my adaptability. Now, after relocating to Belgium, learning Dutch, and embracing motherhood, I’m excited to bring my unique skill set and global perspective to the world of <strong>IT</strong>.
+                                    My career has taken me across <strong>Switzerland 🇨🇭, Denmark 🇩🇰, Slovenia 🇸🇮, Spain 🇪🇸, the Maldives 🇲🇻, and Malaysia 🇲🇾</strong>, where I gained intercultural insights and honed my adaptability. Now, after relocating to Belgium, learning Dutch, and embracing motherhood, I’m excited to bring my unique skill set and global perspective to the world of <strong>IT</strong>.</p>
                                 </div>
                             </div>
                         </div>
@@ -49,13 +49,15 @@ function AboutContent() {
                             </h2>
                             <div id="collapseSkills" className="accordion-collapse collapse" aria-labelledby="headingSkills" data-bs-parent="#aboutAccordion">
                                 <div className="accordion-body">
-                                    <strong>💼 What I Do</strong><br />
-                                    I specialize in:
-                                    <ul className='text-start'>
-                                        <li>Building web applications using <strong>JavaScript</strong> and <strong>SQL</strong>, with a focus on creating innovative digital solutions for business growth and transformation 🛠️</li>
-                                        <li>Creating and optimizing websites for small businesses using platforms like <strong>Squarespace</strong> 🌐</li>
-                                        <li>Leveraging technical expertise to deliver scalable web solutions that enhance user experiences and meet client needs 🌐</li>
-                                    </ul>
+                                    <p>
+                                        <strong>💼 What I Do</strong><br />
+                                        I specialize in:
+                                        <ul className='text-start'>
+                                            <li>Building web applications using <strong>JavaScript</strong> and <strong>SQL</strong>, with a focus on creating innovative digital solutions for business growth and transformation 🛠️</li>
+                                            <li>Creating and optimizing websites for small businesses using platforms like <strong>Squarespace</strong> 🌐</li>
+                                            <li>Leveraging technical expertise to deliver scalable web solutions that enhance user experiences and meet client needs 🌐</li>
+                                        </ul>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -69,8 +71,9 @@ function AboutContent() {
                             </h2>
                             <div id="collapseBeyondCode" className="accordion-collapse collapse" aria-labelledby="headingBeyondCode" data-bs-parent="#aboutAccordion">
                                 <div className="accordion-body">
-                                    <strong>🌟 Beyond the Code</strong><br />
-                                    Outside of work, I’m passionate about exploring the latest tech trends, learning new languages, and engaging in sustainability initiatives. ♻️🌍
+                                    <p>
+                                        <strong>🌟 Beyond the Code</strong><br />
+                                        Outside of work, I’m passionate about exploring the latest tech trends, learning new languages, and engaging in sustainability initiatives.♻️🌍</p>
                                 </div>
                             </div>
                         </div>
