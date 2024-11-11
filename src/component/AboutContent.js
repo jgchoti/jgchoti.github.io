@@ -17,7 +17,7 @@ function AboutContent() {
                     <h3>Based in Belgium 🇧🇪</h3>
 
                     <p className="mt-3">
-                        Hi, I'm Choti, a globally-minded tech enthusiast with a strong foundation in <strong>web development</strong>, <strong>project management</strong>, and <strong>data analysis</strong>. My journey spans multiple countries and industries, enriching my perspective and approach to transforming ideas into impactful digital solutions. 🌍✨
+                        Hi, I'm Choti, a tech enthusiast with a global mindset and a strong foundation in <strong>web development</strong>, <strong>project management</strong>, and <strong>data analysis</strong>. Having lived and worked across multiple countries and industries, I bring a unique perspective to delivering innovative digital solutions that drive results. 🌍✨
                     </p>
 
                     {/* Accordion for "Read More" sections */}
@@ -52,9 +52,9 @@ function AboutContent() {
                                     <strong>💼 What I Do</strong><br />
                                     I specialize in:
                                     <ul className='text-start'>
-                                        <li>Programming with <strong>JavaScript</strong>, <strong>SQL</strong>, and <strong>IoT solutions</strong> for digital transformation projects 🛠️</li>
+                                        <li>Building web applications using <strong>JavaScript</strong> and <strong>SQL</strong>, with a focus on creating innovative digital solutions for business growth and transformation 🛠️</li>
                                         <li>Creating and optimizing websites for small businesses using platforms like <strong>Squarespace</strong> 🌐</li>
-                                        <li>Developing data-driven digital strategies that help clients reach their goals 📊</li>
+                                        <li>Leveraging technical expertise to deliver scalable web solutions that enhance user experiences and meet client needs 🌐</li>
                                     </ul>
                                 </div>
                             </div>
