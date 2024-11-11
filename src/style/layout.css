@@ -15,6 +15,7 @@
 .sub-header {
   background-color: var(--secondary-color);
   padding-bottom: 40px;
+  padding-top: 60px;
 }
 
 .projects-container {
