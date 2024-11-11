@@ -64,7 +64,7 @@
 /* Media Queries for max-width: 950px */
 @media (max-width: 950px) {
   .hero {
-    padding-bottom: 140px;
+    padding-bottom: 0;
   }
 
   .hero {
@@ -99,9 +99,8 @@
     padding-bottom: 60px;
   }
 
-  .sub-header-text {
-    font-size: 16px;
-    font-weight: 200;
+  .sub-header-text h4 {
+    font-size: 18px;
   }
 
   .description {
