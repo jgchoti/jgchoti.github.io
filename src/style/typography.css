@@ -40,9 +40,10 @@ p {
 }
 
 .sub-header-text a {
-  color: var(--secondary-color);
-  font-family: var(--font-family);
-  font-size: 24px;
+  color: black;
+  font-size: 24px !important;
+  text-decoration: underline;
+  font-weight: 400;
 }
 
 .sub-header-text a:hover {
