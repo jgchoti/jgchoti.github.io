@@ -19,19 +19,7 @@ function Hero() {
                 <CodingExperience />
                 <Link to="/contact" className="btn-branding mb-4" title="Contact Choti">Say Hello</Link>
             </div>
-            <div className='wave-container container-fluid p-0'>
-                <Wave fill='#546A2F'
-                    paused={false}
-                    style={{ display: 'flex' }}
-                    options={{
-                        height: 20,
-                        amplitude: 20,
-                        speed: 0.15,
-                        points: 3,
 
-                    }}
-                />
-            </div>
         </div>
     );
 }
