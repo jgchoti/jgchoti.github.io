@@ -24,6 +24,8 @@ function Project() {
                     linkTitle={project.linkTitle}
                     githubUrl={project.githubUrl}
                     technologies={project.technologies}
+                    blogUrl={project.blogUrl}
+                    webUrl={project.webUrl}
                     index={index}
                 />
             ))}

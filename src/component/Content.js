@@ -14,6 +14,8 @@ function Content(props) {
                         linkTitle={project.linkTitle}
                         shortDescription={project.shortDescription}
                         githubUrl={project.githubUrl}
+                        blogUrl={project.blogUrl}
+                        webUrl={project.webUrl}
                     />
                 ))}
             </div>

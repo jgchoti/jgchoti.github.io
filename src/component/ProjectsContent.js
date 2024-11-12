@@ -3,8 +3,9 @@ import TechnologyBadge from './TechnologyBadge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faDisplay } from '@fortawesome/free-solid-svg-icons'
+import { faMedium } from '@fortawesome/free-brands-svg-icons'
 
-function ProjectContent({ name, description, details, imageUrl, linkUrl, linkTitle, index, githubUrl, technologies }) {
+function ProjectContent({ name, description, details, imageUrl, linkUrl, linkTitle, index, githubUrl, webUrl, blogUrl, technologies }) {
     const id = name.split(' ').join('').toLowerCase();
     const isEvenProject = index % 2 === 0;
 
@@ -43,12 +44,28 @@ function ProjectContent({ name, description, details, imageUrl, linkUrl, linkTit
                     </div>
 
                     <div className="mt-4 d-flex justify-content-center">
-                        <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="btn-branding-outline" title="GitHub">
-                            <FontAwesomeIcon icon={faGithub} /> <p className='btn-text mb-0 ms-3'>GitHub</p>
-                        </a>
-                        <a href={linkUrl} target="_blank" rel="noopener noreferrer" className="btn-branding-outline" title="Demo">
-                            <FontAwesomeIcon icon={faDisplay} /> <p className='btn-text mb-0 ms-3'>Launch {name}</p>
-                        </a>
+                        {githubUrl && (
+                            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="btn-branding-outline" title="GitHub">
+                                <FontAwesomeIcon icon={faGithub} /> <p className='btn-text mb-0 ms-3'>GitHub</p>
+                            </a>
+                        )}
+                        {blogUrl && (
+                            <a href={blogUrl} target="_blank" rel="noopener noreferrer" className="btn-branding-outline" title="Blog">
+                                <FontAwesomeIcon icon={faMedium} /><p className='btn-text mb-0 ms-3'>Read Blog</p>
+                            </a>
+                        )}
+                        {(webUrl || linkUrl) && (
+                            <a
+                                href={webUrl ? webUrl : linkUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn-branding-outline"
+                                title={webUrl ? "Website" : "Demo"}
+                            >
+                                <FontAwesomeIcon icon={faDisplay} />
+                                <p className='btn-text mb-0 ms-3'>Launch {name}</p>
+                            </a>
+                        )}
                     </div>
                 </div>
             </div>

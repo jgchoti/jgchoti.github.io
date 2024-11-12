@@ -2,6 +2,7 @@
 import cvWebsiteImage from '../assets/images/cv_website.png';
 import cvWebsiteImageAlt from '../assets/images/cv_website_light.png';
 import weatherImage from '../assets/images/weather.png';
+import weatherImageAlt from '../assets/images/weather_dark.png';
 import weather2Image from '../assets/images/weather2.png';
 import weather2LightImage from '../assets/images/weather2_light.png';
 import calculatorImage from '../assets/images/calculator.png';
@@ -9,6 +10,7 @@ import calculatorDarkImage from '../assets/images/calculator_dark.png';
 import fietsateljeeBerchemImage from '../assets/images/fietsateljee_berchem.png';
 import fietsateljeeBerchemImageAlt from '../assets/images/fietsateljee_berchem_light.png'
 import todoImage from '../assets/images/todo.png';
+import todoImageAlt from '../assets/images/todo_dark.png';
 import studioGhibliImage from '../assets/images/studio_ghibli.png';
 import studioGhibliLightImage from '../assets/images/studio_ghibli_light.png';
 import potterImage from '../assets/images/potter.png';
@@ -21,6 +23,8 @@ import gameImage from '../assets/images/game_light.png';
 import gameImageAlt from '../assets/images/game_dark.png';
 import dashboardImage from '../assets/images/dashboard_dark.png';
 import dashboardImageAlt from '../assets/images/dashboard_light.png';
+import jakobeWebsiteImage from '../assets/images/jakobeWebsite_light.png'
+import jakobeWebsiteImageAlt from '../assets/images/jakobeWebsite.png'
 
 // Importing logos
 import htmlLogo from '../assets/logos/html.png';
@@ -35,6 +39,8 @@ import viteLogo from '../assets/logos/vite.png';
 import twineLogo from '../assets/logos/twine.png';
 import chartJsLogo from '../assets/logos/Chart.js_logo.svg';
 import leafletLogo from '../assets/logos/leaflet.png';
+import squarespaceLogo from '../assets/logos/squarespace.png'
+import seoLogo from '../assets/logos/seo.png'
 
 export const projectData = [
     {
@@ -59,6 +65,7 @@ export const projectData = [
         description: "In this project, I got into the world of live API to make a dynamic weather app. I aimed for a design that's user-friendly. User can get the latest on weather conditions, forecasts, and what's happening in their area, all thanks to the API integration.",
         details: "My primary focus was on integrating weather APIs to ensure users receive up-to-date and accurate weather information. This involved learning how to effectively manage data from external sources and present it in a user-friendly format within the application. By mastering API interactions, I not only enhanced my technical skills in JavaScript but also learned the importance of data integrity and real-time updates in user-facing applications. Moving forward, I plan to further refine this project by exploring additional APIs and improving the overall user experience.",
         imageUrl: weatherImage,
+        alternate_image: weatherImageAlt,
         linkUrl: "https://weather2023.netlify.app/",
         githubUrl: 'https://github.com/jgchoti/weather-app',
         linkTitle: "Weather App Project",
@@ -130,6 +137,7 @@ export const projectData = [
         description: "This to-do list application was developed as part of my studies with HackYourFuture Belgium, aimed at deepening my understanding of JavaScript.",
         details: "Throughout this project, I aimed to create a user-friendly application where individuals could effortlessly manage their daily tasks. I also implemented local storage capabilities, allowing users to save their to-do lists directly on their devices. This project has not only strengthened my technical skills in JavaScript, particularly in event handling and DOM manipulation, but also taught me the importance of user-centric design.",
         imageUrl: todoImage,
+        alternate_image: todoImageAlt,
         linkUrl: "https://jgchoti.github.io/to-do-list/",
         githubUrl: "https://github.com/jgchoti/to-do-list",
         linkTitle: "To-Do List Application",
@@ -194,7 +202,7 @@ export const projectData = [
             { name: 'API', logoUrl: apiLogo }
         ]
     }, {
-        name: "Save Corals - Interactive Game",
+        name: "Save Corals",
         description: "An engaging educational game built to raise awareness about coral reef conservation using interactive storytelling.",
         details: "Developed using Twine, this game allows users to explore scenarios impacting coral reefs and learn about the importance of real-time data monitoring. The game uses HTML, CSS, and JavaScript to enhance interactivity and user experience.",
         imageUrl: gameImage,
@@ -204,10 +212,10 @@ export const projectData = [
         linkTitle: "Can you save coral reefs?",
         shortDescription: "Built with Twine, HTML, CSS, and JavaScript.",
         technologies: [
-            { name: 'Twine', logoUrl: twineLogo },
             { name: 'HTML', logoUrl: htmlLogo },
             { name: 'CSS', logoUrl: cssLogo },
             { name: 'JavaScript', logoUrl: jsLogo },
+            { name: 'Twine', logoUrl: twineLogo },
             { name: 'GitHub', logoUrl: gitHubLogo }
         ]
     },
@@ -229,7 +237,27 @@ export const projectData = [
             { name: 'Leaflet.js', logoUrl: leafletLogo },
             { name: 'GitHub', logoUrl: gitHubLogo }
         ]
+    },
+    {
+        name: "Circus Artist Portfolio",
+        description: "A professional portfolio website designed to showcase the work and artistry of Jakobe Geens, an accomplished circus performer.",
+        details: "This website was created to highlight Jakobe Geens' career in the circus arts. It features her biography, artistic approach, and portfolio of performances. Developed using Squarespace, the site is optimized for user experience and SEO. It allows Jakobe and her team to easily update performance dates and other content independently. I also provided training to ensure she can manage and update the site, including adding new events and collaborations with ease.",
+        imageUrl: jakobeWebsiteImage,
+        alternate_image: jakobeWebsiteImageAlt,
+        webUrl: "https://jakobegeens.com",
+        blogUrl: "https://medium.com/@jgchoti/solving-a-language-switching-nav-bar-using-only-css-on-squarespace-add859c95ef9",
+        linkTitle: "Visit Jakobe Geens' Website",
+        shortDescription: "A professional circus artist portfolio built with Squarespace, designed for show events and collaborations.",
+        technologies: [
+            { name: 'HTML', logoUrl: htmlLogo },
+            { name: 'CSS', logoUrl: cssLogo },
+            { name: 'JavaScript', logoUrl: jsLogo },
+            { name: 'SEO', logoUrl: seoLogo },
+            { name: 'Squarespace', logoUrl: squarespaceLogo },
+        ]
     }
+
+
 ].reverse();
 
 
