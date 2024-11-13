@@ -79,6 +79,7 @@ export const projectData = [
         ]
     },
     {
+
         name: "Weather App 2.0",
         description: "Utilizing my knowledge of HTML, CSS, and JavaScript, I embarked on building the Weather App using React. This project marked my entry into the world of React.",
         details: "Through this project, I deepened my understanding of React's core concepts, such as state, props, and components. This project reflects my growth and remind me that software development is a continuous learning process.",
@@ -98,6 +99,7 @@ export const projectData = [
         ]
     },
     {
+
         name: "Basic Calculator",
         description: "When I started my journey with HackYourFuture Belgium, I was tasked to created a Basic Calculator. Developed to enhance my web development skills, this calculator is crafted using HTML, CSS, and basic JavaScript.",
         details: "My goal of this project was to create simple, clean and minimalistic design, making calculations straightforward and efficient. Creating this app meant diving into various functionalities with HTML, CSS, and JavaScript. It was a fun and rewarding challenge that highlights the basics of web development.",
@@ -115,6 +117,7 @@ export const projectData = [
         ]
     },
     {
+
         name: "Bike Shop Website",
         description: "I made a website for a local Bike Repair Shop. I used HTML, CSS, JavaScript, and Bootstrap to make this site user-friendly and responsive.",
         details: "The goal is to make this site looks great on different devices, and to help the shop connect with customers in a digital world.This project.",
@@ -133,6 +136,7 @@ export const projectData = [
         ]
     },
     {
+
         name: "To-Do List",
         description: "This to-do list application was developed as part of my studies with HackYourFuture Belgium, aimed at deepening my understanding of JavaScript.",
         details: "Throughout this project, I aimed to create a user-friendly application where individuals could effortlessly manage their daily tasks. I also implemented local storage capabilities, allowing users to save their to-do lists directly on their devices. This project has not only strengthened my technical skills in JavaScript, particularly in event handling and DOM manipulation, but also taught me the importance of user-centric design.",
@@ -149,6 +153,7 @@ export const projectData = [
             { name: 'GitHub', logoUrl: gitHubLogo },
         ]
     }, {
+
         name: "Studio Ghibli Searcher",
         description: "The Studio Ghibli Searcher is an application born out of my deep admiration for Studio Ghibli films and characters. It is designed to let users discover the world of Studio Ghibli by using the Studio Ghibli API.",
         details: "This application was a passion project developed during my studies at HackYourFuture Belgium. One of the highlights of this project was implementing client-side filtering using state management. This feature enables users to refine search results directly.",
@@ -166,6 +171,7 @@ export const projectData = [
             { name: 'API', logoUrl: apiLogo }
         ]
     }, {
+
         name: "Potter Searcher",
         description: "The PotterAPI Searcher is an application developed as part of an assignment during my studies at HackYourFuture Belgium to deepen my understanding of JavaScript and API interactions.",
         details: "It utilizes The Potter DB: API and allow users to explore and discover information about characters, spells, potions, books, and movies. This project served as an opportunity for me to learn about making API calls and managing queries to retrieve specific data from The Potter DB: API. One of the key challenges I tackled was implementing server-side filtering to optimize performance and ensure accurate data retrieval.",
@@ -184,6 +190,7 @@ export const projectData = [
         ]
     },
     {
+
         name: "English Dictionary",
         description: "This English Dictionary project was developed using React. Using Free Dictionary API, user can look up meaning of any word.",
         details: "Beyond just looking up meanings, users can also get random words thrown their way, making their learning journey exciting and engaging.",
@@ -220,6 +227,7 @@ export const projectData = [
         ]
     },
     {
+
         name: "Monitoring Dashboard",
         description: "A data visualization tool designed to monitor coral health using data from Smart Buoy sensors.",
         details: "Developed as part of Tech4Sustainable Futures Challenge's presentation, this dashboard leverages Chart.js for real-time data visualization and Leaflet.js for interactive mapping. It provides insights into key coral health metrics like temperature and pH levels, helping communities and researchers make informed decisions to protect coral reefs.",
