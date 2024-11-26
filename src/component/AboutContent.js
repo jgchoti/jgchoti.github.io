@@ -36,7 +36,7 @@ function AboutContent() {
                                     Since June 2024, I've worked as a freelance <strong>web developer</strong>, helping small businesses build engaging websites and elevate their online presence. Currently, I am further advancing my skills in <strong>full-stack development</strong> at <a href="https://www.hackyourfuture.be/" target="_blank" rel="noopener noreferrer"><strong>HackYourFuture Belgium</strong></a>, driven by a commitment to continuous learning and growth in the tech space.
                                     <br /><br />
                                     My career and education have taken me to Switzerland 🇨🇭, the United Kingdom 🇬🇧, Denmark 🇩🇰, Slovenia 🇸🇮, Spain 🇪🇸, the Maldives 🇲🇻, and Malaysia 🇲🇾, where I gained valuable intercultural insights and refined my adaptability. Now, having relocated to Belgium, learned Dutch, and embraced motherhood, I’m eager to apply my unique skill set and global perspective to the world of IT.
-                                </div>
+                                </p></div>
                             </div>
                         </div>
 
