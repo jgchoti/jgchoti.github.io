@@ -7,11 +7,29 @@
 @import url(./media-queries.css);
 @import url(./TechnologyBadge.css);
 @import url(./TechnologySum.css);
-
+@import url(./Hero.css);
+@import url(./Navbar.css);
 :root {
   --head-font-family: "Josefin Sans", cursive;
   --font-family: "Roboto Mono", monospace;
-  --main-bg-color: beige;
+  --main-bg-color: #f7f1e1;
   --secondary-color: darkolivegreen;
   --accent-color: #f8f9fa;
+
+  /* Shared fallback colors */
+  --primary-color: darkolivegreen;
+  --bg-soft: #f7f1e1;
+  --text-main: #f7f1e1;
+}
+
+[data-theme="web"] {
+  --primary-color: darkolivegreen;
+  --main-bg-color: #f7f1e1;
+}
+
+[data-theme="data"] {
+  --primary-color: #552205;
+  --main-bg-color: #fceaeb;
+  --text-main: #fceaeb;
+  --secondary-color: #552205;
 }
