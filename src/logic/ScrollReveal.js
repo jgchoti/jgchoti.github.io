@@ -24,9 +24,9 @@ const ScrollReveal = () => {
         return () => {
             window.removeEventListener("scroll", reveal);
         };
-    }, []); // Empty dependency array ensures this effect runs only once
+    }, []);
 
-    return null; // Since this component only adds an event listener, it doesn't render any UI
+    return null;
 };
 
 export default ScrollReveal;
