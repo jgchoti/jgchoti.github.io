@@ -1,13 +1,13 @@
 import React from 'react';
 import TechnologyBadge from './TechnologyBadge';
 import { getUniqueTechnologies } from '../logic/getUniqueTechnologies';
-import Wave from 'react-wavify';
+import { projectData } from '../data/projectData';
 
-function TechnologySum({ projectData }) {
+function TechnologySum() {
     const uniqueTechnologies = getUniqueTechnologies(projectData);
 
     return (
-        <div className='technology-sum container-fluid w-100 m-0'>
+        <div className='technology-sum container-fluid'>
             <div className=" text-center technology-text">
                 <h3>
                     Technologies I've Worked With
