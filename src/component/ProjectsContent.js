@@ -8,7 +8,6 @@ import { faMedium } from '@fortawesome/free-brands-svg-icons'
 function ProjectContent({ name, description, details, imageUrl, linkUrl, linkTitle, index, githubUrl, webUrl, blogUrl, technologies }) {
     const id = name.split(' ').join('').toLowerCase();
     const isEvenProject = index % 2 === 0;
-
     return (
         <div className="container">
             <div className="d-flex flex-column flex-md-row reveal">
