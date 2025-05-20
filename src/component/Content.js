@@ -20,8 +20,9 @@ function Content(props) {
                         blogUrl={project.blogUrl}
                         webUrl={project.webUrl}
                     />)
-                )) : (<div className="text-center mt-5 mb-5" style={{ fontStyle: 'italic', opacity: 0.7 }}>
-                    🚧 Ongoing — more projects coming soon!
+                )) : (<div className="text-center mt-5 mb-5" >
+                    <p className='mb-5'>🚧 Ongoing — more projects coming soon!</p>
+                    <img src='https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHF2NGljZXlrbjFzOGpmajU3YWFidHF0Mmd2ZXQyNzRrbjBqajFhZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6MbbT5ctRJeOnPIA/giphy.gif' alt="giphy" className="img-fluid rounded mx-auto d-block" />
                 </div>)}
             </div>
         </div>
