@@ -7,7 +7,6 @@
 @import url(./media-queries.css);
 @import url(./TechnologyBadge.css);
 @import url(./TechnologySum.css);
-@import url(./Hero.css);
 @import url(./Navbar.css);
 :root {
   --head-font-family: "Josefin Sans", cursive;
