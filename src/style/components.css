@@ -20,15 +20,6 @@ footer svg:hover {
   transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-nav a {
-  opacity: 0.7 !important;
-  color: var(--secondary-color) !important;
-}
-
-nav a:hover {
-  color: var(--secondary-color) !important;
-}
-
 .contact-form-container,
 .form-submit-container {
   display: flex;
@@ -84,15 +75,6 @@ form input:focus {
   border: none;
   outline: none;
   border-bottom: 1px solid var(--secondary-color);
-}
-
-.navbar-nav a.active {
-  color: var(--secondary-color) !important;
-}
-
-.nav-link {
-  margin-left: 30px;
-  margin-right: 40px;
 }
 
 form button,
@@ -197,6 +179,7 @@ form button:hover,
   box-shadow: 12px 12px 2px 1px var(--main-bg-color);
   margin-top: 50px;
   margin-right: 46px;
+  max-width: 450px;
 }
 
 .about-logo {
@@ -291,4 +274,40 @@ form button:hover,
 
 .button-link:hover {
   background-color: var(--secondary-color);
+}
+
+/* about */
+
+.stacking-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 200px 0;
+}
+
+.stacking-base {
+  position: relative;
+  width: 800px;
+  height: 400px;
+}
+
+/* .profile-photo {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto;
+} */
+
+.stacking-card {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  background: white;
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
