@@ -186,13 +186,6 @@ form button:hover,
   width: 145px;
 }
 
-.profile-illustration {
-  width: 100%;
-  z-index: 4;
-  position: relative;
-  opacity: 0.8;
-}
-
 .btn-code {
   display: inline;
   background-color: var(--secondary-color);
@@ -291,15 +284,6 @@ form button:hover,
   height: 400px;
 }
 
-/* .profile-photo {
-  width: 100%;
-  border-radius: 16px;
-  display: block;
-  z-index: 1;
-  position: relative;
-  margin: 0 auto;
-} */
-
 .stacking-card {
   position: absolute;
   left: 0;
@@ -310,4 +294,8 @@ form button:hover,
   border-radius: 16px;
   padding: 36px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+div .giphy {
+  margin: 0 auto;
 }
