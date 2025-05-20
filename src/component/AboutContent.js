@@ -1,96 +1,74 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import profilePhoto from '../assets/images/profile_photo.png';
-import chotiLogo from '../assets/images/logo_choti.png';
+import { motion, useScroll, useSpring } from "framer-motion";
+import profilePhoto from "../assets/images/profile_photo.png";
+import profilePhotoDataTheme from "../assets/images/profile_photo_data.png";
+// import { Link } from "react-router-dom";
+import { profileData } from "../data/profileData";
+import TechnologySum from "./TechnologySum";
+import { useTheme } from '../component/Theme.js';
+const fadeInUp = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
-function AboutContent() {
-
+export default function AboutContent() {
+    const theme = useTheme()
+    console.log(theme)
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
     return (
         <div className="container content-container">
-            <div className="row">
-                <div className="col-lg-6 mt-5">
-                    <img className="profile-photo img-fluid" src={profilePhoto} alt="Chotirat profile" />
+            <motion.div
+                className="line-scroll"
+                style={{
+                    scaleX: scaleX,
+                }}
+            />
+            {/* Profile Photo Section */}
+            <motion.div
+                className="row justify-content-center mt-5"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
+                <div className="col-lg-6 text-center">
+                    <img className="profile-photo img-fluid mt-0" src={theme.theme === "web" ? profilePhoto : profilePhotoDataTheme} alt="Chotirat profile" />
                 </div>
-                <div className="col-lg-6 description">
-                    <h1>About Me</h1>
-                    <img src={chotiLogo} alt="Choti Logo" className="about-logo" />
-                    <h3>Based in Belgium 🇧🇪</h3>
+            </motion.div>
 
-                    <p className="mt-3">
-                        Hi, I'm Choti, a tech enthusiast with a global mindset and a strong foundation in <strong>web development</strong>, <strong>project management</strong>, and <strong>data analysis</strong>. Having lived and worked across multiple countries and industries, I bring a unique perspective to delivering innovative digital solutions that drive results. 🌍✨
-                    </p>
-
-                    {/* Accordion for "Read More" sections */}
-                    <div className="accordion mt-4" id="aboutAccordion">
-
-                        {/* Journey Section */}
-                        <div className="accordion-item">
-                            <h2 className="accordion-header" id="headingJourney">
-                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJourney" aria-expanded="false" aria-controls="collapseJourney">
-                                    What’s My Story Across the Globe?
-                                </button>
-                            </h2>
-                            <div id="collapseJourney" className="accordion-collapse collapse" aria-labelledby="headingJourney" data-bs-parent="#aboutAccordion">
-                                <div className="accordion-body"><p>
-                                    <strong>🌱 My Journey</strong><br />
-                                    Since June 2024, I've worked as a freelance <strong>web developer</strong>, helping small businesses build engaging websites and elevate their online presence. Currently, I am further advancing my skills in <strong>full-stack development</strong> at <a href="https://www.hackyourfuture.be/" target="_blank" rel="noopener noreferrer"><strong>HackYourFuture Belgium</strong></a>, driven by a commitment to continuous learning and growth in the tech space.
-                                    <br /><br />
-                                    My career and education have taken me to Switzerland 🇨🇭, the United Kingdom 🇬🇧, Denmark 🇩🇰, Slovenia 🇸🇮, Spain 🇪🇸, the Maldives 🇲🇻, and Malaysia 🇲🇾, where I gained valuable intercultural insights and refined my adaptability. Now, having relocated to Belgium, learned Dutch, and embraced motherhood, I’m eager to apply my unique skill set and global perspective to the world of IT.
-                                </p></div>
-                            </div>
-                        </div>
-
-                        {/* Skills Section */}
-                        <div className="accordion-item">
-                            <h2 className="accordion-header" id="headingSkills">
-                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSkills" aria-expanded="false" aria-controls="collapseSkills">
-                                    What Can I Do for You?
-                                </button>
-                            </h2>
-                            <div id="collapseSkills" className="accordion-collapse collapse" aria-labelledby="headingSkills" data-bs-parent="#aboutAccordion">
-                                <div className="accordion-body">
-                                    <p>
-                                        <strong>💼 What I Do</strong><br />
-                                        I specialize in:
-                                        <ul className='text-start'>
-                                            <li>Building web applications using <strong>JavaScript</strong> and <strong>SQL</strong>, with a focus on creating innovative digital solutions for business growth and transformation 🛠️</li>
-                                            <li>Creating and optimizing websites for small businesses using platforms like <strong>Squarespace</strong> 🌐</li>
-                                            <li>Leveraging technical expertise to deliver scalable web solutions that enhance user experiences and meet client needs 🌐</li>
-                                        </ul>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Beyond Code Section */}
-                        <div className="accordion-item">
-                            <h2 className="accordion-header" id="headingBeyondCode">
-                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBeyondCode" aria-expanded="false" aria-controls="collapseBeyondCode">
-                                    What Am I Passionate About Beyond Tech?
-                                </button>
-                            </h2>
-                            <div id="collapseBeyondCode" className="accordion-collapse collapse" aria-labelledby="headingBeyondCode" data-bs-parent="#aboutAccordion">
-                                <div className="accordion-body">
-                                    <p>
-                                        <strong>🌟 Beyond the Code</strong><br />
-                                        Outside of work, I’m passionate about exploring the latest tech trends, learning new languages, and engaging in sustainability initiatives.♻️🌍</p>
-                                </div>
-                            </div>
-                        </div>
+            {profileData.map(({ id, title, subtitle, content }) => (
+                <motion.div
+                    key={id}
+                    className="row mt-5"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={fadeInUp}
+                >
+                    <div className="col-lg-8 offset-lg-2 about-content">
+                        {id === "intro" ? (<h1>{title}</h1>) : (<h2>{title}</h2>)}
+                        {subtitle && <h3>{subtitle}</h3>}
+                        <p>
+                            {content}
+                        </p>
                     </div>
-
-                    <p className="mb-5 mt-3">
-                        I present my diverse portfolio of projects. See what I've created! Curious to explore?
-                    </p>
-                    <Link to="/project" className="btn-branding btn-mobile" title="Choti's Projects">See Projects</Link>
-                    <a href="/blog" className="btn-branding-case btn-mobile" title="Choti's Case Study" target="_blank" rel="noopener noreferrer">
-                        See Case Study
-                    </a>
+                </motion.div>
+            ))}
+            <motion.div
+                className="row mt-5 mb-5 text-center"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
+                <div className="col">
+                    <TechnologySum />
                 </div>
-            </div>
-        </div >
+            </motion.div>
+        </div>
     );
 }
-
-export default AboutContent;
-
