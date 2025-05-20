@@ -55,7 +55,8 @@ function Project() {
                             index={index}
                         />
                     </div>
-                ))) : (<div><p className="text-center m-5">🚧 Projects are in progress. Stay tuned!</p></div>)
+                ))) : (<div className='content'><p className="text-center m-5">🚧 Projects are in progress. Stay tuned!!</p>
+                    <img src='https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWg3MjdvbTdybno3Y3N0em92eWJ2N25nd2xyaWY0NHJsNWJ4NHRlciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3orifj9lMglxE6O4qk/giphy.gif' alt="giphy" className="img-fluid rounded mx-auto d-block" /></div>)
             }
 
             <ContactBox />
