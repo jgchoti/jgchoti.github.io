@@ -28,9 +28,6 @@ function BlogBody() {
                     </div>
                 </div>
             </div>
-            <div className="mt-5 text-center">
-                <img className="blog-img img-fluid" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHY5eWNoaGN6d2dkZWJxNWgwYzFlaDAwY3F3OTVyYnZzbDl5OW04dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ule4vhcY1xEKQ/giphy.webp" alt="chotirat profile" />
-            </div>
         </div>
     );
 }
