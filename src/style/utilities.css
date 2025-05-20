@@ -1,3 +1,19 @@
+.line-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--main-bg-color),
+    var(--primary-color)
+  );
+  transform-origin: 0%;
+  z-index: 1000;
+  transform: scaleX(1.5);
+}
+
 .reveal {
   position: relative;
   transform: translateY(150px);
@@ -49,6 +65,7 @@
   font-weight: bold;
   animation: colorchange 10s infinite alternate;
   -webkit-animation: colorchange 10s infinite alternate;
+  padding-bottom: 24px;
 }
 
 @-webkit-keyframes colorchange {
