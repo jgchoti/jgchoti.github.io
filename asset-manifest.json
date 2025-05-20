@@ -1,16 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.ea09f16a.css",
-    "main.js": "/static/js/main.9c8bdec4.js",
-    "static/js/453.b7680500.chunk.js": "/static/js/453.b7680500.chunk.js",
+    "main.css": "/static/css/main.b1c188ba.css",
+    "main.js": "/static/js/main.b082436f.js",
     "static/media/studio_ghibli.png": "/static/media/studio_ghibli.db7f075aacbd9f62f22e.png",
     "static/media/studio_ghibli_light.png": "/static/media/studio_ghibli_light.de235751ef6b2737fd6f.png",
     "static/media/weather_dark.png": "/static/media/weather_dark.5bbdb08db0262f2b3b60.png",
     "static/media/weather.png": "/static/media/weather.905c5f1fff21e734dca2.png",
-    "static/media/cv_dark.png": "/static/media/cv_dark.6fe381e3cbfbad6d526d.png",
-    "static/media/cv.png": "/static/media/cv.b22f07d0dff612126c60.png",
     "static/media/cv_website.png": "/static/media/cv_website.3b9aef73774f0e617672.png",
     "static/media/cv_website_light.png": "/static/media/cv_website_light.e061c38238ee1c67f639.png",
+    "static/media/profile_photo_data.png": "/static/media/profile_photo_data.9d5c0a3cf9f947c6e099.png",
     "static/media/profile_photo.png": "/static/media/profile_photo.364b7c3045577423f4a1.png",
     "static/media/calculator_dark.png": "/static/media/calculator_dark.55e56c49256ba31b8905.png",
     "static/media/weather2.png": "/static/media/weather2.55f5cfa87262b6f1e891.png",
@@ -21,7 +19,6 @@
     "static/media/game_dark.png": "/static/media/game_dark.ee922de41e6b40f2d984.png",
     "static/media/game_light.png": "/static/media/game_light.21004cef80401a37a479.png",
     "static/media/dictionary_dark.png": "/static/media/dictionary_dark.67e97951061d9602a8e8.png",
-    "static/media/vite.png": "/static/media/vite.cf2bd784aefc4de003c6.png",
     "static/media/dictionary.png": "/static/media/dictionary.e028dc2865621e1557d4.png",
     "static/media/dashboard_dark.png": "/static/media/dashboard_dark.87f6533eada390a3e586.png",
     "static/media/fietsateljee_berchem.png": "/static/media/fietsateljee_berchem.97b2c68b59d91446715c.png",
@@ -35,10 +32,8 @@
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.bacd5de623fb563b961a.ttf",
     "static/media/squarespace.png": "/static/media/squarespace.399101b7b87b7d952254.png",
     "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.60127e352b7a11f7f1bc.ttf",
-    "static/media/tailwind.png": "/static/media/tailwind.3549d9e451d7abb96934.png",
     "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.4d986b00ff9ca3828fbd.woff2",
     "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.455ea818179b4def0c43.woff2",
-    "static/media/profile_illustration.png": "/static/media/profile_illustration.733df7e4218065c77870.png",
     "static/media/leaflet.png": "/static/media/leaflet.587332f02816208852c7.png",
     "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.eb91f7b948a42799f678.ttf",
     "static/media/github.png": "/static/media/github.7eea27e972efca6999dd.png",
@@ -52,12 +47,11 @@
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.cf7f5903d06b79ad60f1.woff2",
     "static/media/Chart.js_logo.svg": "/static/media/Chart.js_logo.609a2dc9742df4252749dc4bb2fb9350.svg",
     "index.html": "/index.html",
-    "main.ea09f16a.css.map": "/static/css/main.ea09f16a.css.map",
-    "main.9c8bdec4.js.map": "/static/js/main.9c8bdec4.js.map",
-    "453.b7680500.chunk.js.map": "/static/js/453.b7680500.chunk.js.map"
+    "main.b1c188ba.css.map": "/static/css/main.b1c188ba.css.map",
+    "main.b082436f.js.map": "/static/js/main.b082436f.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea09f16a.css",
-    "static/js/main.9c8bdec4.js"
+    "static/css/main.b1c188ba.css",
+    "static/js/main.b082436f.js"
   ]
 }
