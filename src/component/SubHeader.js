@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Wave from 'react-wavify'
-import profileIllustration from '../assets/images/profile_illustration.png';
+// import { Link } from 'react-router-dom';
+// import Wave from 'react-wavify'
+// import profileIllustration from '../assets/images/profile_illustration.png';
 
 function SubHeader() {
     return (
