@@ -12,7 +12,7 @@ function ProjectShowcase({ name, imageUrl, linkUrl, blogUrl, webUrl, linkTitle, 
     const specialImageUrl = isOddRow ? projectData[index].alternate_image : imageUrl;
 
     return (
-        <div className="col-md-6 mb-5 reveal">
+        <div className="col-md-6 mb-5">
             <div className="project-wrapper">
                 <img
                     src={specialImageUrl}
