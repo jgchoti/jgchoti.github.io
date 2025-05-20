@@ -17,8 +17,8 @@ import potterImage from '../assets/images/potter.png';
 import potterDarkImage from '../assets/images/potter_dark.png';
 import dictionaryImage from '../assets/images/dictionary.png';
 import dictionaryDarkImage from '../assets/images/dictionary_dark.png';
-import cvImage from '../assets/images/cv.png';
-import cvDarkImage from '../assets/images/cv_dark.png';
+// import cvImage from '../assets/images/cv.png';
+// import cvDarkImage from '../assets/images/cv_dark.png';
 import gameImage from '../assets/images/game_light.png';
 import gameImageAlt from '../assets/images/game_dark.png';
 import dashboardImage from '../assets/images/dashboard_dark.png';
@@ -34,8 +34,8 @@ import reactLogo from '../assets/logos/react.png';
 import bootstrapLogo from '../assets/logos/bootstrap.png';
 import apiLogo from '../assets/logos/api.png';
 import gitHubLogo from '../assets/logos/github.png';
-import tailwindLogo from '../assets/logos/tailwind.png';
-import viteLogo from '../assets/logos/vite.png';
+// import tailwindLogo from '../assets/logos/tailwind.png';
+// import viteLogo from '../assets/logos/vite.png';
 import twineLogo from '../assets/logos/twine.png';
 import chartJsLogo from '../assets/logos/Chart.js_logo.svg';
 import leafletLogo from '../assets/logos/leaflet.png';
@@ -45,6 +45,7 @@ import seoLogo from '../assets/logos/seo.png'
 export const projectData = [
     {
         name: "Online Resume",
+        type: "web",
         description: "My first ever landing page! This project marks my initial steps into the exciting world of web development, primarily using vanilla HTML and CSS with a bit of JavaScript. I learned the basics of HTML, CSS, and JavaScript while creating my very own landing page.",
         details: "So, what's the big deal about this project? Well, it's like the start of my journey in web development. It may not be the most thrilling, but you can still check out my CV and see the landing page I created! It's where I laid the foundation for all the coding adventures I've been having since then.",
         imageUrl: cvWebsiteImage,
@@ -62,6 +63,7 @@ export const projectData = [
     },
     {
         name: "Weather App",
+        type: "web",
         description: "In this project, I got into the world of live API to make a dynamic weather app. I aimed for a design that's user-friendly. User can get the latest on weather conditions, forecasts, and what's happening in their area, all thanks to the API integration.",
         details: "My primary focus was on integrating weather APIs to ensure users receive up-to-date and accurate weather information. This involved learning how to effectively manage data from external sources and present it in a user-friendly format within the application. By mastering API interactions, I not only enhanced my technical skills in JavaScript but also learned the importance of data integrity and real-time updates in user-facing applications. Moving forward, I plan to further refine this project by exploring additional APIs and improving the overall user experience.",
         imageUrl: weatherImage,
@@ -81,6 +83,7 @@ export const projectData = [
     {
 
         name: "Weather App 2.0",
+        type: "web",
         description: "Utilizing my knowledge of HTML, CSS, and JavaScript, I embarked on building the Weather App using React. This project marked my entry into the world of React.",
         details: "Through this project, I deepened my understanding of React's core concepts, such as state, props, and components. This project reflects my growth and remind me that software development is a continuous learning process.",
         imageUrl: weather2Image,
@@ -101,6 +104,7 @@ export const projectData = [
     {
 
         name: "Basic Calculator",
+        type: "web",
         description: "When I started my journey with HackYourFuture Belgium, I was tasked to created a Basic Calculator. Developed to enhance my web development skills, this calculator is crafted using HTML, CSS, and basic JavaScript.",
         details: "My goal of this project was to create simple, clean and minimalistic design, making calculations straightforward and efficient. Creating this app meant diving into various functionalities with HTML, CSS, and JavaScript. It was a fun and rewarding challenge that highlights the basics of web development.",
         imageUrl: calculatorImage,
@@ -119,6 +123,7 @@ export const projectData = [
     {
 
         name: "Bike Shop Website",
+        type: "web",
         description: "I made a website for a local Bike Repair Shop. I used HTML, CSS, JavaScript, and Bootstrap to make this site user-friendly and responsive.",
         details: "The goal is to make this site looks great on different devices, and to help the shop connect with customers in a digital world.This project.",
         imageUrl: fietsateljeeBerchemImage,
@@ -138,6 +143,7 @@ export const projectData = [
     {
 
         name: "To-Do List",
+        type: "web",
         description: "This to-do list application was developed as part of my studies with HackYourFuture Belgium, aimed at deepening my understanding of JavaScript.",
         details: "Throughout this project, I aimed to create a user-friendly application where individuals could effortlessly manage their daily tasks. I also implemented local storage capabilities, allowing users to save their to-do lists directly on their devices. This project has not only strengthened my technical skills in JavaScript, particularly in event handling and DOM manipulation, but also taught me the importance of user-centric design.",
         imageUrl: todoImage,
@@ -155,6 +161,7 @@ export const projectData = [
     }, {
 
         name: "Studio Ghibli Searcher",
+        type: "web",
         description: "The Studio Ghibli Searcher is an application born out of my deep admiration for Studio Ghibli films and characters. It is designed to let users discover the world of Studio Ghibli by using the Studio Ghibli API.",
         details: "This application was a passion project developed during my studies at HackYourFuture Belgium. One of the highlights of this project was implementing client-side filtering using state management. This feature enables users to refine search results directly.",
         imageUrl: studioGhibliImage,
@@ -173,6 +180,7 @@ export const projectData = [
     }, {
 
         name: "Potter Searcher",
+        type: "web",
         description: "The PotterAPI Searcher is an application developed as part of an assignment during my studies at HackYourFuture Belgium to deepen my understanding of JavaScript and API interactions.",
         details: "It utilizes The Potter DB: API and allow users to explore and discover information about characters, spells, potions, books, and movies. This project served as an opportunity for me to learn about making API calls and managing queries to retrieve specific data from The Potter DB: API. One of the key challenges I tackled was implementing server-side filtering to optimize performance and ensure accurate data retrieval.",
         imageUrl: potterImage,
@@ -192,6 +200,7 @@ export const projectData = [
     {
 
         name: "English Dictionary",
+        type: "web",
         description: "This English Dictionary project was developed using React. Using Free Dictionary API, user can look up meaning of any word.",
         details: "Beyond just looking up meanings, users can also get random words thrown their way, making their learning journey exciting and engaging.",
         imageUrl: dictionaryDarkImage,
@@ -210,6 +219,7 @@ export const projectData = [
         ]
     }, {
         name: "Save Corals",
+        type: "web",
         description: "An engaging educational game built to raise awareness about coral reef conservation using interactive storytelling.",
         details: "Developed using Twine, this game allows users to explore scenarios impacting coral reefs and learn about the importance of real-time data monitoring. The game uses HTML, CSS, and JavaScript to enhance interactivity and user experience.",
         imageUrl: gameImage,
@@ -229,6 +239,7 @@ export const projectData = [
     {
 
         name: "Monitoring Dashboard",
+        type: "web",
         description: "A data visualization tool designed to monitor coral health using data from Smart Buoy sensors.",
         details: "Developed as part of Tech4Sustainable Futures Challenge's presentation, this dashboard leverages Chart.js for real-time data visualization and Leaflet.js for interactive mapping. It provides insights into key coral health metrics like temperature and pH levels, helping communities and researchers make informed decisions to protect coral reefs.",
         imageUrl: dashboardImage,
@@ -248,6 +259,7 @@ export const projectData = [
     },
     {
         name: "Circus Artist Portfolio",
+        type: "web",
         description: "A professional portfolio website designed to showcase the work and artistry of Jakobe Geens, an accomplished circus performer.",
         details: "This website was created to highlight Jakobe Geens' career in the circus arts. It features her biography, artistic approach, and portfolio of performances. Developed using Squarespace, the site is optimized for user experience and SEO. It allows Jakobe and her team to easily update performance dates and other content independently. I also provided training to ensure she can manage and update the site, including adding new events and collaborations with ease.",
         imageUrl: jakobeWebsiteImage,
