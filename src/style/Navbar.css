@@ -9,10 +9,12 @@
   top: 0;
   right: 0;
   overflow: hidden;
+  width: 56px; /* width matching toggle button */
   height: 29px;
   transition: width 0.3s ease;
   z-index: 9999;
-  background-color: var(--main-bg-color);
+  background-color: red;
+  /* background-color: var(--main-bg-color); */
 }
 
 .navbar-toggle-wrapper {
@@ -26,7 +28,8 @@
 .navbar-wrapper.closed {
   pointer-events: none;
   z-index: -1;
-  background-color: var(--main-bg-color);
+  /* background-color: var(--main-bg-color); */
+  background-color: red;
 }
 
 .navbar-wrapper.open {
