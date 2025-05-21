@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import chotiLogo from "../assets/images/logo_choti.png";
 import ScrollToTop from "../logic/ScrollToTop.js";
 
-
-export default function Navbar({ setTheme, theme }) {
+export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const containerRef = useRef(null);
 
@@ -23,32 +22,51 @@ export default function Navbar({ setTheme, theme }) {
     const { height } = useDimensions(containerRef);
 
     return (
-        <div className={`navbar-wrapper ${isOpen ? "open" : "closed"}`}>
-            <div className="navbar-header">
-                <NavLink to="/" title="Homepage" onClick={() => setIsOpen(false)}>
-                    <img src={chotiLogo} alt="Choti Logo" className="logo" />
-                </NavLink>
+        <div>
+            <div className="navbar-toggle-wrapper">
+                <MenuToggle toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
+                {!isOpen && <div className="navbar-header">
+                    <NavLink to="/" title="Homepage" onClick={() => setIsOpen(false)}>
+                        <img src={chotiLogo} alt="Choti Logo" className="logo" />
+                    </NavLink>
+                </div>}
             </div>
-            <motion.nav
-                initial={false}
-                animate={isOpen ? "open" : "closed"}
-                custom={height}
-                ref={containerRef}
-                className="navbar-motion"
-            >
-                <motion.div className="navbar-background" variants={sidebarVariants} />
+            <div className={`navbar-wrapper ${isOpen ? "open" : "closed"}`}>
 
-                <motion.ul className="navbar-list" variants={navVariants}>
-                    <NavItem to="/" title="Home" onClick={() => setIsOpen(false)} />
-                    <NavItem to="/data" title="Data Lab" onClick={() => { setIsOpen(false); }} />
-                    <NavItem to="/project" title="Web Works" onClick={() => { setIsOpen(false); }} />
-                    <NavItem to="/blog" title="Blog" onClick={() => setIsOpen(false)} />
-                    <NavItem to="/about" title="About" onClick={() => setIsOpen(false)} />
-                    <NavItem to="/contact" title="Contact" onClick={() => setIsOpen(false)} />
-                </motion.ul>
-                <MenuToggle toggle={() => setIsOpen(!isOpen)} />
-            </motion.nav>
-            <ScrollToTop />
+
+                <motion.nav
+                    initial={false}
+                    animate={isOpen ? "open" : "closed"}
+                    custom={height}
+                    ref={containerRef}
+                    className="navbar-motion"
+                >
+                    <motion.div className="navbar-background" variants={sidebarVariants} />
+
+                    <AnimatePresence>
+                        {isOpen && (
+                            <motion.ul
+                                key="navbar-list"
+                                className="navbar-list"
+                                initial="closed"
+                                animate="open"
+                                exit="closed"
+                                variants={navVariants}
+                            >
+                                <NavItem to="/" title="Home" onClick={() => setIsOpen(false)} />
+                                <NavItem to="/data" title="Data Lab" onClick={() => setIsOpen(false)} />
+                                <NavItem to="/project" title="Web Works" onClick={() => setIsOpen(false)} />
+                                <NavItem to="/blog" title="Blog" onClick={() => setIsOpen(false)} />
+                                <NavItem to="/about" title="About" onClick={() => setIsOpen(false)} />
+                                <NavItem to="/contact" title="Contact" onClick={() => setIsOpen(false)} />
+                            </motion.ul>
+                        )}
+                    </AnimatePresence>
+                </motion.nav>
+
+
+                <ScrollToTop />
+            </div>
         </div>
     );
 }
@@ -124,10 +142,15 @@ const Path = (props) => (
     />
 );
 
-function MenuToggle({ toggle }) {
+function MenuToggle({ toggle, isOpen }) {
     return (
         <button className="menu-toggle" onClick={toggle} aria-label="Toggle menu">
-            <svg width="23" height="23" viewBox="0 0 23 23">
+            <motion.svg
+                width="23"
+                height="23"
+                viewBox="0 0 23 23"
+                animate={isOpen ? "open" : "closed"}
+            >
                 <Path
                     variants={{
                         closed: { d: "M 2 2.5 L 20 2.5" },
@@ -148,7 +171,7 @@ function MenuToggle({ toggle }) {
                         open: { d: "M 3 2.5 L 17 16.346" },
                     }}
                 />
-            </svg>
+            </motion.svg>
         </button>
     );
 }
