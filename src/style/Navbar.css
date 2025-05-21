@@ -5,6 +5,7 @@
   overflow: hidden;
   transition: width 0.3s ease;
   z-index: 9999;
+  background-color: var((--main-bg-color));
 }
 
 .navbar-toggle-wrapper {
@@ -12,6 +13,7 @@
   top: 48px;
   right: 140px;
   z-index: 10000;
+  background-color: var((--main-bg-color));
 }
 
 .navbar-wrapper.closed {
