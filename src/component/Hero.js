@@ -7,7 +7,7 @@ function Hero() {
     //     setTheme(isWeb ? "data" : "web");
     // };
     return (
-        <div className="hero">
+        <div className="hero m-0">
             <div className="content-wrapper container">
                 <p>Hi! I am Choti.</p>
                 <h1>I work with pixels and patterns.</h1>
