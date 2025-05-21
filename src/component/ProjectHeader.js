@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAnglesDown } from '@fortawesome/free-solid-svg-icons'
-import { useTheme } from './Theme';
+import { useTheme } from '../logic/Theme';
 
 function ProjectHeader() {
     const theme = useTheme()
