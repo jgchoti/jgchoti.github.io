@@ -10,7 +10,6 @@ body {
   padding-bottom: 0;
   text-align: center;
   background-color: var(--main-bg-color);
-  position: relative;
   min-height: 50svh;
 }
 
