@@ -6,7 +6,7 @@ import { projectData } from '../data/projectData';
 import ProjectContent from '../component/ProjectsContent';
 import ScrollReveal from '../logic/ScrollReveal';
 import ProjectHeader from '../component/ProjectHeader';
-import { useTheme } from '../component/Theme';
+import { useTheme } from '../logic/Theme';
 
 function Project() {
     const theme = useTheme()
