@@ -4,7 +4,7 @@ import profilePhotoDataTheme from "../assets/images/profile_photo_data.png";
 // import { Link } from "react-router-dom";
 import { profileData } from "../data/profileData";
 import TechnologySum from "./TechnologySum";
-import { useTheme } from '../component/Theme.js';
+import { useTheme } from '../logic/Theme.js';
 const fadeInUp = {
     hidden: { opacity: 0, y: 100 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
