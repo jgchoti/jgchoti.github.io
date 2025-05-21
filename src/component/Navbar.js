@@ -22,7 +22,7 @@ export default function Navbar() {
     const { height } = useDimensions(containerRef);
 
     return (
-        <div>
+        <div className="navbar">
             <div className="navbar-toggle-wrapper">
                 <MenuToggle toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
                 {!isOpen && <div className="navbar-header">
@@ -32,8 +32,6 @@ export default function Navbar() {
                 </div>}
             </div>
             <div className={`navbar-wrapper ${isOpen ? "open" : "closed"}`}>
-
-
                 <motion.nav
                     initial={false}
                     animate={isOpen ? "open" : "closed"}
