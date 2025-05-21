@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import { Outlet } from 'react-router-dom';
+import { useTheme } from '../logic/Theme';
 
 function Layout() {
-    const [theme, setTheme] = useState('web');
+    const { theme, setTheme } = useTheme()
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
@@ -11,9 +12,9 @@ function Layout() {
 
     return (
         <>
-            <Navbar theme={theme} setTheme={setTheme} />
+            {/* <Navbar /> */}
             <main>
-                <Outlet context={{ theme, setTheme }} />
+                <Outlet />
             </main>
         </>
     );
