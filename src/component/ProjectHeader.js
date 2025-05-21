@@ -8,7 +8,7 @@ function ProjectHeader() {
     const isWeb = theme.theme === 'web';
 
     return (
-        <div className="hero mb-4">
+        <div className="hero m-0">
             <h1>
                 {isWeb ? 'Pixels & Interaction — Web Projects' : 'Patterns & Insights — Data Lab'}
             </h1>
