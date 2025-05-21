@@ -65,6 +65,7 @@
 @media (max-width: 950px) {
   .hero {
     padding-bottom: 0;
+    margin-top: 0;
   }
 
   .hero {
