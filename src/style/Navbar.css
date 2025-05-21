@@ -9,7 +9,7 @@
   top: 0;
   right: 0;
   overflow: hidden;
-  height: 0;
+  height: 29px;
   transition: width 0.3s ease;
   z-index: 9999;
   background-color: var(--main-bg-color);
@@ -41,12 +41,14 @@
   width: 400px;
   height: 100vh;
   overflow: hidden;
+  background-color: var(--primary-color);
 }
 
--background {
+.navbar-background {
   position: absolute;
   bottom: 0;
   z-index: 0;
+  background-color: var(--primary-color);
 }
 
 .navbar-header {
