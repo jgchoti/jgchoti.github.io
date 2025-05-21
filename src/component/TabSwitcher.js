@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useTheme } from "./Theme";
+import { useTheme } from "../logic/Theme";
 
 const tabs = [
     { icon: "💻", label: "Web" },
