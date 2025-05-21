@@ -25,6 +25,7 @@
 .navbar-wrapper.closed {
   pointer-events: none;
   z-index: -1;
+  background-color: var(--main-bg-color);
 }
 
 .navbar-wrapper.open {
