@@ -1,7 +1,7 @@
 .navbar {
   padding: 0;
   margin: 0;
-  background-color: var((--main-bg-color));
+  background-color: var(--main-bg-color);
 }
 
 .navbar-wrapper {
@@ -11,7 +11,7 @@
   overflow: hidden;
   transition: width 0.3s ease;
   z-index: 9999;
-  background-color: var((--main-bg-color));
+  /* background-color: var(--main-bg-color); */
 }
 
 .navbar-toggle-wrapper {
@@ -19,7 +19,7 @@
   top: 48px;
   right: 140px;
   z-index: 10000;
-  background-color: var((--main-bg-color));
+  background-color: var(--main-bg-color);
 }
 
 .navbar-wrapper.closed {
@@ -41,7 +41,7 @@
   overflow: hidden;
 }
 
-.navbar-background {
+-background {
   position: absolute;
   bottom: 0;
   z-index: 0;
