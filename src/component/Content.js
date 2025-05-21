@@ -1,5 +1,5 @@
 import ProjectShowcase from './ProjectShowcase';
-import { useTheme } from './Theme'
+import { useTheme } from '../logic/Theme'
 
 function Content(props) {
     const { theme } = useTheme();
