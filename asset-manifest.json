@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d950a55b.css",
-    "main.js": "/static/js/main.cc4105bb.js",
+    "main.css": "/static/css/main.e0d37223.css",
+    "main.js": "/static/js/main.fd4ef18c.js",
     "static/media/studio_ghibli.png": "/static/media/studio_ghibli.db7f075aacbd9f62f22e.png",
     "static/media/studio_ghibli_light.png": "/static/media/studio_ghibli_light.de235751ef6b2737fd6f.png",
     "static/media/weather_dark.png": "/static/media/weather_dark.5bbdb08db0262f2b3b60.png",
@@ -47,11 +47,11 @@
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.cf7f5903d06b79ad60f1.woff2",
     "static/media/Chart.js_logo.svg": "/static/media/Chart.js_logo.609a2dc9742df4252749dc4bb2fb9350.svg",
     "index.html": "/index.html",
-    "main.d950a55b.css.map": "/static/css/main.d950a55b.css.map",
-    "main.cc4105bb.js.map": "/static/js/main.cc4105bb.js.map"
+    "main.e0d37223.css.map": "/static/css/main.e0d37223.css.map",
+    "main.fd4ef18c.js.map": "/static/js/main.fd4ef18c.js.map"
   },
   "entrypoints": [
-    "static/css/main.d950a55b.css",
-    "static/js/main.cc4105bb.js"
+    "static/css/main.e0d37223.css",
+    "static/js/main.fd4ef18c.js"
   ]
 }
