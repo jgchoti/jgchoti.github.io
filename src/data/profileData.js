@@ -3,20 +3,18 @@ export const profileData = [
         id: "intro",
         title: "About Me",
         subtitle: "Based in Belgium 🇧🇪",
-        content: `Hi, I’m Choti — I build things online, solve problems with data, and love learning new skills.
-I’ve worked in web development, project management, and used data across different industries.`,
+        content: `Hi, I’m Choti — a curious learner passionate about digital skills, data, and solving problems step-by-step. This portfolio is a record of my learning journey, where I’ve explored web and data projects, and even collaborated with clients along the way.`,
     },
     {
         id: "journey",
         title: "🌱 My Journey",
-        content: `I’ve lived in 8 countries (Switzerland 🇨🇭, the UK 🇬🇧, Denmark 🇩🇰, Slovenia 🇸🇮, Spain 🇪🇸, the Maldives 🇲🇻, Malaysia 🇲🇾, and now Belgium 🇧🇪), so adapting, picking things up quickly, and working across cultures is second nature. Along the way, I’ve learned Dutch, become a mom, and stayed endlessly curious.`,
+        content: `Having lived in 9 countries (Thailand 🇹🇭, Switzerland 🇨🇭, the UK 🇬🇧, Denmark 🇩🇰, Slovenia 🇸🇮, Spain 🇪🇸, the Maldives 🇲🇻, Malaysia 🇲🇾, and Belgium 🇧🇪), adapting quickly and working across cultures has shaped how I learn and grow. Along the way, I’ve learned Dutch, become a mom, and stayed endlessly curious.`,
     },
     {
         id: "skills",
         title: "💼 What I Do",
         content: `
-I build websites and apps that don’t just look good — they get results. 
-From small business sites to data-driven projects, I make sure what I create helps people and businesses grow.`
+I focus on learning by doing — building digital projects, experimenting with data, and improving my skills through real-world challenges and client collaborations.`
     },
     {
         id: "beyond",
