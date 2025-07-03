@@ -286,11 +286,11 @@ export const projectData = [
         name: "Too Lazy as A Service",
         type: "data",
         description: "Too Lazy as A Service (TLaaS) is a lazy excuse generator API that randomly returns excuses, sometimes refuses to work, and always stay lazy.",
-        details: "A project to learn FastAPI. Implemented routing, validation with Pydantic, Dockerized, and deployed on Render. A fun way to practice Python APIs and deployment."
-        imageUrl: tlaasImage, // 
+        details: "A project to learn FastAPI. Implemented routing, validation with Pydantic, Dockerized, and deployed on Render. A fun way to practice Python APIs and deployment.",
+        imageUrl: tlaasImage,
         alternate_image: tlaasImageAlt,
         linkUrl: "https://too-lazy-as-a-service.onrender.com/docs",
-        githubUrl: "https://github.com/jgchoti/tlaas", // replace with your actual repo URL
+        githubUrl: "https://github.com/jgchoti/tlaas",
         linkTitle: "TLaaS API Documentation",
         shortDescription: "Lazy excuse generator powered by FastAPI",
         technologies: [
