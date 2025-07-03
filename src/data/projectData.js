@@ -45,7 +45,7 @@ import squarespaceLogo from '../assets/logos/squarespace.png'
 import seoLogo from '../assets/logos/seo.png'
 import pythonLogo from '../assets/logos/python.png'
 import renderLogo from '../assets/logos/render.png'
-import dockerLogoLogo from '../assets/logos/docker.png'
+import dockerLogo from '../assets/logos/docker.png'
 import fastapiLogo from '../assets/logos/FastAPI.png'
 
 export const projectData = [
