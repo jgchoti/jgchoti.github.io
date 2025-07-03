@@ -25,6 +25,8 @@ import dashboardImage from '../assets/images/dashboard_dark.png';
 import dashboardImageAlt from '../assets/images/dashboard_light.png';
 import jakobeWebsiteImage from '../assets/images/jakobeWebsite_light.png'
 import jakobeWebsiteImageAlt from '../assets/images/jakobeWebsite.png'
+import tlaasImage from '../assets/images/tlaas_dark.png'
+import tlaasImageAlt from '../assets/images/tlaas_light.png'
 
 // Importing logos
 import htmlLogo from '../assets/logos/html.png';
@@ -41,6 +43,10 @@ import chartJsLogo from '../assets/logos/Chart.js_logo.svg';
 import leafletLogo from '../assets/logos/leaflet.png';
 import squarespaceLogo from '../assets/logos/squarespace.png'
 import seoLogo from '../assets/logos/seo.png'
+import pythonLogo from '../assets/logos/python.png'
+import renderLogo from '../assets/logos/render.png'
+import dockerLogoLogo from '../assets/logos/docker.png'
+import fastapiLogo from '../assets/logos/FastAPI.png'
 
 export const projectData = [
     {
@@ -274,6 +280,25 @@ export const projectData = [
             { name: 'JavaScript', logoUrl: jsLogo },
             { name: 'SEO', logoUrl: seoLogo },
             { name: 'Squarespace', logoUrl: squarespaceLogo },
+        ]
+    },
+    {
+        name: "Too Lazy as a Service (TLaaS)",
+        type: "data",
+        description: "A fun excuse-generating API built to help me learn FastAPI while avoiding actual productivity. It randomly returns excuses, sometimes refuses to work, and always stays lazy.",
+        details: "This was a hands-on learning project where I explored how to build RESTful APIs with FastAPI. I implemented structured routing, request validation with Pydantic, Dockerized the app, and deployed it to Render. The API randomly generates playful excuses, and sometimes lazily refuses to help. This was a fun way to get comfortable with Python APIs and deployment workflows.",
+        imageUrl: tlaasImage, // 
+        alternate_image: tlaasImageAlt,
+        linkUrl: "https://too-lazy-as-a-service.onrender.com/docs",
+        githubUrl: "https://github.com/jgchoti/tlaas", // replace with your actual repo URL
+        linkTitle: "TLaaS API Documentation",
+        shortDescription: "Lazy excuse generator powered by FastAPI",
+        technologies: [
+            { name: 'Python', logoUrl: pythonLogo },
+            { name: 'FastAPI', logoUrl: fastapiLogo },
+            { name: 'Docker', logoUrl: dockerLogo },
+            { name: 'Render', logoUrl: renderLogo },
+            { name: 'GitHub', logoUrl: gitHubLogo }
         ]
     }
 
