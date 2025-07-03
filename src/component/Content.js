@@ -13,6 +13,7 @@ function Content(props) {
                         index={index}
                         name={project.name}
                         imageUrl={project.imageUrl}
+                        alternate_image={project.alternate_image}
                         linkUrl={project.linkUrl}
                         linkTitle={project.linkTitle}
                         shortDescription={project.shortDescription}

@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { projectData } from '../data/projectData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faDisplay } from '@fortawesome/free-solid-svg-icons'
 import { faMedium } from '@fortawesome/free-brands-svg-icons'
 
-function ProjectShowcase({ name, imageUrl, linkUrl, blogUrl, webUrl, linkTitle, shortDescription, githubUrl, index }) {
+function ProjectShowcase({ name, imageUrl, alternate_image, linkUrl, blogUrl, webUrl, linkTitle, shortDescription, githubUrl, index }) {
     const row = Math.floor(index / 2)
     const isOddRow = row % 2 !== 0
-    const specialImageUrl = isOddRow ? projectData[index].alternate_image : imageUrl;
+    const specialImageUrl = isOddRow ? alternate_image : imageUrl;
 
     return (
         <div className="col-md-6 mb-5">
