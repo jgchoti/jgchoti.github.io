@@ -18,6 +18,7 @@ const Chatbot = ({ theme = 'web' }) => {
     ]);
     const messagesEndRef = useRef(null);
 
+    // Create profile information for the AI
     const createProfilePrompt = () => {
         let profileText = "\n**CHOTI'S BACKGROUND & PERSONALITY:**\n\n";
 
@@ -34,6 +35,7 @@ const Chatbot = ({ theme = 'web' }) => {
         return profileText;
     };
 
+    // Create contact information for the AI
     const createContactPrompt = () => {
         let contactText = "\n**CONTACT INFORMATION:**\n";
 
@@ -48,6 +50,7 @@ const Chatbot = ({ theme = 'web' }) => {
         return contactText;
     };
 
+    // Create detailed project information for the AI
     const createProjectsPrompt = () => {
         const webProjects = projectData.filter(p => p.type === 'web');
         const dataProjects = projectData.filter(p => p.type === 'data');
@@ -163,6 +166,7 @@ const Chatbot = ({ theme = 'web' }) => {
         setMessages(prev => [...prev, { type, content }]);
     };
 
+    // sendMessage now accepts optional overrideMessage (for suggestions)
     const sendMessage = async (overrideMessage) => {
         const messageToSend = overrideMessage || inputValue.trim();
         if (!messageToSend || !isSetup) return;
@@ -291,7 +295,7 @@ const Chatbot = ({ theme = 'web' }) => {
                                     ))}
                                 </div>
                             )}
-
+                            {/* Input + Send Button */}
                             <div className="d-flex gap-2">
                                 <input
                                     type="text"
