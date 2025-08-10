@@ -35,6 +35,9 @@
     transparent
   ) !important;
   font-family: var(--font-family) !important;
+  overflow-x: hidden !important;
+  overflow-x: hidden !important;
+  word-break: break-word !important;
 }
 .user-message {
   background: var(--primary-color) !important;
@@ -95,12 +98,28 @@
 
 .bot-message a,
 .user-message a {
-  word-break: break-all !important;
+  word-break: break-word !important;
   overflow-wrap: break-word !important;
-  display: inline-block;
-  max-width: 100%;
+  display: inline !important;
+  max-width: none !important;
+  text-decoration: underline;
+  color: inherit;
 }
 
-.chatbot-messages {
-  overflow-x: hidden !important;
+.bot-message a {
+  color: var(--primary-color) !important;
+  opacity: 0.8;
+}
+
+.user-message a {
+  color: var(--main-bg-color) !important;
+  opacity: 0.9;
+}
+
+.bot-message,
+.user-message {
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  max-width: 85% !important;
+  box-sizing: border-box !important;
 }
