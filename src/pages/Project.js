@@ -7,6 +7,7 @@ import ProjectContent from '../component/ProjectsContent';
 import ScrollReveal from '../logic/ScrollReveal';
 import ProjectHeader from '../component/ProjectHeader';
 import { useTheme } from '../logic/Theme';
+import '../style/index.css';
 
 function Project() {
     const theme = useTheme()
