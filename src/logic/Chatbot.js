@@ -163,7 +163,6 @@ const Chatbot = ({ theme = 'web' }) => {
         setMessages(prev => [...prev, { type, content }]);
     };
 
-    // sendMessage now accepts optional overrideMessage (for suggestions)
     const sendMessage = async (overrideMessage) => {
         const messageToSend = overrideMessage || inputValue.trim();
         if (!messageToSend || !isSetup) return;
@@ -211,8 +210,8 @@ const Chatbot = ({ theme = 'web' }) => {
         return content
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\n/g, '<br>')
-            .replace(/(jgchotirat@gmail.com)/g, '<a href="mailto:$1" class="text-primary">$1</a>')
-            .replace(/(https:\/\/[^\s]+)/g, '<a href="$1" target="_blank" class="text-primary">$1</a>');
+            .replace(/(jgchotirat@gmail\.com)/g, '<a href="mailto:$1" class="text-primary">$1</a>')
+            .replace(/(https?:\/\/[^\s\)\,\.\!]+)/g, '<a href="$1" target="_blank" class="text-primary">$1</a>');
     };
 
     return (
@@ -292,7 +291,7 @@ const Chatbot = ({ theme = 'web' }) => {
                                     ))}
                                 </div>
                             )}
-                            {/* Input + Send Button */}
+
                             <div className="d-flex gap-2">
                                 <input
                                     type="text"
