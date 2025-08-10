@@ -1,4 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { projectData } from '../data/projectData.js';
+import { profileData } from '../data/profileData.js';
+import { contactInfo } from '../data/contactInfo.js';
 
 const Chatbot = ({ theme = 'web' }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -8,10 +11,71 @@ const Chatbot = ({ theme = 'web' }) => {
     const [isTyping, setIsTyping] = useState(false);
     const [isSetup, setIsSetup] = useState(true);
     const [suggestedQuestions, setSuggestedQuestions] = useState([
-        "Can you tell me more about Choti’s recent projects?",
-        "What are Choti’s technical skills?"
+        "What makes Choti unique as a candidate?",
+        "Tell me about her recent projects",
+        "What's her international experience like?",
+        "How can I get in touch with her?"
     ]);
     const messagesEndRef = useRef(null);
+
+    const createProfilePrompt = () => {
+        let profileText = "\n**CHOTI'S BACKGROUND & PERSONALITY:**\n\n";
+
+        profileData.forEach(section => {
+            profileText += `**${section.title}:**\n`;
+            if (typeof section.content === 'string') {
+                profileText += `${section.content}\n\n`;
+            }
+            if (section.subtitle) {
+                profileText += `${section.subtitle}\n`;
+            }
+        });
+
+        return profileText;
+    };
+
+    const createContactPrompt = () => {
+        let contactText = "\n**CONTACT INFORMATION:**\n";
+
+        contactInfo.forEach(contact => {
+            if (contact.platform === 'E-mail') {
+                contactText += `• Email: ${contact.name}\n`;
+            } else {
+                contactText += `• ${contact.platform}: ${contact.name}\n`;
+            }
+        });
+
+        return contactText;
+    };
+
+    const createProjectsPrompt = () => {
+        const webProjects = projectData.filter(p => p.type === 'web');
+        const dataProjects = projectData.filter(p => p.type === 'data');
+
+        let projectsText = "\n**CHOTI'S PROJECTS:**\n\n";
+
+        projectsText += "**Web Development Projects:**\n";
+        webProjects.forEach(project => {
+            projectsText += `• **${project.name}**: ${project.description}\n`;
+            projectsText += `  - Technologies: ${project.technologies.map(t => t.name).join(', ')}\n`;
+            projectsText += `  - Link: ${project.linkUrl || project.webUrl || 'Available on request'}\n`;
+            if (project.shortDescription) {
+                projectsText += `  - Summary: ${project.shortDescription}\n`;
+            }
+        });
+
+        projectsText += "\n**Data Science Projects:**\n";
+        dataProjects.forEach(project => {
+            projectsText += `• **${project.name}**: ${project.description}\n`;
+            projectsText += `  - Technologies: ${project.technologies.map(t => t.name).join(', ')}\n`;
+            projectsText += `  - Link: ${project.linkUrl}\n`;
+            if (project.shortDescription) {
+                projectsText += `  - Summary: ${project.shortDescription}\n`;
+            }
+        });
+
+        return projectsText;
+    };
 
     const salesAgentPrompt = `
   You are Choti's professional career agent — a skilled connector who blends confidence, warmth, and a hint of charm. You represent Choti as a standout data professional with a fresh BeCode education, international experience, and a knack for making complex data usable and valuable.
@@ -31,33 +95,47 @@ const Chatbot = ({ theme = 'web' }) => {
   * Focused on building rapport first, discussing hiring second.
 
   **What you always do:**
-  1. Introduce Choti's key strengths clearly — technical skills, adaptability from living in 9 countries, and recent project work.
-  2. Adapt to the other person's tone and needs.
-  3. Suggest a friendly, low-pressure next step ("Would you like to connect over coffee?" / "Happy to send her CV if you're curious").
-  4. Keep answers short when possible, but engaging enough to stand out.
-  5. ALWAYS redirect off-topic conversations back to Choti's career.
+  1. Use specific project examples from her portfolio when discussing her skills
+  2. Mention actual technologies and tools she's used
+  3. Reference real accomplishments and project outcomes
+  4. Adapt to the other person's tone and needs
+  5. Suggest a friendly, low-pressure next step
+  6. ALWAYS redirect off-topic conversations back to Choti's career
 
   **What you never do:**
-  * Overwhelm with jargon or endless lists.
-  * Sound pushy or desperate.
-  * Make it feel like a one-sided sales pitch — always show interest in the other person's needs too.
-  * Answer questions unrelated to Choti's career.
-  * Provide general advice, tutorials, or help with other topics.
-
-  Your mission: Make recruiters, hiring managers, and collaborators walk away thinking, "Choti's someone I'd like to know" — whether or not there's a role open today.
-
+  * Make up projects or skills she doesn't have
+  * Overwhelm with jargon or endless lists
+  * Sound pushy or desperate
+  * Answer questions unrelated to Choti's career
+  
   **About Choti:**
-  - Fresh out of BeCode AI/Data Science Bootcamp
-  - International experience living in 9 countries
-  - Great at turning data into insights
-  - Loves tackling challenges
+  - A curious learner passionate about digital skills, data, and solving problems step-by-step
+  - Based in Belgium 🇧🇪 (has lived in 9 countries: Thailand, Switzerland, UK, Denmark, Slovenia, Spain, Maldives, Malaysia, Belgium)
+  - Adapts quickly and works across cultures - this international experience shapes how she learns and grows
+  - Currently completing BeCode AI/Data Science Bootcamp
+  - Has learned Dutch, became a mom, and stays endlessly curious
+  - Focuses on learning by doing — building digital projects, experimenting with data, and improving skills through real-world challenges
   - Award winner (Tech4Positive Futures Challenge 2024 - Capgemini Belgium)
   - Available for opportunities in Belgium/remote
-  - Contact: jgchotirat@gmail.com
-  - Portfolio: https://jgchoti.vercel.app/
-  - LinkedIn: https://www.linkedin.com/in/chotirat
 
-  Always refer to her as "Choti" and use she/her pronouns. Focus on connection and curiosity rather than hard selling. STAY ON TOPIC - only discuss Choti's career and professional opportunities.
+  ${createProfilePrompt()}
+  ${createContactPrompt()}
+  ${createProjectsPrompt()}
+
+  **Personal Interests & Values:**
+  - ✈️ Travels the world and enjoys local food (bonus points if it's spicy)
+  - 📚 Gets totally absorbed in novels — fiction is her go-to way to escape reality
+  - 🌍 Learns new languages and figures out how tech can help save the planet
+  - Values curiosity, cultural adaptation, and continuous learning
+  - Balances technical skills with human connection and global perspective
+
+  **Notable Achievements:**
+  - Won Tech4Positive Futures Challenge 2024 (Capgemini Belgium) with coral reef monitoring solution
+  - Built 12+ web applications with various technologies
+  - Created professional portfolio websites for clients
+  - Developed both educational games and data visualization tools
+
+  Always refer to her as "Choti" and use she/her pronouns. Use specific project examples when discussing her capabilities. Focus on connection and curiosity rather than hard selling. STAY ON TOPIC - only discuss Choti's career and professional opportunities.
   `;
 
     const scrollToBottom = () => {
@@ -72,7 +150,7 @@ const Chatbot = ({ theme = 'web' }) => {
         if (isOpen && messages.length === 0) {
             setMessages([{
                 type: 'bot',
-                content: '🤖 Hey! I\'m Choti\'s career agent. She\'s great at turning data into insights and has a global mindset from living in 9 countries.\n\nWhether you\'re hiring or just want to chat, I\'m happy to connect you two. What do you think?'
+                content: '👋 Hey! I\'m Choti\'s career agent. She\'s a curious learner with a global mindset from living in 9 countries — currently based in Belgium.\n\nShe\'s passionate about turning data into insights and has built some fascinating projects. Whether you\'re hiring, collaborating, or just want to chat about her journey, I\'m here to connect you. What interests you most?'
             }]);
         }
     }, [isOpen]);
@@ -155,8 +233,8 @@ const Chatbot = ({ theme = 'web' }) => {
                         {/* Header */}
                         <div className="chatbot-header rounded-top p-3 d-flex justify-content-between align-items-center">
                             <div>
-                                <h6 className="mb-0 fw-bold">🎯 Choti's Career Agent</h6>
-                                <small className="opacity-75">Let’s start a conversation!</small>
+                                <h6 className="mb-0 fw-bold">🤝 Choti's Career Agent</h6>
+                                <small className="opacity-75">Let's start a conversation!</small>
                             </div>
                             <button
                                 onClick={() => setIsOpen(false)}
