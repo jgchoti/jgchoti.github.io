@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './Navbar';
 import { Outlet } from 'react-router-dom';
-import { useTheme } from '../logic/Theme';
 
 function Layout() {
     const { theme, setTheme } = useTheme()

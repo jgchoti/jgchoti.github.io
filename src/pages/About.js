@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '../component/Footer';
 import AboutContent from '../component/AboutContent';
+import '../style/index.css';
 
 function About() {
     return (
