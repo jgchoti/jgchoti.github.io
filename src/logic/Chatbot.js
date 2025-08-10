@@ -68,7 +68,7 @@ const Chatbot = ({ theme = 'web' }) => {
         if (isOpen && messages.length === 0) {
             setMessages([{
                 type: 'bot',
-                content: '👋 Hey! I\'m Choti\'s career agent. She\'s great at turning data into insights and has a global mindset from living in 9 countries.\n\nFresh out of BeCode AI / Data Science Bootcamp, she\'s worked on real projects and loves tackling challenges.\n\nWhether you\'re hiring or just want to chat, I\'m happy to connect you two. What do you think?'
+                content: '👋 Hey! I\'m Choti\'s career agent. She\'s great at turning data into insights and has a global mindset from living in 9 countries.\n\nShe\'s worked on real projects and loves tackling challenges.\n\nWhether you\'re hiring or just want to chat, I\'m happy to connect you two. What do you think?'
             }]);
         }
     }, [isOpen]);
@@ -155,7 +155,7 @@ const Chatbot = ({ theme = 'web' }) => {
                         <div className="chatbot-header rounded-top p-3 d-flex justify-content-between align-items-center">
                             <div>
                                 <h6 className="mb-0 fw-bold">🎯 Choti's Career Agent</h6>
-                                <small className="opacity-75">Selling top data engineering talent!</small>
+                                <small className="opacity-75">Let’s start a conversation!</small>
                             </div>
                             <button
                                 onClick={() => setIsOpen(false)}
@@ -195,7 +195,6 @@ const Chatbot = ({ theme = 'web' }) => {
                             <div ref={messagesEndRef} />
                         </div>
 
-                        {/* Input - Always available with serverless! */}
                         <div className="p-3 border-top">
                             <div className="d-flex gap-2">
                                 <input
@@ -215,7 +214,7 @@ const Chatbot = ({ theme = 'web' }) => {
                                 </button>
                             </div>
                         </div>
-            )}
+
                     </div>
                 )}
             </div>
