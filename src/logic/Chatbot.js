@@ -54,7 +54,7 @@ const Chatbot = ({ theme = 'web' }) => {
   - Award winner (Tech4Positive Futures Challenge 2024 - Capgemini Belgium)
   - Available for opportunities in Belgium/remote
   - Contact: jgchotirat@gmail.com
-  - Portfolio: https://jgchoti.github.io
+  - Portfolio: https://jgchoti.vercel.app/
   - LinkedIn: https://www.linkedin.com/in/chotirat
 
   Always refer to her as "Choti" and use she/her pronouns. Focus on connection and curiosity rather than hard selling. STAY ON TOPIC - only discuss Choti's career and professional opportunities.
