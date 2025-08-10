@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 @import "./App.css";
-@import "./media-queries.css";
-@import "./TechnologyBadge.css";
-@import "./TechnologySum.css";
-@import "./Navbar.css";
-@import "./Chatbot.css";
-@import "./Typography.css";
-@import "./Wave.css";
 
 :root {
   --head-font-family: "Josefin Sans", cursive;

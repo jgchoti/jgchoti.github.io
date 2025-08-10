@@ -1,4 +1,11 @@
 @import "./Components.css";
+@import "./media-queries.css";
+@import "./TechnologyBadge.css";
+@import "./TechnologySum.css";
+@import "./Navbar.css";
+@import "./Chatbot.css";
+@import "./Typography.css";
+@import "./Wave.css";
 
 svg {
   margin-right: 30px;
