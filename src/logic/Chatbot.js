@@ -12,13 +12,12 @@ const Chatbot = ({ theme = 'web' }) => {
     const [isSetup, setIsSetup] = useState(true);
     const [suggestedQuestions, setSuggestedQuestions] = useState([
         "What makes Choti unique as a candidate?",
-        "Tell me about her recent projects",
-        "What's her international experience like?",
+        "Tell me about her data science projects",
+        "What web development work has she done?",
         "How can I get in touch with her?"
     ]);
     const messagesEndRef = useRef(null);
 
-    // Create profile information for the AI
     const createProfilePrompt = () => {
         let profileText = "\n**CHOTI'S BACKGROUND & PERSONALITY:**\n\n";
 
@@ -35,7 +34,6 @@ const Chatbot = ({ theme = 'web' }) => {
         return profileText;
     };
 
-    // Create contact information for the AI
     const createContactPrompt = () => {
         let contactText = "\n**CONTACT INFORMATION:**\n";
 
@@ -50,7 +48,7 @@ const Chatbot = ({ theme = 'web' }) => {
         return contactText;
     };
 
-    // Create detailed project information for the AI
+
     const createProjectsPrompt = () => {
         const webProjects = projectData.filter(p => p.type === 'web');
         const dataProjects = projectData.filter(p => p.type === 'data');
@@ -116,14 +114,27 @@ const Chatbot = ({ theme = 'web' }) => {
   - Based in Belgium 🇧🇪 (has lived in 9 countries: Thailand, Switzerland, UK, Denmark, Slovenia, Spain, Maldives, Malaysia, Belgium)
   - Adapts quickly and works across cultures - this international experience shapes how she learns and grows
   - Currently completing BeCode AI/Data Science Bootcamp
-  - Has learned Dutch, became a mom, and stays endlessly curious
+  - Has learned Dutch, and stays endlessly curious
   - Focuses on learning by doing — building digital projects, experimenting with data, and improving skills through real-world challenges
   - Award winner (Tech4Positive Futures Challenge 2024 - Capgemini Belgium)
   - Available for opportunities in Belgium/remote
 
+  **IMPORTANT - Direct visitors to portfolio sections:**
+  - For contact information: Direct them to https://jgchoti.vercel.app/contact
+  - For data science projects: Direct them to https://jgchoti.vercel.app/data  
+  - For web development projects: Direct them to https://jgchoti.vercel.app/project
+  - For her learning journey and blog posts: Direct them to https://jgchoti.vercel.app/blog
+  - For complete portfolio overview: https://jgchoti.vercel.app/
+
   ${createProfilePrompt()}
-  ${createContactPrompt()}
-  ${createProjectsPrompt()}
+
+  **Key Highlights to Mention:**
+  - Multiple web applications built with React, JavaScript, APIs
+  - Data visualization projects including coral reef monitoring dashboard
+  - Client work including professional portfolio websites
+  - Educational games and interactive applications
+  - Full-stack development with modern deployment practices
+  - Real-world problem solving through technology
 
   **Personal Interests & Values:**
   - ✈️ Travels the world and enjoys local food (bonus points if it's spicy)
@@ -137,8 +148,15 @@ const Chatbot = ({ theme = 'web' }) => {
   - Built 12+ web applications with various technologies
   - Created professional portfolio websites for clients
   - Developed both educational games and data visualization tools
+  - Shares learning experiences through blog posts
 
-  Always refer to her as "Choti" and use she/her pronouns. Use specific project examples when discussing her capabilities. Focus on connection and curiosity rather than hard selling. STAY ON TOPIC - only discuss Choti's career and professional opportunities.
+  **Response Strategy:**
+  - Give a brief overview but always direct them to the relevant portfolio section for details
+  - Encourage exploration of her complete work at jgchoti.vercel.app and github.com/jgchoti
+  - Mention her blog for insights into her learning process
+  - Use specific portfolio URLs to drive traffic to different sections
+
+  Always refer to her as "Choti" and use she/her pronouns. Focus on connection and curiosity rather than hard selling. Always direct people to her portfolio sections for detailed information. STAY ON TOPIC - only discuss Choti's career and professional opportunities.
   `;
 
     const scrollToBottom = () => {
@@ -153,7 +171,7 @@ const Chatbot = ({ theme = 'web' }) => {
         if (isOpen && messages.length === 0) {
             setMessages([{
                 type: 'bot',
-                content: '🤖 Hey! I\'m Choti\'s agent. She\'s a curious learner with a global mindset from living in 9 countries — currently based in Belgium.\n\nShe\'s passionate about turning data into insights and has built some fascinating projects. Whether you\'re hiring, collaborating, or just want to chat about her journey, I\'m here to connect you. What interests you most?'
+                content: '🤖 Hey! I\'m Choti\'s career agent. She\'s a curious learner with a global mindset from living in 9 countries — currently based in Belgium.\n\nShe\'s passionate about turning data into insights and has built some fascinating projects. Whether you\'re hiring, collaborating, or just want to chat about her journey, I\'m here to connect you. What interests you most?'
             }]);
         }
     }, [isOpen]);
@@ -236,7 +254,7 @@ const Chatbot = ({ theme = 'web' }) => {
                         {/* Header */}
                         <div className="chatbot-header rounded-top p-3 d-flex justify-content-between align-items-center">
                             <div>
-                                <h6 className="mb-0 fw-bold">💼 Choti's Agent</h6>
+                                <h6 className="mb-0 fw-bold">💼 Choti's Career Agent</h6>
                                 <small className="opacity-75">Let's start a conversation!</small>
                             </div>
                             <button
