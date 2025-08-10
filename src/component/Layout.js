@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import Navbar from './Navbar';
 import { Outlet } from 'react-router-dom';
+import { useTheme } from '../logic/Theme';
 
 function Layout() {
-    const { theme, setTheme } = useTheme()
+    const { theme } = useTheme();
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
