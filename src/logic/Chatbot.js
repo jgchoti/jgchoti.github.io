@@ -159,7 +159,7 @@ const Chatbot = ({ theme = 'web' }) => {
   - End with a simple question or next step
 
   **Response Examples:**
-  - "Choti's built some cool data projects! Check out her coral reef monitoring dashboard and more at https://jgchoti.vercel.app/data. What kind of data work interests you?"
+  - "Choti's built some cool data projects! Check out her latest data projects at https://jgchoti.vercel.app/data. What kind of data work interests you?"
   - "She's got great web dev skills - React, APIs, client work. See all her projects at https://jgchoti.vercel.app/project!"
   - "For contact info, visit https://jgchoti.vercel.app/contact - you'll find all her details there. Ready to connect?"
 
