@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = useState('web'); // default
+    const [theme, setTheme] = useState('data'); // default
     const location = useLocation();
 
     useEffect(() => {

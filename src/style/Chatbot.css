@@ -1,0 +1,93 @@
+.chatbot-container {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+}
+.chatbot-btn {
+  background: var(--primary-color) !important;
+  color: var(--main-bg-color) !important;
+  border: none !important;
+  font-family: var(--head-font-family) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+.chatbot-btn:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4) !important;
+  color: var(--main-bg-color) !important;
+}
+.chatbot-window {
+  background: var(--main-bg-color) !important;
+  border: 1px solid var(--primary-color) !important;
+  font-family: var(--font-family) !important;
+}
+.chatbot-header {
+  background: var(--primary-color) !important;
+  color: var(--main-bg-color) !important;
+  font-family: var(--head-font-family) !important;
+}
+.chatbot-messages {
+  background: color-mix(
+    in srgb,
+    var(--main-bg-color) 80%,
+    transparent
+  ) !important;
+  font-family: var(--font-family) !important;
+}
+.user-message {
+  background: var(--primary-color) !important;
+  color: var(--main-bg-color) !important;
+}
+.bot-message {
+  background: var(--main-bg-color) !important;
+  color: var(--primary-color) !important;
+  border-left: 4px solid var(--primary-color) !important;
+}
+.chatbot-input {
+  background: var(--main-bg-color) !important;
+  color: var(--primary-color) !important;
+  border: 1px solid var(--primary-color) !important;
+  font-family: var(--font-family) !important;
+}
+.chatbot-input:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.2rem
+    color-mix(in srgb, var(--primary-color) 25%, transparent) !important;
+}
+.send-btn {
+  background: var(--primary-color) !important;
+  color: var(--main-bg-color) !important;
+  border: none !important;
+}
+.setup-area {
+  background: var(--main-bg-color) !important;
+  border-bottom: 1px solid var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  font-family: var(--font-family) !important;
+}
+.setup-btn {
+  background: var(--primary-color) !important;
+  color: var(--main-bg-color) !important;
+  border: none !important;
+  font-family: var(--font-family) !important;
+}
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+.typing-dot {
+  animation: bounce 1.4s infinite ease-in-out;
+}
+.typing-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.typing-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
