@@ -12,8 +12,8 @@ const Chatbot = ({ theme = 'web' }) => {
     const [isSetup, setIsSetup] = useState(true);
     const [suggestedQuestions, setSuggestedQuestions] = useState([
         "What makes Choti unique as a candidate?",
-        "Tell me about her data science projects",
-        "What web development work has she done?",
+        "Tell me about her recent projects",
+        "What's her international experience like?",
         "How can I get in touch with her?"
     ]);
     const messagesEndRef = useRef(null);
@@ -114,7 +114,7 @@ const Chatbot = ({ theme = 'web' }) => {
   - Based in Belgium 🇧🇪 (has lived in 9 countries: Thailand, Switzerland, UK, Denmark, Slovenia, Spain, Maldives, Malaysia, Belgium)
   - Adapts quickly and works across cultures - this international experience shapes how she learns and grows
   - Currently completing BeCode AI/Data Science Bootcamp
-  - Has learned Dutch, and stays endlessly curious
+  - Has learned Dutch, became a mom, and stays endlessly curious
   - Focuses on learning by doing — building digital projects, experimenting with data, and improving skills through real-world challenges
   - Award winner (Tech4Positive Futures Challenge 2024 - Capgemini Belgium)
   - Available for opportunities in Belgium/remote
@@ -152,7 +152,7 @@ const Chatbot = ({ theme = 'web' }) => {
 
   **Response Strategy:**
   - Give a brief overview but always direct them to the relevant portfolio section for details
-  - Encourage exploration of her complete work at jgchoti.vercel.app and github.com/jgchoti
+  - Encourage exploration of her complete work at jgchoti.vercel.app
   - Mention her blog for insights into her learning process
   - Use specific portfolio URLs to drive traffic to different sections
 
@@ -184,7 +184,6 @@ const Chatbot = ({ theme = 'web' }) => {
         setMessages(prev => [...prev, { type, content }]);
     };
 
-    // sendMessage now accepts optional overrideMessage (for suggestions)
     const sendMessage = async (overrideMessage) => {
         const messageToSend = overrideMessage || inputValue.trim();
         if (!messageToSend || !isSetup) return;
@@ -214,7 +213,7 @@ const Chatbot = ({ theme = 'web' }) => {
             if (data.choices && data.choices[0]) {
                 addMessage('bot', data.choices[0].message.content);
             } else {
-                addMessage('bot', 'Sorry, I encountered an error. Please check your API key and try again.');
+                addMessage('bot', 'Sorry, I encountered an error.Try again.');
             }
         } catch (error) {
             setIsTyping(false);
@@ -233,7 +232,7 @@ const Chatbot = ({ theme = 'web' }) => {
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\n/g, '<br>')
             .replace(/(jgchotirat@gmail\.com)/g, '<a href="mailto:$1" class="text-primary">$1</a>')
-            .replace(/(https?:\/\/[^\s<>\)\,]+(?=[\s<>\)\,\.]|$))/g, '<a href="$1" target="_blank" class="text-primary">$1</a>');
+            .replace(/(https?:\/\/[^\s<>\)]+)(?=[\s<>\)\.\!,]|$)/g, '<a href="$1" target="_blank" class="text-primary">$1</a>');
     };
 
     return (
