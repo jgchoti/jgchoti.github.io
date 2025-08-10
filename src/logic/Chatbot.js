@@ -6,7 +6,11 @@ const Chatbot = ({ theme = 'web' }) => {
     const [inputValue, setInputValue] = useState('');
     const [apiKey, setApiKey] = useState('');
     const [isTyping, setIsTyping] = useState(false);
-    const [isSetup, setIsSetup] = useState(true); // Always ready with serverless!
+    const [isSetup, setIsSetup] = useState(true);
+    const [suggestedQuestions, setSuggestedQuestions] = useState([
+        "Can you tell me more about Choti’s recent projects?",
+        "What are Choti’s technical skills?"
+    ]);
     const messagesEndRef = useRef(null);
 
     const salesAgentPrompt = `
@@ -68,7 +72,7 @@ const Chatbot = ({ theme = 'web' }) => {
         if (isOpen && messages.length === 0) {
             setMessages([{
                 type: 'bot',
-                content: '👋 Hey! I\'m Choti\'s career agent. She\'s great at turning data into insights and has a global mindset from living in 9 countries.\n\nShe\'s worked on real projects and loves tackling challenges.\n\nWhether you\'re hiring or just want to chat, I\'m happy to connect you two. What do you think?'
+                content: '🤖 Hey! I\'m Choti\'s career agent. She\'s great at turning data into insights and has a global mindset from living in 9 countries.\n\nWhether you\'re hiring or just want to chat, I\'m happy to connect you two. What do you think?'
             }]);
         }
     }, [isOpen]);
@@ -81,26 +85,24 @@ const Chatbot = ({ theme = 'web' }) => {
         setMessages(prev => [...prev, { type, content }]);
     };
 
-    const sendMessage = async () => {
-        if (!inputValue.trim() || !isSetup) return;
+    // sendMessage now accepts optional overrideMessage (for suggestions)
+    const sendMessage = async (overrideMessage) => {
+        const messageToSend = overrideMessage || inputValue.trim();
+        if (!messageToSend || !isSetup) return;
 
-        const userMessage = inputValue.trim();
-        addMessage('user', userMessage);
+        addMessage('user', messageToSend);
         setInputValue('');
         setIsTyping(true);
 
         try {
-
             const response = await fetch('/api/chat', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     model: 'gpt-3.5-turbo',
                     messages: [
                         { role: 'system', content: salesAgentPrompt },
-                        { role: 'user', content: userMessage }
+                        { role: 'user', content: messageToSend }
                     ],
                     max_tokens: 400,
                     temperature: 0.8
@@ -148,7 +150,6 @@ const Chatbot = ({ theme = 'web' }) => {
                     </button>
                 )}
 
-                {/* Chat Window */}
                 {isOpen && (
                     <div className="chatbot-window rounded shadow-lg d-flex flex-column" style={{ width: '350px', height: '500px' }}>
                         {/* Header */}
@@ -165,6 +166,7 @@ const Chatbot = ({ theme = 'web' }) => {
                                 ×
                             </button>
                         </div>
+
                         {/* Messages */}
                         <div className="chatbot-messages flex-grow-1 p-3 overflow-auto">
                             {messages.map((message, index) => (
@@ -180,7 +182,6 @@ const Chatbot = ({ theme = 'web' }) => {
                                 </div>
                             ))}
 
-                            {/* Typing Indicator */}
                             {isTyping && (
                                 <div className="mb-3">
                                     <div className="bot-message d-inline-block px-3 py-2 rounded shadow-sm">
@@ -195,7 +196,25 @@ const Chatbot = ({ theme = 'web' }) => {
                             <div ref={messagesEndRef} />
                         </div>
 
-                        <div className="p-3 border-top">
+                        {/* Suggested Questions */}
+                        <div className="p-3 border-top" style={{ background: "#f9f9f9" }}>
+                            {suggestedQuestions.length > 0 && (
+                                <div className="mb-2 d-flex flex-wrap gap-2">
+                                    {suggestedQuestions.map((question, idx) => (
+                                        <button
+                                            key={idx}
+                                            onClick={() => {
+                                                setSuggestedQuestions(prev => prev.filter((_, i) => i !== idx));
+                                                sendMessage(question);
+                                            }}
+                                            className="btn btn-outline-secondary btn-sm rounded-pill"
+                                        >
+                                            {question}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+                            {/* Input + Send Button */}
                             <div className="d-flex gap-2">
                                 <input
                                     type="text"
@@ -206,7 +225,7 @@ const Chatbot = ({ theme = 'web' }) => {
                                     className="form-control chatbot-input rounded-pill"
                                 />
                                 <button
-                                    onClick={sendMessage}
+                                    onClick={() => sendMessage()}
                                     className="btn send-btn rounded-circle d-flex align-items-center justify-content-center"
                                     style={{ width: '45px', height: '45px' }}
                                 >
@@ -214,7 +233,6 @@ const Chatbot = ({ theme = 'web' }) => {
                                 </button>
                             </div>
                         </div>
-
                     </div>
                 )}
             </div>

@@ -11,6 +11,7 @@
   font-family: var(--head-font-family) !important;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
   transition: all 0.3s ease !important;
+  font-size: 24px;
 }
 .chatbot-btn:hover {
   transform: scale(1.05) !important;
