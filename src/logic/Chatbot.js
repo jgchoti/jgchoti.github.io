@@ -153,7 +153,7 @@ const Chatbot = ({ theme = 'web' }) => {
         if (isOpen && messages.length === 0) {
             setMessages([{
                 type: 'bot',
-                content: '👋 Hey! I\'m Choti\'s career agent. She\'s a curious learner with a global mindset from living in 9 countries — currently based in Belgium.\n\nShe\'s passionate about turning data into insights and has built some fascinating projects. Whether you\'re hiring, collaborating, or just want to chat about her journey, I\'m here to connect you. What interests you most?'
+                content: '🤖 Hey! I\'m Choti\'s agent. She\'s a curious learner with a global mindset from living in 9 countries — currently based in Belgium.\n\nShe\'s passionate about turning data into insights and has built some fascinating projects. Whether you\'re hiring, collaborating, or just want to chat about her journey, I\'m here to connect you. What interests you most?'
             }]);
         }
     }, [isOpen]);
@@ -215,7 +215,7 @@ const Chatbot = ({ theme = 'web' }) => {
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\n/g, '<br>')
             .replace(/(jgchotirat@gmail\.com)/g, '<a href="mailto:$1" class="text-primary">$1</a>')
-            .replace(/(https?:\/\/[^\s\)\,\.\!]+)/g, '<a href="$1" target="_blank" class="text-primary">$1</a>');
+            .replace(/(https?:\/\/[^\s<>\)\,]+(?=[\s<>\)\,\.]|$))/g, '<a href="$1" target="_blank" class="text-primary">$1</a>');
     };
 
     return (
@@ -227,7 +227,7 @@ const Chatbot = ({ theme = 'web' }) => {
                         className="btn chatbot-btn rounded-pill px-4 py-3 fw-bold d-flex align-items-center gap-2"
                     >
                         <span>💼</span>
-                        <span>Hire Choti</span>
+                        <span>Choti's Agent</span>
                     </button>
                 )}
 
@@ -236,7 +236,7 @@ const Chatbot = ({ theme = 'web' }) => {
                         {/* Header */}
                         <div className="chatbot-header rounded-top p-3 d-flex justify-content-between align-items-center">
                             <div>
-                                <h6 className="mb-0 fw-bold">🤝 Choti's Career Agent</h6>
+                                <h6 className="mb-0 fw-bold">💼 Choti's Agent</h6>
                                 <small className="opacity-75">Let's start a conversation!</small>
                             </div>
                             <button
