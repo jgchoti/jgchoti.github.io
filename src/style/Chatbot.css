@@ -92,3 +92,15 @@
 .typing-dot:nth-child(2) {
   animation-delay: -0.16s;
 }
+
+.bot-message a,
+.user-message a {
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.chatbot-messages {
+  overflow-x: hidden !important;
+}
