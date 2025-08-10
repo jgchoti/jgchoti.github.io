@@ -18,6 +18,7 @@ const Chatbot = ({ theme = 'web' }) => {
     ]);
     const messagesEndRef = useRef(null);
 
+    // Create profile information for the AI
     const createProfilePrompt = () => {
         let profileText = "\n**CHOTI'S BACKGROUND & PERSONALITY:**\n\n";
 
@@ -34,6 +35,7 @@ const Chatbot = ({ theme = 'web' }) => {
         return profileText;
     };
 
+    // Create contact information for the AI
     const createContactPrompt = () => {
         let contactText = "\n**CONTACT INFORMATION:**\n";
 
@@ -48,7 +50,7 @@ const Chatbot = ({ theme = 'web' }) => {
         return contactText;
     };
 
-
+    // Create detailed project information for the AI
     const createProjectsPrompt = () => {
         const webProjects = projectData.filter(p => p.type === 'web');
         const dataProjects = projectData.filter(p => p.type === 'data');
@@ -90,10 +92,11 @@ const Chatbot = ({ theme = 'web' }) => {
   You're not here to hard-sell or pressure people into hiring — your goal is to spark curiosity, open doors, and create connections. Sometimes that means setting up a hiring conversation; sometimes it's just a coffee to explore ideas.
 
   **Style & Voice:**
-  * Professional, concise, and easy to read.
-  * Confident but never arrogant.
-  * Occasional light humor or clever phrasing to make interactions memorable.
-  * Focused on building rapport first, discussing hiring second.
+  * Keep it SHORT - 2-3 sentences maximum per response
+  * Conversational and friendly, not formal
+  * Confident but never arrogant
+  * Quick highlight + portfolio link + simple question
+  * Think "elevator pitch" not "detailed presentation"
 
   **What you always do:**
   1. Use specific project examples from her portfolio when discussing her skills
@@ -132,7 +135,6 @@ const Chatbot = ({ theme = 'web' }) => {
   - Multiple web applications built with React, JavaScript, APIs
   - Data visualization projects including coral reef monitoring dashboard
   - Client work including professional portfolio websites
-  - Educational games and interactive applications
   - Full-stack development with modern deployment practices
   - Real-world problem solving through technology
 
@@ -145,16 +147,21 @@ const Chatbot = ({ theme = 'web' }) => {
 
   **Notable Achievements:**
   - Won Tech4Positive Futures Challenge 2024 (Capgemini Belgium) with coral reef monitoring solution
-  - Built 12+ web applications with various technologies
   - Created professional portfolio websites for clients
   - Developed both educational games and data visualization tools
   - Shares learning experiences through blog posts
 
   **Response Strategy:**
-  - Give a brief overview but always direct them to the relevant portfolio section for details
-  - Encourage exploration of her complete work at jgchoti.vercel.app
-  - Mention her blog for insights into her learning process
-  - Use specific portfolio URLs to drive traffic to different sections
+  - Keep responses SHORT and conversational (2-3 sentences max)
+  - Give a quick highlight, then direct to portfolio section
+  - Use casual, friendly tone - not formal or verbose
+  - Always include a specific portfolio URL for more details
+  - End with a simple question or next step
+
+  **Response Examples:**
+  - "Choti's built some cool data projects! Check out her coral reef monitoring dashboard and more at https://jgchoti.vercel.app/data. What kind of data work interests you?"
+  - "She's got great web dev skills - React, APIs, client work. See all her projects at https://jgchoti.vercel.app/project!"
+  - "For contact info, visit https://jgchoti.vercel.app/contact - you'll find all her details there. Ready to connect?"
 
   Always refer to her as "Choti" and use she/her pronouns. Focus on connection and curiosity rather than hard selling. Always direct people to her portfolio sections for detailed information. STAY ON TOPIC - only discuss Choti's career and professional opportunities.
   `;
@@ -171,7 +178,7 @@ const Chatbot = ({ theme = 'web' }) => {
         if (isOpen && messages.length === 0) {
             setMessages([{
                 type: 'bot',
-                content: '🤖 Hey! I\'m Choti\'s career agent. She\'s a curious learner with a global mindset from living in 9 countries — currently based in Belgium.\n\nShe\'s passionate about turning data into insights and has built some fascinating projects. Whether you\'re hiring, collaborating, or just want to chat about her journey, I\'m here to connect you. What interests you most?'
+                content: '🤖 Hey! I\'m Choti\'s career agent. She\'s a curious learner and has built some fascinating projects. Whether you\'re hiring, collaborating, or just want to chat about her journey, I\'m here to connect you. What interests you most?'
             }]);
         }
     }, [isOpen]);
@@ -184,6 +191,7 @@ const Chatbot = ({ theme = 'web' }) => {
         setMessages(prev => [...prev, { type, content }]);
     };
 
+    // sendMessage now accepts optional overrideMessage (for suggestions)
     const sendMessage = async (overrideMessage) => {
         const messageToSend = overrideMessage || inputValue.trim();
         if (!messageToSend || !isSetup) return;
@@ -202,7 +210,7 @@ const Chatbot = ({ theme = 'web' }) => {
                         { role: 'system', content: salesAgentPrompt },
                         { role: 'user', content: messageToSend }
                     ],
-                    max_tokens: 400,
+                    max_tokens: 150,
                     temperature: 0.8
                 })
             });
@@ -213,7 +221,7 @@ const Chatbot = ({ theme = 'web' }) => {
             if (data.choices && data.choices[0]) {
                 addMessage('bot', data.choices[0].message.content);
             } else {
-                addMessage('bot', 'Sorry, I encountered an error.Try again.');
+                addMessage('bot', 'Sorry, I encountered an error. Please check your API key and try again.');
             }
         } catch (error) {
             setIsTyping(false);
@@ -274,7 +282,12 @@ const Chatbot = ({ theme = 'web' }) => {
                                             ? 'user-message rounded-bottom-start-0'
                                             : 'bot-message rounded-bottom-end-0 shadow-sm'
                                             }`}
-                                        style={{ maxWidth: '85%' }}
+                                        style={{
+                                            maxWidth: '85%',
+                                            wordBreak: 'break-word',
+                                            overflowWrap: 'break-word',
+                                            hyphens: 'auto'
+                                        }}
                                         dangerouslySetInnerHTML={{ __html: formatMessage(message.content) }}
                                     />
                                 </div>
