@@ -6,7 +6,7 @@ const Chatbot = ({ theme = 'web' }) => {
     const [inputValue, setInputValue] = useState('');
     const [apiKey, setApiKey] = useState('');
     const [isTyping, setIsTyping] = useState(false);
-    const [isSetup, setIsSetup] = useState(false);
+    const [isSetup, setIsSetup] = useState(true); // Always ready with serverless!
     const messagesEndRef = useRef(null);
 
     const salesAgentPrompt = `
@@ -74,10 +74,7 @@ const Chatbot = ({ theme = 'web' }) => {
     }, [isOpen]);
 
     const handleApiKeySubmit = () => {
-        if (apiKey.startsWith('sk-') && apiKey.length > 20) {
-            setIsSetup(true);
-            addMessage('bot', '🚀 Perfect! I\'m ready to help you learn more about Choti and her work.\n\nShe\'s genuinely passionate about making data useful and has some interesting projects to share. What would you like to know first?');
-        }
+        setIsSetup(true);
     };
 
     const addMessage = (type, content) => {
@@ -93,11 +90,11 @@ const Chatbot = ({ theme = 'web' }) => {
         setIsTyping(true);
 
         try {
-            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+
+            const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
                 },
                 body: JSON.stringify({
                     model: 'gpt-3.5-turbo',
@@ -120,7 +117,7 @@ const Chatbot = ({ theme = 'web' }) => {
             }
         } catch (error) {
             setIsTyping(false);
-            addMessage('bot', 'Sorry, I\'m having trouble connecting. Please check your internet connection and API key.');
+            addMessage('bot', 'Sorry, I\'m having trouble connecting. Please try again in a moment.');
         }
     };
 
@@ -140,7 +137,6 @@ const Chatbot = ({ theme = 'web' }) => {
 
     return (
         <>
-
             <div className="chatbot-container position-fixed" style={{ bottom: '20px', right: '20px', zIndex: 9999 }}>
                 {!isOpen && (
                     <button
@@ -169,31 +165,6 @@ const Chatbot = ({ theme = 'web' }) => {
                                 ×
                             </button>
                         </div>
-
-                        {/* API Key Setup */}
-                        {!isSetup && (
-                            <div className="setup-area p-3">
-                                <p className="small mb-2">
-                                    🔑 Quick setup: Add your OpenAI API key (get $5 free at platform.openai.com)
-                                </p>
-                                <div className="d-flex gap-2">
-                                    <input
-                                        type="password"
-                                        placeholder="sk-..."
-                                        value={apiKey}
-                                        onChange={(e) => setApiKey(e.target.value)}
-                                        className="form-control form-control-sm"
-                                    />
-                                    <button
-                                        onClick={handleApiKeySubmit}
-                                        className="btn btn-sm setup-btn"
-                                    >
-                                        Start
-                                    </button>
-                                </div>
-                            </div>
-                        )}
-
                         {/* Messages */}
                         <div className="chatbot-messages flex-grow-1 p-3 overflow-auto">
                             {messages.map((message, index) => (
@@ -224,28 +195,27 @@ const Chatbot = ({ theme = 'web' }) => {
                             <div ref={messagesEndRef} />
                         </div>
 
-                        {/* Input */}
-                        {isSetup && (
-                            <div className="p-3 border-top">
-                                <div className="d-flex gap-2">
-                                    <input
-                                        type="text"
-                                        value={inputValue}
-                                        onChange={(e) => setInputValue(e.target.value)}
-                                        onKeyPress={handleKeyPress}
-                                        placeholder="Ask about this candidate..."
-                                        className="form-control chatbot-input rounded-pill"
-                                    />
-                                    <button
-                                        onClick={sendMessage}
-                                        className="btn send-btn rounded-circle d-flex align-items-center justify-content-center"
-                                        style={{ width: '45px', height: '45px' }}
-                                    >
-                                        ➤
-                                    </button>
-                                </div>
+                        {/* Input - Always available with serverless! */}
+                        <div className="p-3 border-top">
+                            <div className="d-flex gap-2">
+                                <input
+                                    type="text"
+                                    value={inputValue}
+                                    onChange={(e) => setInputValue(e.target.value)}
+                                    onKeyPress={handleKeyPress}
+                                    placeholder="Ask about this candidate..."
+                                    className="form-control chatbot-input rounded-pill"
+                                />
+                                <button
+                                    onClick={sendMessage}
+                                    className="btn send-btn rounded-circle d-flex align-items-center justify-content-center"
+                                    style={{ width: '45px', height: '45px' }}
+                                >
+                                    ➤
+                                </button>
                             </div>
-                        )}
+                        </div>
+            )}
                     </div>
                 )}
             </div>
