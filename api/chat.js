@@ -55,6 +55,7 @@ export default async function handler(req, res) {
         });
     }
 
+    let requestedTokens = 0;
     try {
         const apiKey = process.env.OPENAI_API_KEY;
 
@@ -81,6 +82,7 @@ export default async function handler(req, res) {
         }
 
         const limitedMaxTokens = Math.min(max_tokens, 2000);
+        requestedTokens = limitedMaxTokens;
 
         rateLimitData.requests++;
         rateLimitData.tokensUsed += limitedMaxTokens;
@@ -127,9 +129,11 @@ export default async function handler(req, res) {
         console.error('Server error:', error);
 
         const rateLimitData = getRateLimitData(userIP);
-        rateLimitData.requests--;
-        rateLimitData.tokensUsed -= max_tokens;
+        rateLimitData.requests = Math.max(0, rateLimitData.requests - 1);
+        if (typeof requestedTokens === 'number' && !Number.isNaN(requestedTokens)) {
+            rateLimitData.tokensUsed = Math.max(0, rateLimitData.tokensUsed - requestedTokens);
+        }
 
-        res.status(500).json({ error: 'Internal server error' });
+        return res.status(500).json({ error: 'Internal server error' });
     }
 }

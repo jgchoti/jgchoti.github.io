@@ -218,10 +218,11 @@ const Chatbot = ({ theme = 'web' }) => {
             const data = await response.json();
             setIsTyping(false);
 
-            if (data.choices && data.choices[0]) {
+            if (response.ok && data.choices && data.choices[0]) {
                 addMessage('bot', data.choices[0].message.content);
             } else {
-                addMessage('bot', 'Sorry, I encountered an error. Please check your API key and try again.');
+                const serverMessage = data?.details || data?.error || 'Unknown server error';
+                addMessage('bot', `Sorry, I encountered an error: ${serverMessage}.`);
             }
         } catch (error) {
             setIsTyping(false);
