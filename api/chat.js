@@ -2,7 +2,7 @@ const rateLimitStore = new Map();
 
 const RATE_LIMIT = {
     windowMs: 15 * 60 * 1000,
-    maxRequests: 8,
+    maxRequests: 10,
     maxTokensPerHour: 1000,
 };
 
