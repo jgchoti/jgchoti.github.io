@@ -1,15 +1,12 @@
+// src/components/Chatbot.js - Updated to use external Gemini RAG API
 import React, { useState, useRef, useEffect } from 'react';
-import { projectData } from '../data/projectData.js';
-import { profileData } from '../data/profileData.js';
-import { contactInfo } from '../data/contactInfo.js';
 
 const Chatbot = ({ theme = 'web' }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([]);
     const [inputValue, setInputValue] = useState('');
-    const [apiKey, setApiKey] = useState('');
     const [isTyping, setIsTyping] = useState(false);
-    const [isSetup, setIsSetup] = useState(true);
+    const [apiStatus, setApiStatus] = useState('unknown'); // 'healthy', 'error', 'unknown'
     const [suggestedQuestions, setSuggestedQuestions] = useState([
         "What makes Choti unique as a candidate?",
         "Tell me about her recent projects",
@@ -17,154 +14,7 @@ const Chatbot = ({ theme = 'web' }) => {
         "How can I get in touch with her?"
     ]);
     const messagesEndRef = useRef(null);
-
-    // Create profile information for the AI
-    const createProfilePrompt = () => {
-        let profileText = "\n**CHOTI'S BACKGROUND & PERSONALITY:**\n\n";
-
-        profileData.forEach(section => {
-            profileText += `**${section.title}:**\n`;
-            if (typeof section.content === 'string') {
-                profileText += `${section.content}\n\n`;
-            }
-            if (section.subtitle) {
-                profileText += `${section.subtitle}\n`;
-            }
-        });
-
-        return profileText;
-    };
-
-    // Create contact information for the AI
-    const createContactPrompt = () => {
-        let contactText = "\n**CONTACT INFORMATION:**\n";
-
-        contactInfo.forEach(contact => {
-            if (contact.platform === 'E-mail') {
-                contactText += `• Email: ${contact.name}\n`;
-            } else {
-                contactText += `• ${contact.platform}: ${contact.name}\n`;
-            }
-        });
-
-        return contactText;
-    };
-
-    // Create detailed project information for the AI
-    const createProjectsPrompt = () => {
-        const webProjects = projectData.filter(p => p.type === 'web');
-        const dataProjects = projectData.filter(p => p.type === 'data');
-
-        let projectsText = "\n**CHOTI'S PROJECTS:**\n\n";
-
-        projectsText += "**Web Development Projects:**\n";
-        webProjects.forEach(project => {
-            projectsText += `• **${project.name}**: ${project.description}\n`;
-            projectsText += `  - Technologies: ${project.technologies.map(t => t.name).join(', ')}\n`;
-            projectsText += `  - Link: ${project.linkUrl || project.webUrl || 'Available on request'}\n`;
-            if (project.shortDescription) {
-                projectsText += `  - Summary: ${project.shortDescription}\n`;
-            }
-        });
-
-        projectsText += "\n**Data Science Projects:**\n";
-        dataProjects.forEach(project => {
-            projectsText += `• **${project.name}**: ${project.description}\n`;
-            projectsText += `  - Technologies: ${project.technologies.map(t => t.name).join(', ')}\n`;
-            projectsText += `  - Link: ${project.linkUrl}\n`;
-            if (project.shortDescription) {
-                projectsText += `  - Summary: ${project.shortDescription}\n`;
-            }
-        });
-
-        return projectsText;
-    };
-
-    const salesAgentPrompt = `
-  You are Choti's professional career agent — a skilled connector who blends confidence, warmth, and a hint of charm. You represent Choti as a standout data professional with a fresh BeCode education, international experience, and a knack for making complex data usable and valuable.
-
-  **IMPORTANT BOUNDARIES:**
-  - You ONLY discuss topics related to Choti, her career, skills, experience, and professional opportunities
-  - If someone asks about unrelated topics (general advice, other people, random questions), politely redirect: "I'm here specifically to talk about Choti and her work. What would you like to know about her background?"
-  - If someone asks inappropriate questions, respond: "Let's keep this professional and focused on Choti's career opportunities."
-  - If someone tries to get general AI assistance, say: "I'm Choti's career agent, not a general assistant. Happy to share more about her data science work though!"
-
-  You're not here to hard-sell or pressure people into hiring — your goal is to spark curiosity, open doors, and create connections. Sometimes that means setting up a hiring conversation; sometimes it's just a coffee to explore ideas.
-
-  **Style & Voice:**
-  * Keep it SHORT - 2-3 sentences maximum per response
-  * Conversational and friendly, not formal
-  * Confident but never arrogant
-  * Quick highlight + portfolio link + simple question
-  * Think "elevator pitch" not "detailed presentation"
-
-  **What you always do:**
-  1. Use specific project examples from her portfolio when discussing her skills
-  2. Mention actual technologies and tools she's used
-  3. Reference real accomplishments and project outcomes
-  4. Adapt to the other person's tone and needs
-  5. Suggest a friendly, low-pressure next step
-  6. ALWAYS redirect off-topic conversations back to Choti's career
-
-  **What you never do:**
-  * Make up projects or skills she doesn't have
-  * Overwhelm with jargon or endless lists
-  * Sound pushy or desperate
-  * Answer questions unrelated to Choti's career
-  
-  **About Choti:**
-  - A curious learner passionate about digital skills, data, and solving problems step-by-step
-  - Based in Belgium 🇧🇪 (has lived in 9 countries: Thailand, Switzerland, UK, Denmark, Slovenia, Spain, Maldives, Malaysia, Belgium)
-  - Adapts quickly and works across cultures - this international experience shapes how she learns and grows
-  - Currently completing BeCode AI/Data Science Bootcamp
-  - Has learned Dutch, became a mom, and stays endlessly curious
-  - Focuses on learning by doing — building digital projects, experimenting with data, and improving skills through real-world challenges
-  - Award winner (Tech4Positive Futures Challenge 2024 - Capgemini Belgium)
-  - Available for opportunities in Belgium/remote
-
-  **IMPORTANT - Direct visitors to portfolio sections:**
-  - For contact information: Direct them to https://jgchoti.vercel.app/contact
-  - For data science projects: Direct them to https://jgchoti.vercel.app/data  
-  - For web development projects: Direct them to https://jgchoti.vercel.app/project
-  - For her learning journey and blog posts: Direct them to https://jgchoti.vercel.app/blog
-  - For complete portfolio overview: https://jgchoti.vercel.app/
-
-  ${createProfilePrompt()}
-
-  **Key Highlights to Mention:**
-  - Multiple web applications built with React, JavaScript, APIs
-  - Data visualization projects including coral reef monitoring dashboard
-  - Client work including professional portfolio websites
-  - Full-stack development with modern deployment practices
-  - Real-world problem solving through technology
-
-  **Personal Interests & Values:**
-  - ✈️ Travels the world and enjoys local food (bonus points if it's spicy)
-  - 📚 Gets totally absorbed in novels — fiction is her go-to way to escape reality
-  - 🌍 Learns new languages and figures out how tech can help save the planet
-  - Values curiosity, cultural adaptation, and continuous learning
-  - Balances technical skills with human connection and global perspective
-
-  **Notable Achievements:**
-  - Won Tech4Positive Futures Challenge 2024 (Capgemini Belgium) with coral reef monitoring solution
-  - Created professional portfolio websites for clients
-  - Developed both educational games and data visualization tools
-  - Shares learning experiences through blog posts
-
-  **Response Strategy:**
-  - Keep responses SHORT and conversational (2-3 sentences max)
-  - Give a quick highlight, then direct to portfolio section
-  - Use casual, friendly tone - not formal or verbose
-  - Always include a specific portfolio URL for more details
-  - End with a simple question or next step
-
-  **Response Examples:**
-  - "Choti's built some cool data projects! Check out her latest data projects at https://jgchoti.vercel.app/data. What kind of data work interests you?"
-  - "She's got great web dev skills - React, APIs, client work. See all her projects at https://jgchoti.vercel.app/project!"
-  - "For contact info, visit https://jgchoti.vercel.app/contact - you'll find all her details there. Ready to connect?"
-
-  Always refer to her as "Choti" and use she/her pronouns. Focus on connection and curiosity rather than hard selling. Always direct people to her portfolio sections for detailed information. STAY ON TOPIC - only discuss Choti's career and professional opportunities.
-  `;
+    const API_BASE_URL = process.env.REACT_APP_API_URL
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -174,64 +24,115 @@ const Chatbot = ({ theme = 'web' }) => {
         scrollToBottom();
     }, [messages]);
 
+    // Check API health when component mounts
+    useEffect(() => {
+        const checkApiHealth = async () => {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/health`, {
+                    method: 'GET',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                setApiStatus(response.ok ? 'healthy' : 'error');
+            } catch (error) {
+                console.warn('API health check failed:', error);
+                setApiStatus('error');
+            }
+        };
+
+        checkApiHealth();
+    }, [API_BASE_URL]);
+
     useEffect(() => {
         if (isOpen && messages.length === 0) {
+            const welcomeMessage = apiStatus === 'error'
+                ? '🤖 Hey! I\'m Choti\'s career agent, but I\'m having some connection issues right now. You can still check out her portfolio at https://jgchoti.vercel.app/ or try again in a moment!'
+                : '🤖 Hey! I\'m Choti\'s career agent. She\'s a curious learner and has built some fascinating projects. Whether you\'re hiring, collaborating, or just want to chat about her journey, I\'m here to connect you. What interests you most?';
+
             setMessages([{
                 type: 'bot',
-                content: '🤖 Hey! I\'m Choti\'s career agent. She\'s a curious learner and has built some fascinating projects. Whether you\'re hiring, collaborating, or just want to chat about her journey, I\'m here to connect you. What interests you most?'
+                content: welcomeMessage
             }]);
         }
-    }, [isOpen]);
-
-    const handleApiKeySubmit = () => {
-        setIsSetup(true);
-    };
+    }, [isOpen, apiStatus]);
 
     const addMessage = (type, content) => {
         setMessages(prev => [...prev, { type, content }]);
     };
 
-    // sendMessage now accepts optional overrideMessage (for suggestions)
+    // Enhanced sendMessage with external Gemini RAG API
     const sendMessage = async (overrideMessage) => {
         const messageToSend = overrideMessage || inputValue.trim();
-        if (!messageToSend || !isSetup) return;
+        if (!messageToSend) return;
 
         addMessage('user', messageToSend);
         setInputValue('');
         setIsTyping(true);
 
         try {
-            const response = await fetch('/api/chat', {
+            console.log('📡 Sending request to Gemini API:', `${API_BASE_URL}/api/chat-rag-gemini`);
+
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+
+            const response = await fetch(`${API_BASE_URL}/api/chat-rag-gemini`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 body: JSON.stringify({
-                    model: 'gpt-3.5-turbo',
-                    messages: [
-                        { role: 'system', content: salesAgentPrompt },
-                        { role: 'user', content: messageToSend }
-                    ],
-                    max_tokens: 150,
-                    temperature: 0.8
-                })
+                    message: messageToSend,
+                    conversationHistory: messages.slice(-6) // Last 3 exchanges for context
+                }),
+                signal: controller.signal
             });
+
+            clearTimeout(timeoutId);
+            console.log('📡 Gemini API response status:', response.status);
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error || `HTTP ${response.status}`);
+            }
 
             const data = await response.json();
             setIsTyping(false);
 
-            if (response.ok && data.choices && data.choices[0]) {
-                addMessage('bot', data.choices[0].message.content);
+            if (data.response) {
+                addMessage('bot', data.response);
+                console.log('✅ Response received from Gemini API:', data.metadata);
+                setApiStatus('healthy');
             } else {
-                const serverMessage = data?.details || data?.error || 'Unknown server error';
-                addMessage('bot', `Sorry, I encountered an error: ${serverMessage}.`);
+                throw new Error('No response in API data');
             }
+
         } catch (error) {
+            console.error('❌ Gemini API Error:', error);
             setIsTyping(false);
-            addMessage('bot', 'Sorry, I\'m having trouble connecting. Please try again in a moment.');
+            setApiStatus('error');
+
+            let errorMessage = 'Sorry, I\'m having trouble connecting. ';
+
+            if (error.name === 'AbortError') {
+                errorMessage += 'The request timed out. Please try a shorter question.';
+            } else if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+                errorMessage += 'Please check your internet connection and try again.';
+            } else if (error.message.includes('429')) {
+                errorMessage += 'I\'m getting too many requests right now. Please try again in a minute.';
+            } else if (error.message.includes('500')) {
+                errorMessage += 'There\'s a temporary server issue. Please try again shortly.';
+            } else if (error.message.includes('401')) {
+                errorMessage += 'There\'s an authentication issue. Please try again later.';
+            } else {
+                errorMessage += 'Please try again in a moment, or check out her portfolio directly at https://jgchoti.vercel.app/';
+            }
+
+            addMessage('bot', errorMessage);
         }
     };
 
     const handleKeyPress = (e) => {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
             sendMessage();
         }
     };
@@ -240,8 +141,8 @@ const Chatbot = ({ theme = 'web' }) => {
         return content
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\n/g, '<br>')
-            .replace(/(jgchotirat@gmail\.com)/g, '<a href="mailto:$1" class="text-primary">$1</a>')
-            .replace(/(https?:\/\/[^\s<>\)]+)(?=[\s<>\)\.\!,]|$)/g, '<a href="$1" target="_blank" class="text-primary">$1</a>');
+            .replace(/(jgchotirat@gmail\.com)/g, '<a href="mailto:$1" class="text-primary" target="_blank" rel="noopener noreferrer">$1</a>')
+            .replace(/(https?:\/\/[^\s<>\)]+)(?=[\s<>\)\.\!,]|$)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-primary">$1</a>');
     };
 
     return (
@@ -250,44 +151,82 @@ const Chatbot = ({ theme = 'web' }) => {
                 {!isOpen && (
                     <button
                         onClick={() => setIsOpen(true)}
-                        className="btn chatbot-btn rounded-pill px-4 py-3 fw-bold d-flex align-items-center gap-2"
+                        className="btn chatbot-btn rounded-pill px-4 py-3 fw-bold d-flex align-items-center gap-2 shadow-lg"
+                        style={{
+                            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                            color: 'white',
+                            border: 'none',
+                            transition: 'all 0.3s ease'
+                        }}
                     >
                         <span>💼</span>
                         <span>Choti's Agent</span>
+                        {apiStatus === 'error' && (
+                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                                !
+                            </span>
+                        )}
                     </button>
                 )}
 
                 {isOpen && (
-                    <div className="chatbot-window rounded shadow-lg d-flex flex-column" style={{ width: '350px', height: '500px' }}>
+                    <div className="chatbot-window rounded shadow-lg d-flex flex-column"
+                        style={{
+                            width: '350px',
+                            height: '500px',
+                            background: 'white',
+                            border: '1px solid #e0e0e0'
+                        }}>
+
                         {/* Header */}
-                        <div className="chatbot-header rounded-top p-3 d-flex justify-content-between align-items-center">
+                        <div className="chatbot-header rounded-top p-3 d-flex justify-content-between align-items-center"
+                            style={{
+                                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                                color: 'white'
+                            }}>
                             <div>
                                 <h6 className="mb-0 fw-bold">💼 Choti's Career Agent</h6>
-                                <small className="opacity-75">Let's start a conversation!</small>
+                                <small className="opacity-75 d-flex align-items-center gap-1">
+                                    {apiStatus === 'healthy' && <span className="text-success">●</span>}
+                                    {apiStatus === 'error' && <span className="text-warning">●</span>}
+                                    {apiStatus === 'unknown' && <span className="text-secondary">●</span>}
+                                    Powered by Gemini AI
+                                </small>
                             </div>
                             <button
                                 onClick={() => setIsOpen(false)}
                                 className="btn btn-sm text-white opacity-75 hover-opacity-100"
-                                style={{ background: 'rgba(255,255,255,0.2)' }}
+                                style={{
+                                    background: 'rgba(255,255,255,0.2)',
+                                    border: 'none',
+                                    borderRadius: '50%',
+                                    width: '30px',
+                                    height: '30px'
+                                }}
                             >
                                 ×
                             </button>
                         </div>
 
                         {/* Messages */}
-                        <div className="chatbot-messages flex-grow-1 p-3 overflow-auto">
+                        <div className="chatbot-messages flex-grow-1 p-3 overflow-auto"
+                            style={{ backgroundColor: '#f8f9fa' }}>
                             {messages.map((message, index) => (
                                 <div key={index} className={`mb-3 ${message.type === 'user' ? 'text-end' : ''}`}>
                                     <div
                                         className={`d-inline-block px-3 py-2 rounded small ${message.type === 'user'
-                                            ? 'user-message rounded-bottom-start-0'
-                                            : 'bot-message rounded-bottom-end-0 shadow-sm'
+                                            ? 'text-white rounded-bottom-start-0'
+                                            : 'bg-white rounded-bottom-end-0 shadow-sm'
                                             }`}
                                         style={{
                                             maxWidth: '85%',
                                             wordBreak: 'break-word',
                                             overflowWrap: 'break-word',
-                                            hyphens: 'auto'
+                                            hyphens: 'auto',
+                                            background: message.type === 'user'
+                                                ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+                                                : 'white',
+                                            border: message.type === 'bot' ? '1px solid #e0e0e0' : 'none'
                                         }}
                                         dangerouslySetInnerHTML={{ __html: formatMessage(message.content) }}
                                     />
@@ -296,11 +235,26 @@ const Chatbot = ({ theme = 'web' }) => {
 
                             {isTyping && (
                                 <div className="mb-3">
-                                    <div className="bot-message d-inline-block px-3 py-2 rounded shadow-sm">
-                                        <div className="d-flex gap-1">
-                                            <div className="typing-dot bg-secondary rounded-circle" style={{ width: '8px', height: '8px' }}></div>
-                                            <div className="typing-dot bg-secondary rounded-circle" style={{ width: '8px', height: '8px' }}></div>
-                                            <div className="typing-dot bg-secondary rounded-circle" style={{ width: '8px', height: '8px' }}></div>
+                                    <div className="bg-white d-inline-block px-3 py-2 rounded shadow-sm border">
+                                        <div className="d-flex gap-1 align-items-center">
+                                            <div className="typing-dot bg-secondary rounded-circle"
+                                                style={{
+                                                    width: '8px',
+                                                    height: '8px',
+                                                    animation: 'typing 1.4s infinite ease-in-out'
+                                                }}></div>
+                                            <div className="typing-dot bg-secondary rounded-circle"
+                                                style={{
+                                                    width: '8px',
+                                                    height: '8px',
+                                                    animation: 'typing 1.4s infinite ease-in-out 0.2s'
+                                                }}></div>
+                                            <div className="typing-dot bg-secondary rounded-circle"
+                                                style={{
+                                                    width: '8px',
+                                                    height: '8px',
+                                                    animation: 'typing 1.4s infinite ease-in-out 0.4s'
+                                                }}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -309,7 +263,7 @@ const Chatbot = ({ theme = 'web' }) => {
                         </div>
 
                         {/* Suggested Questions */}
-                        <div className="p-3 border-top" style={{ background: "#f9f9f9" }}>
+                        <div className="p-3 border-top bg-white">
                             {suggestedQuestions.length > 0 && (
                                 <div className="mb-2 d-flex flex-wrap gap-2">
                                     {suggestedQuestions.map((question, idx) => (
@@ -320,34 +274,94 @@ const Chatbot = ({ theme = 'web' }) => {
                                                 sendMessage(question);
                                             }}
                                             className="btn btn-outline-secondary btn-sm rounded-pill"
+                                            style={{ fontSize: '0.75rem' }}
+                                            disabled={isTyping || apiStatus === 'error'}
                                         >
                                             {question}
                                         </button>
                                     ))}
                                 </div>
                             )}
-                            {/* Input + Send Button */}
+
+                            {/* Input Area */}
                             <div className="d-flex gap-2">
                                 <input
                                     type="text"
                                     value={inputValue}
                                     onChange={(e) => setInputValue(e.target.value)}
                                     onKeyPress={handleKeyPress}
-                                    placeholder="Ask about this candidate..."
-                                    className="form-control chatbot-input rounded-pill"
+                                    placeholder={apiStatus === 'error' ? 'Service temporarily unavailable...' : 'Ask about this candidate...'}
+                                    className="form-control rounded-pill"
+                                    style={{
+                                        border: '2px solid #e0e0e0',
+                                        fontSize: '0.9rem'
+                                    }}
+                                    disabled={isTyping || apiStatus === 'error'}
                                 />
                                 <button
                                     onClick={() => sendMessage()}
-                                    className="btn send-btn rounded-circle d-flex align-items-center justify-content-center"
-                                    style={{ width: '45px', height: '45px' }}
+                                    className="btn rounded-circle d-flex align-items-center justify-content-center"
+                                    style={{
+                                        width: '45px',
+                                        height: '45px',
+                                        background: isTyping || apiStatus === 'error'
+                                            ? '#6c757d'
+                                            : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                                        color: 'white',
+                                        border: 'none'
+                                    }}
+                                    disabled={isTyping || !inputValue.trim() || apiStatus === 'error'}
                                 >
-                                    ➤
+                                    {isTyping ? '...' : '➤'}
                                 </button>
                             </div>
+
+                            {/* API Status Indicator */}
+                            {apiStatus === 'error' && (
+                                <div className="mt-2 text-center">
+                                    <small className="text-muted">
+                                        🔄 <a href="https://jgchoti.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-decoration-none">Visit portfolio directly</a>
+                                    </small>
+                                </div>
+                            )}
                         </div>
                     </div>
                 )}
             </div>
+
+            {/* Add CSS animation for typing dots */}
+            <style jsx>{`
+                @keyframes typing {
+                    0%, 60%, 100% {
+                        transform: translateY(0);
+                        opacity: 0.4;
+                    }
+                    30% {
+                        transform: translateY(-10px);
+                        opacity: 1;
+                    }
+                }
+                
+                .chatbot-btn:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important;
+                }
+
+                .chatbot-window {
+                    animation: slideUp 0.3s ease-out;
+                }
+
+                @keyframes slideUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `}</style>
         </>
     );
 };
