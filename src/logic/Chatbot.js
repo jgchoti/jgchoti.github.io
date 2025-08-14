@@ -1,4 +1,3 @@
-// src/components/Chatbot.js - Updated to use external Gemini RAG API
 import React, { useState, useRef, useEffect } from 'react';
 
 const Chatbot = ({ theme = 'web' }) => {
@@ -8,10 +7,9 @@ const Chatbot = ({ theme = 'web' }) => {
     const [isTyping, setIsTyping] = useState(false);
     const [apiStatus, setApiStatus] = useState('unknown'); // 'healthy', 'error', 'unknown'
     const [suggestedQuestions, setSuggestedQuestions] = useState([
-        "What makes Choti unique as a candidate?",
+        "What makes her unique as a candidate?",
         "Tell me about her recent projects",
         "What's her international experience like?",
-        "How can I get in touch with her?"
     ]);
     const messagesEndRef = useRef(null);
     const API_BASE_URL = process.env.REACT_APP_API_URL
@@ -69,19 +67,19 @@ const Chatbot = ({ theme = 'web' }) => {
         setIsTyping(true);
 
         try {
-            console.log('📡 Sending request to Gemini API:', `${API_BASE_URL}/api/chat-rag-gemini`);
+            console.log('📡 Sending request to Gemini API:', `${API_BASE_URL}/api/chat-rag`);
 
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+            const timeoutId = setTimeout(() => controller.abort(), 30000);
 
-            const response = await fetch(`${API_BASE_URL}/api/chat-rag-gemini`, {
+            const response = await fetch(`${API_BASE_URL}/api/chat-rag`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     message: messageToSend,
-                    conversationHistory: messages.slice(-6) // Last 3 exchanges for context
+                    conversationHistory: messages.slice(-6)
                 }),
                 signal: controller.signal
             });
@@ -147,22 +145,16 @@ const Chatbot = ({ theme = 'web' }) => {
 
     return (
         <>
-            <div className="chatbot-container position-fixed" style={{ bottom: '20px', right: '20px', zIndex: 9999 }}>
+            <div className="chatbot-container">
                 {!isOpen && (
                     <button
                         onClick={() => setIsOpen(true)}
                         className="btn chatbot-btn rounded-pill px-4 py-3 fw-bold d-flex align-items-center gap-2 shadow-lg"
-                        style={{
-                            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                            color: 'white',
-                            border: 'none',
-                            transition: 'all 0.3s ease'
-                        }}
                     >
                         <span>💼</span>
                         <span>Choti's Agent</span>
                         {apiStatus === 'error' && (
-                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                            <span className="error-badge badge rounded-pill bg-warning">
                                 !
                             </span>
                         )}
@@ -170,64 +162,31 @@ const Chatbot = ({ theme = 'web' }) => {
                 )}
 
                 {isOpen && (
-                    <div className="chatbot-window rounded shadow-lg d-flex flex-column"
-                        style={{
-                            width: '350px',
-                            height: '500px',
-                            background: 'white',
-                            border: '1px solid #e0e0e0'
-                        }}>
-
+                    <div className="chatbot-window rounded shadow-lg d-flex flex-column">
                         {/* Header */}
-                        <div className="chatbot-header rounded-top p-3 d-flex justify-content-between align-items-center"
-                            style={{
-                                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                                color: 'white'
-                            }}>
+                        <div className="chatbot-header rounded-top p-3 d-flex justify-content-between align-items-center">
                             <div>
-                                <h6 className="mb-0 fw-bold">💼 Choti's Career Agent</h6>
+                                <h6 className="mb-0 fw-bold">💼 Choti's Agent</h6>
                                 <small className="opacity-75 d-flex align-items-center gap-1">
-                                    {apiStatus === 'healthy' && <span className="text-success">●</span>}
-                                    {apiStatus === 'error' && <span className="text-warning">●</span>}
-                                    {apiStatus === 'unknown' && <span className="text-secondary">●</span>}
+                                    <span className={`api-status-${apiStatus}`}>●</span>
                                     Powered by Gemini AI
                                 </small>
                             </div>
                             <button
                                 onClick={() => setIsOpen(false)}
-                                className="btn btn-sm text-white opacity-75 hover-opacity-100"
-                                style={{
-                                    background: 'rgba(255,255,255,0.2)',
-                                    border: 'none',
-                                    borderRadius: '50%',
-                                    width: '30px',
-                                    height: '30px'
-                                }}
+                                className="btn btn-sm text-white opacity-75 hover-opacity-100 close-btn"
                             >
                                 ×
                             </button>
                         </div>
 
                         {/* Messages */}
-                        <div className="chatbot-messages flex-grow-1 p-3 overflow-auto"
-                            style={{ backgroundColor: '#f8f9fa' }}>
+                        <div className="chatbot-messages flex-grow-1 p-3 overflow-auto">
                             {messages.map((message, index) => (
-                                <div key={index} className={`mb-3 ${message.type === 'user' ? 'text-end' : ''}`}>
+                                <div key={index} className={`mb-3 ${message.type === 'user' ? 'message-user' : 'message-bot'}`}>
                                     <div
-                                        className={`d-inline-block px-3 py-2 rounded small ${message.type === 'user'
-                                            ? 'text-white rounded-bottom-start-0'
-                                            : 'bg-white rounded-bottom-end-0 shadow-sm'
+                                        className={`d-inline-block px-3 py-2 rounded small message-content ${message.type === 'user' ? 'user-message rounded-bottom-start-0' : 'bot-message rounded-bottom-end-0 shadow-sm'
                                             }`}
-                                        style={{
-                                            maxWidth: '85%',
-                                            wordBreak: 'break-word',
-                                            overflowWrap: 'break-word',
-                                            hyphens: 'auto',
-                                            background: message.type === 'user'
-                                                ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-                                                : 'white',
-                                            border: message.type === 'bot' ? '1px solid #e0e0e0' : 'none'
-                                        }}
                                         dangerouslySetInnerHTML={{ __html: formatMessage(message.content) }}
                                     />
                                 </div>
@@ -235,26 +194,11 @@ const Chatbot = ({ theme = 'web' }) => {
 
                             {isTyping && (
                                 <div className="mb-3">
-                                    <div className="bg-white d-inline-block px-3 py-2 rounded shadow-sm border">
+                                    <div className="typing-indicator d-inline-block px-3 py-2 rounded">
                                         <div className="d-flex gap-1 align-items-center">
-                                            <div className="typing-dot bg-secondary rounded-circle"
-                                                style={{
-                                                    width: '8px',
-                                                    height: '8px',
-                                                    animation: 'typing 1.4s infinite ease-in-out'
-                                                }}></div>
-                                            <div className="typing-dot bg-secondary rounded-circle"
-                                                style={{
-                                                    width: '8px',
-                                                    height: '8px',
-                                                    animation: 'typing 1.4s infinite ease-in-out 0.2s'
-                                                }}></div>
-                                            <div className="typing-dot bg-secondary rounded-circle"
-                                                style={{
-                                                    width: '8px',
-                                                    height: '8px',
-                                                    animation: 'typing 1.4s infinite ease-in-out 0.4s'
-                                                }}></div>
+                                            <div className="typing-dot bg-secondary rounded-circle"></div>
+                                            <div className="typing-dot bg-secondary rounded-circle"></div>
+                                            <div className="typing-dot bg-secondary rounded-circle"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -263,7 +207,7 @@ const Chatbot = ({ theme = 'web' }) => {
                         </div>
 
                         {/* Suggested Questions */}
-                        <div className="p-3 border-top bg-white">
+                        <div className="input-area p-3">
                             {suggestedQuestions.length > 0 && (
                                 <div className="mb-2 d-flex flex-wrap gap-2">
                                     {suggestedQuestions.map((question, idx) => (
@@ -273,8 +217,7 @@ const Chatbot = ({ theme = 'web' }) => {
                                                 setSuggestedQuestions(prev => prev.filter((_, i) => i !== idx));
                                                 sendMessage(question);
                                             }}
-                                            className="btn btn-outline-secondary btn-sm rounded-pill"
-                                            style={{ fontSize: '0.75rem' }}
+                                            className="btn btn-outline-secondary btn-sm rounded-pill suggested-question"
                                             disabled={isTyping || apiStatus === 'error'}
                                         >
                                             {question}
@@ -291,25 +234,13 @@ const Chatbot = ({ theme = 'web' }) => {
                                     onChange={(e) => setInputValue(e.target.value)}
                                     onKeyPress={handleKeyPress}
                                     placeholder={apiStatus === 'error' ? 'Service temporarily unavailable...' : 'Ask about this candidate...'}
-                                    className="form-control rounded-pill"
-                                    style={{
-                                        border: '2px solid #e0e0e0',
-                                        fontSize: '0.9rem'
-                                    }}
+                                    className="form-control chatbot-input rounded-pill"
                                     disabled={isTyping || apiStatus === 'error'}
                                 />
                                 <button
                                     onClick={() => sendMessage()}
-                                    className="btn rounded-circle d-flex align-items-center justify-content-center"
-                                    style={{
-                                        width: '45px',
-                                        height: '45px',
-                                        background: isTyping || apiStatus === 'error'
-                                            ? '#6c757d'
-                                            : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                                        color: 'white',
-                                        border: 'none'
-                                    }}
+                                    className="btn send-btn rounded-circle d-flex align-items-center justify-content-center"
+                                    style={{ width: '45px', height: '45px' }}
                                     disabled={isTyping || !inputValue.trim() || apiStatus === 'error'}
                                 >
                                     {isTyping ? '...' : '➤'}
@@ -318,9 +249,9 @@ const Chatbot = ({ theme = 'web' }) => {
 
                             {/* API Status Indicator */}
                             {apiStatus === 'error' && (
-                                <div className="mt-2 text-center">
+                                <div className="api-status-indicator">
                                     <small className="text-muted">
-                                        🔄 <a href="https://jgchoti.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-decoration-none">Visit portfolio directly</a>
+                                        🔄 <a href="https://jgchoti.vercel.app/" target="_blank" rel="noopener noreferrer">Visit portfolio directly</a>
                                     </small>
                                 </div>
                             )}
@@ -328,40 +259,6 @@ const Chatbot = ({ theme = 'web' }) => {
                     </div>
                 )}
             </div>
-
-            {/* Add CSS animation for typing dots */}
-            <style jsx>{`
-                @keyframes typing {
-                    0%, 60%, 100% {
-                        transform: translateY(0);
-                        opacity: 0.4;
-                    }
-                    30% {
-                        transform: translateY(-10px);
-                        opacity: 1;
-                    }
-                }
-                
-                .chatbot-btn:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important;
-                }
-
-                .chatbot-window {
-                    animation: slideUp 0.3s ease-out;
-                }
-
-                @keyframes slideUp {
-                    from {
-                        opacity: 0;
-                        transform: translateY(20px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-            `}</style>
         </>
     );
 };

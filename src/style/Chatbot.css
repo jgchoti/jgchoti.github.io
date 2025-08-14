@@ -4,6 +4,7 @@
   right: 20px !important;
   z-index: 9999 !important;
 }
+
 .chatbot-btn {
   background: var(--primary-color) !important;
   color: var(--main-bg-color) !important;
@@ -13,113 +14,222 @@
   transition: all 0.3s ease !important;
   font-size: 18px;
 }
+
 .chatbot-btn:hover {
-  transform: scale(1.05) !important;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
   color: var(--main-bg-color) !important;
 }
+
 .chatbot-window {
   background: var(--main-bg-color) !important;
   border: 1px solid var(--primary-color) !important;
   font-family: var(--font-family) !important;
+  animation: slideUp 0.3s ease-out;
+  width: 350px !important;
+  height: 500px !important;
 }
+
 .chatbot-header {
   background: var(--primary-color) !important;
   color: var(--main-bg-color) !important;
   font-family: var(--head-font-family) !important;
 }
+
 .chatbot-messages {
-  background: color-mix(
-    in srgb,
-    var(--main-bg-color) 80%,
-    transparent
-  ) !important;
+  background: var(--accent-color) !important;
   font-family: var(--font-family) !important;
-  overflow-x: hidden !important;
   overflow-x: hidden !important;
   word-break: break-word !important;
 }
+
 .user-message {
   background: var(--primary-color) !important;
   color: var(--main-bg-color) !important;
+  border: none !important;
 }
+
 .bot-message {
   background: var(--main-bg-color) !important;
   color: var(--primary-color) !important;
-  border-left: 4px solid var(--primary-color) !important;
+  border: 1px solid var(--primary-color) !important;
 }
+
 .chatbot-input {
   background: var(--main-bg-color) !important;
   color: var(--primary-color) !important;
-  border: 1px solid var(--primary-color) !important;
+  border: 2px solid var(--primary-color) !important;
   font-family: var(--font-family) !important;
+  font-size: 0.9rem !important;
 }
+
 .chatbot-input:focus {
   border-color: var(--primary-color) !important;
   box-shadow: 0 0 0 0.2rem
     color-mix(in srgb, var(--primary-color) 25%, transparent) !important;
 }
+
 .send-btn {
   background: var(--primary-color) !important;
   color: var(--main-bg-color) !important;
   border: none !important;
 }
+
+.send-btn:disabled {
+  background: var(--secondary-color) !important;
+  opacity: 0.6 !important;
+}
+
 .setup-area {
   background: var(--main-bg-color) !important;
   border-bottom: 1px solid var(--primary-color) !important;
   color: var(--primary-color) !important;
   font-family: var(--font-family) !important;
 }
+
 .setup-btn {
   background: var(--primary-color) !important;
   color: var(--main-bg-color) !important;
   border: none !important;
   font-family: var(--font-family) !important;
 }
-@keyframes bounce {
+
+/* Typing animation */
+@keyframes typing {
   0%,
-  80%,
+  60%,
   100% {
-    transform: scale(0);
+    transform: translateY(0);
+    opacity: 0.4;
   }
-  40% {
-    transform: scale(1);
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
   }
 }
+
 .typing-dot {
-  animation: bounce 1.4s infinite ease-in-out;
+  animation: typing 1.4s infinite ease-in-out;
+  width: 8px;
+  height: 8px;
 }
+
 .typing-dot:nth-child(1) {
   animation-delay: -0.32s;
 }
+
 .typing-dot:nth-child(2) {
-  animation-delay: -0.16s;
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Status indicators */
+.api-status-healthy {
+  color: var(--secondary-color);
+}
+
+.api-status-error {
+  color: #ffc107;
+}
+
+.api-status-unknown {
+  color: var(--secondary-color);
+}
+
+/* Suggested questions */
+.suggested-question {
+  font-size: 0.75rem;
+}
+
+.suggested-question:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Close button */
+.close-btn {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Error status badge */
+.error-badge {
+  position: absolute !important;
+  top: 0 !important;
+  left: 100% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* API status indicator */
+.api-status-indicator {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.api-status-indicator a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+/* Message styling */
+.message-user {
+  text-align: right;
+}
+
+.message-bot {
+  text-align: left;
+}
+
+.message-content {
+  max-width: 85%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Input area */
+.input-area {
+  border-top: 1px solid var(--primary-color);
+  background: var(--main-bg-color);
+}
+
+/* Typing indicator */
+.typing-indicator {
+  background: var(--main-bg-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 0.375rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
 .bot-message a,
 .user-message a {
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-  display: inline !important;
-  max-width: none !important;
-  text-decoration: underline;
-  color: inherit;
+  color: inherit !important;
+  text-decoration: underline !important;
 }
 
-.bot-message a {
-  color: var(--primary-color) !important;
-  opacity: 0.8;
-}
-
-.user-message a {
-  color: var(--main-bg-color) !important;
-  opacity: 0.9;
-}
-
-.bot-message,
-.user-message {
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-  max-width: 85% !important;
-  box-sizing: border-box !important;
+.bot-message a:hover,
+.user-message a:hover {
+  opacity: 0.8 !important;
 }
