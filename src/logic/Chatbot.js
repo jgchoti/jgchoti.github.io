@@ -75,7 +75,7 @@ const Chatbot = ({ theme = 'web' }) => {
             const response = await fetch(`${API_BASE_URL}/api/chat-rag`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                        'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     message: messageToSend,
