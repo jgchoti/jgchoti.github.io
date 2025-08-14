@@ -162,8 +162,8 @@ const Chatbot = ({ theme = 'web' }) => {
             .replace(/\n/g, '<br>')
             // Handle email addresses
             .replace(/(jgchotirat@gmail\.com)/g, '<a href="mailto:$1" class="text-primary" target="_blank" rel="noopener noreferrer">$1</a>')
-            // Handle standalone URLs (but not ones already in <a> tags)
-            .replace(/(?<!href=["'])(?<!<a[^>]*>)(https?:\/\/[^\s<>\)\]\!,]+)(?![^<]*<\/a>)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-primary">$1</a>')
+            // Handle standalone URLs (improved to exclude trailing punctuation)
+            .replace(/(?<!href=["'])(?<!<a[^>]*>)(https?:\/\/[^\s<>\)\]\!,]+?)(?=[\s<>\)\]\.\!,;:]|$)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-primary">$1</a>')
             // Clean up any remaining malformed brackets around links
             .replace(/\]\(/g, '')
             .replace(/\[([^\]]*)\]/g, '$1');
