@@ -12,7 +12,24 @@ const Chatbot = ({ theme = 'web' }) => {
         "What's her international experience like?",
     ]);
     const messagesEndRef = useRef(null);
-    const API_BASE_URL = process.env.REACT_APP_API_URL
+
+    // Auto-detect API URL based on environment
+    const getApiUrl = () => {
+        // If in development
+        if (window.location.hostname === 'localhost') {
+            return 'http://localhost:3000';
+        }
+
+        // If on GitHub Pages production
+        if (window.location.hostname === 'jgchoti.github.io') {
+            return 'https://jgchoti-api.vercel.app';
+        }
+
+        // Fallback to production API
+        return process.env.REACT_APP_API_URL || 'https://jgchoti-api.vercel.app';
+    };
+
+    const API_BASE_URL = getApiUrl();
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -75,7 +92,7 @@ const Chatbot = ({ theme = 'web' }) => {
             const response = await fetch(`${API_BASE_URL}/api/chat-rag`, {
                 method: 'POST',
                 headers: {
-                        'Content-Type': 'application/json',
+                    'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     message: messageToSend,
@@ -137,10 +154,19 @@ const Chatbot = ({ theme = 'web' }) => {
 
     const formatMessage = (content) => {
         return content
+            // Clean up malformed markdown-style links first
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary">$1</a>')
+            // Handle bold text
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            // Convert line breaks
             .replace(/\n/g, '<br>')
+            // Handle email addresses
             .replace(/(jgchotirat@gmail\.com)/g, '<a href="mailto:$1" class="text-primary" target="_blank" rel="noopener noreferrer">$1</a>')
-            .replace(/(https?:\/\/[^\s<>\)]+)(?=[\s<>\)\.\!,]|$)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-primary">$1</a>');
+            // Handle standalone URLs (but not ones already in <a> tags)
+            .replace(/(?<!href=["'])(?<!<a[^>]*>)(https?:\/\/[^\s<>\)\]\!,]+)(?![^<]*<\/a>)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-primary">$1</a>')
+            // Clean up any remaining malformed brackets around links
+            .replace(/\]\(/g, '')
+            .replace(/\[([^\]]*)\]/g, '$1');
     };
 
     return (
@@ -246,15 +272,6 @@ const Chatbot = ({ theme = 'web' }) => {
                                     {isTyping ? '...' : '➤'}
                                 </button>
                             </div>
-
-                            {/* API Status Indicator */}
-                            {apiStatus === 'error' && (
-                                <div className="api-status-indicator">
-                                    <small className="text-muted">
-                                        🔄 <a href="https://jgchoti.vercel.app/" target="_blank" rel="noopener noreferrer">Visit portfolio directly</a>
-                                    </small>
-                                </div>
-                            )}
                         </div>
                     </div>
                 )}
