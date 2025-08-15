@@ -19,16 +19,16 @@ import dictionaryImage from '../assets/images/dictionary.png';
 import dictionaryDarkImage from '../assets/images/dictionary_dark.png';
 // import cvImage from '../assets/images/cv.png';
 // import cvDarkImage from '../assets/images/cv_dark.png';
-import gameImage from '../assets/images/game_light.png';
-import gameImageAlt from '../assets/images/game_dark.png';
+import gameImage from '../assets/images/game_dark.png';
+import gameImageAlt from '../assets/images/game_light.png';
 import dashboardImage from '../assets/images/dashboard_dark.png';
 import dashboardImageAlt from '../assets/images/dashboard_light.png';
 import jakobeWebsiteImage from '../assets/images/jakobeWebsite_light.png'
 import jakobeWebsiteImageAlt from '../assets/images/jakobeWebsite.png'
-import tlaasImage from '../assets/images/tlaas_dark.png'
-import tlaasImageAlt from '../assets/images/tlaas_light.png'
+import tlaasImage from '../assets/images/tlaas_light.png'
+import tlaasImageAlt from '../assets/images/tlaas_dark.png'
 
-// Importing logos
+// Importing logos  
 import htmlLogo from '../assets/logos/html.png';
 import cssLogo from '../assets/logos/css.png';
 import jsLogo from '../assets/logos/js.png';
@@ -67,25 +67,7 @@ export const projectData = [
             { name: 'GitHub', logoUrl: gitHubLogo }
         ]
     },
-    {
-        name: "Weather App",
-        type: "web",
-        description: "In this project, I got into the world of live API to make a dynamic weather app. I aimed for a design that's user-friendly. User can get the latest on weather conditions, forecasts, and what's happening in their area, all thanks to the API integration.",
-        details: "My primary focus was on integrating weather APIs to ensure users receive up-to-date and accurate weather information. This involved learning how to effectively manage data from external sources and present it in a user-friendly format within the application. By mastering API interactions, I not only enhanced my technical skills in JavaScript but also learned the importance of data integrity and real-time updates in user-facing applications. Moving forward, I plan to further refine this project by exploring additional APIs and improving the overall user experience.",
-        imageUrl: weatherImage,
-        alternate_image: weatherImageAlt,
-        linkUrl: "https://weather2023.netlify.app/",
-        githubUrl: 'https://github.com/jgchoti/weather-app',
-        linkTitle: "Weather App Project",
-        shortDescription: "Exploring the Power of Live API Integration",
-        technologies: [
-            { name: 'HTML', logoUrl: htmlLogo },
-            { name: 'CSS', logoUrl: cssLogo },
-            { name: 'JavaScript', logoUrl: jsLogo },
-            { name: 'GitHub', logoUrl: gitHubLogo },
-            { name: 'API', logoUrl: apiLogo }
-        ]
-    },
+
     {
 
         name: "Weather App 2.0",
@@ -245,7 +227,7 @@ export const projectData = [
     {
 
         name: "Monitoring Dashboard",
-        type: "web",
+        type: "data",
         description: "A data visualization tool designed to monitor coral health using data from Smart Buoy sensors.",
         details: "Developed as part of Tech4Sustainable Futures Challenge's presentation, this dashboard leverages Chart.js for real-time data visualization and Leaflet.js for interactive mapping. It provides insights into key coral health metrics like temperature and pH levels, helping communities and researchers make informed decisions to protect coral reefs.",
         imageUrl: dashboardImage,
@@ -325,4 +307,24 @@ export const projectData = [
 //         { name: 'React', logoUrl: reactLogo },
 //         { name: 'Vite', logoUrl: viteLogo }
 //     ]
+// }
+
+// {
+//     name: "Weather App",
+//         type: "web",
+//             description: "In this project, I got into the world of live API to make a dynamic weather app. I aimed for a design that's user-friendly. User can get the latest on weather conditions, forecasts, and what's happening in their area, all thanks to the API integration.",
+//                 details: "My primary focus was on integrating weather APIs to ensure users receive up-to-date and accurate weather information. This involved learning how to effectively manage data from external sources and present it in a user-friendly format within the application. By mastering API interactions, I not only enhanced my technical skills in JavaScript but also learned the importance of data integrity and real-time updates in user-facing applications. Moving forward, I plan to further refine this project by exploring additional APIs and improving the overall user experience.",
+//                     imageUrl: weatherImage,
+//                         alternate_image: weatherImageAlt,
+//                             linkUrl: "https://weather2023.netlify.app/",
+//                                 githubUrl: 'https://github.com/jgchoti/weather-app',
+//                                     linkTitle: "Weather App Project",
+//                                         shortDescription: "Exploring the Power of Live API Integration",
+//                                             technologies: [
+//                                                 { name: 'HTML', logoUrl: htmlLogo },
+//                                                 { name: 'CSS', logoUrl: cssLogo },
+//                                                 { name: 'JavaScript', logoUrl: jsLogo },
+//                                                 { name: 'GitHub', logoUrl: gitHubLogo },
+//                                                 { name: 'API', logoUrl: apiLogo }
+//                                             ]
 // }
