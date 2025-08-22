@@ -27,6 +27,8 @@ import jakobeWebsiteImage from '../assets/images/jakobeWebsite_light.png'
 import jakobeWebsiteImageAlt from '../assets/images/jakobeWebsite.png'
 import tlaasImage from '../assets/images/tlaas_light.png'
 import tlaasImageAlt from '../assets/images/tlaas_dark.png'
+import sqlImage from '../assets/images/sql_dark.png'
+import sqlImageAlt from '../assets/images/sql_light.png'
 
 // Importing logos  
 import htmlLogo from '../assets/logos/html.png';
@@ -47,6 +49,12 @@ import pythonLogo from '../assets/logos/python.png'
 import renderLogo from '../assets/logos/render.png'
 import dockerLogo from '../assets/logos/docker.png'
 import fastapiLogo from '../assets/logos/FastAPI.png'
+import flaskLogo from '../assets/logos/flask.svg?asset';
+import muiLogo from '../assets/logos/mui.svg'
+import langChainLogo from '../assets/logos/langchain.svg'
+import geminiLogo from '../assets/logos/gemini.svg'
+import sqlalchemyLogo from '../assets/logos/sqlalchemy.svg'
+
 
 export const projectData = [
     {
@@ -282,7 +290,30 @@ export const projectData = [
             { name: 'Render', logoUrl: renderLogo },
             { name: 'GitHub', logoUrl: gitHubLogo }
         ]
+    }, {
+        name: "SQL Assistant",
+        type: "data",
+        description: "Convert natural language questions into SQL queries and get instant results from your database.",
+        details: "Built with React, Flask, and LangChain with Google Gemini AI. Supports database uploads (.sqlite/.db), AI-generated SQL queries, real-time query execution, and intelligent data analysis. Deployed on Vercel (frontend) and Render (backend).",
+        imageUrl: sqlImage,
+        alternate_image: sqlImageAlt,
+        linkUrl: "https://sql-assist.vercel.app",
+        githubUrl: "https://github.com/jgchoti/nl-to-sql",
+        linkTitle: "Live Demo & Try It",
+        shortDescription: "Ask questions in plain English, get AI-generated SQL queries, and see results instantly.",
+        technologies: [
+            { name: 'Python', logoUrl: pythonLogo },
+            { name: 'Flask', logoUrl: flaskLogo },
+            { name: 'React', logoUrl: reactLogo },
+            { name: 'Material-UI', logoUrl: muiLogo },
+            { name: 'LangChain', logoUrl: langChainLogo },
+            { name: 'Google Gemini', logoUrl: geminiLogo },
+            { name: 'SQLAlchemy', logoUrl: sqlalchemyLogo },
+            { name: 'Render', logoUrl: renderLogo },
+            { name: 'GitHub', logoUrl: gitHubLogo }
+        ]
     }
+
 
 
 ].reverse();

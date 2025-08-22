@@ -1,4 +1,15 @@
 @media (max-width: 900px) {
+  ul {
+    padding: 0 8px;
+  }
+
+  .navbar-header {
+    top: 16px;
+  }
+  .navbar-toggle-wrapper {
+    top: 6px;
+  }
+
   footer svg {
     margin-right: 10px;
     margin-left: 10px;
@@ -65,7 +76,7 @@
   .hero {
     padding-bottom: 0;
     margin-top: 0;
-    padding-top: 130px;
+    padding-top: 80px;
   }
 
   .hero h1,
@@ -78,7 +89,7 @@
   }
 
   .hero p {
-    font-size: 24px;
+    font-size: 28px;
     margin: 80px auto 0;
   }
 
@@ -167,12 +178,12 @@
   }
 
   .technology-sum {
-    padding-bottom: 80px;
+    padding: 12px 12px;
   }
 
   .technology-sum .tech-badge {
-    margin-top: 8px;
-    margin-left: 12px;
+    margin: 12px;
+    width: 38px;
   }
 
   .code-box {
