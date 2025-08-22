@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.71091c60.css",
-    "main.js": "/static/js/main.8f3dc24e.js",
+    "main.css": "/static/css/main.eb898c92.css",
+    "main.js": "/static/js/main.3c1b8d51.js",
     "static/media/studio_ghibli.png": "/static/media/studio_ghibli.db7f075aacbd9f62f22e.png",
     "static/media/studio_ghibli_light.png": "/static/media/studio_ghibli_light.de235751ef6b2737fd6f.png",
     "static/media/weather_dark.png": "/static/media/weather_dark.5bbdb08db0262f2b3b60.png",
@@ -19,11 +19,13 @@
     "static/media/game_dark.png": "/static/media/game_dark.ee922de41e6b40f2d984.png",
     "static/media/game_light.png": "/static/media/game_light.21004cef80401a37a479.png",
     "static/media/dictionary_dark.png": "/static/media/dictionary_dark.67e97951061d9602a8e8.png",
+    "static/media/sql_light.png": "/static/media/sql_light.5b19dc663d91f87a0957.png",
     "static/media/dictionary.png": "/static/media/dictionary.e028dc2865621e1557d4.png",
     "static/media/tlaas_dark.png": "/static/media/tlaas_dark.2b068ad46410af1a13c2.png",
     "static/media/tlaas_light.png": "/static/media/tlaas_light.7023c8750f4a325734ba.png",
     "static/media/dashboard_dark.png": "/static/media/dashboard_dark.ea8c428161a9c809a715.png",
     "static/media/dashboard_light.png": "/static/media/dashboard_light.cfb7e4cc1b6c4593be06.png",
+    "static/media/sql_dark.png": "/static/media/sql_dark.c76005b55b9d733fc123.png",
     "static/media/fietsateljee_berchem.png": "/static/media/fietsateljee_berchem.97b2c68b59d91446715c.png",
     "static/media/potter_dark.png": "/static/media/potter_dark.88daded497e038730939.png",
     "static/media/fietsateljee_berchem_light.png": "/static/media/fietsateljee_berchem_light.37e5b6b06bdd1dc8675c.png",
@@ -48,14 +50,19 @@
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
     "static/media/nodejs.png": "/static/media/nodejs.e328955d6bbbf3ebc72b.png",
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
+    "static/media/gemini.svg": "/static/media/gemini.b60079fb21481bbb37b8eb65c1ee07e4.svg",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
+    "static/media/langchain.svg": "/static/media/langchain.eb6c913126d16edb13f5c8e6254f726a.svg",
+    "static/media/flask.svg?asset": "/static/media/flask.3361aadfecab0af931a90d11d242be71.svg",
+    "static/media/sqlalchemy.svg": "/static/media/sqlalchemy.b3ab4bf55b751f5b3d3654e24d6a25fa.svg",
     "static/media/Chart.js_logo.svg": "/static/media/Chart.js_logo.609a2dc9742df4252749dc4bb2fb9350.svg",
     "index.html": "/index.html",
-    "main.71091c60.css.map": "/static/css/main.71091c60.css.map",
-    "main.8f3dc24e.js.map": "/static/js/main.8f3dc24e.js.map"
+    "static/media/mui.svg": "/static/media/mui.fd510ed8518b192069590b04e2e6348a.svg",
+    "main.eb898c92.css.map": "/static/css/main.eb898c92.css.map",
+    "main.3c1b8d51.js.map": "/static/js/main.3c1b8d51.js.map"
   },
   "entrypoints": [
-    "static/css/main.71091c60.css",
-    "static/js/main.8f3dc24e.js"
+    "static/css/main.eb898c92.css",
+    "static/js/main.3c1b8d51.js"
   ]
 }
