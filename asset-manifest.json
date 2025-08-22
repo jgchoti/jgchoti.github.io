@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.eb898c92.css",
-    "main.js": "/static/js/main.3c1b8d51.js",
+    "main.js": "/static/js/main.23c314eb.js",
     "static/media/studio_ghibli.png": "/static/media/studio_ghibli.db7f075aacbd9f62f22e.png",
     "static/media/studio_ghibli_light.png": "/static/media/studio_ghibli_light.de235751ef6b2737fd6f.png",
     "static/media/weather_dark.png": "/static/media/weather_dark.5bbdb08db0262f2b3b60.png",
@@ -59,10 +59,10 @@
     "index.html": "/index.html",
     "static/media/mui.svg": "/static/media/mui.fd510ed8518b192069590b04e2e6348a.svg",
     "main.eb898c92.css.map": "/static/css/main.eb898c92.css.map",
-    "main.3c1b8d51.js.map": "/static/js/main.3c1b8d51.js.map"
+    "main.23c314eb.js.map": "/static/js/main.23c314eb.js.map"
   },
   "entrypoints": [
     "static/css/main.eb898c92.css",
-    "static/js/main.3c1b8d51.js"
+    "static/js/main.23c314eb.js"
   ]
 }
