@@ -10,7 +10,6 @@ body {
   padding-bottom: 0;
   text-align: center;
   background-color: var(--main-bg-color);
-  min-height: 50svh;
 }
 
 .content-wrapper {
@@ -52,23 +51,12 @@ body {
   border-radius: 10px;
 }
 
-.tab-container {
-  width: 100%;
-  overflow: hidden;
-  /* box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075),
-    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075); */
-  display: flex;
-  flex-direction: column;
-}
 .tab-style {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   list-style: none;
-  padding: 20px auto 0;
+  padding: 0 10px;
   margin: 0;
   font-weight: 300;
   font-size: 18px;
@@ -78,17 +66,14 @@ body {
 }
 
 .tab-style li {
-  flex: 0 1 auto;
-  white-space: nowrap;
+  flex: 1;
   min-width: 60px;
   text-align: center;
-  padding: 8px 20%;
+  padding: 8px 0;
+  margin: 0;
   border-radius: 10px 10px 0 0;
   box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075),
-    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+    0 2px 2px hsl(0deg 0% 0% / 0.075);
   cursor: pointer;
   position: relative;
   transition: all 0.3s ease-in-out;

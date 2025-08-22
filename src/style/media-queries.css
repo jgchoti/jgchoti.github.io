@@ -81,7 +81,7 @@
 
   .hero h1,
   .hero h2 {
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 300;
     padding-left: 30px;
     padding-right: 30px;
@@ -89,7 +89,7 @@
   }
 
   .hero p {
-    font-size: 28px;
+    font-size: 26px;
     margin: 80px auto 0;
   }
 
@@ -194,10 +194,6 @@
   .sub-header-text h3 {
     font-size: 24px;
   }
-
-  .tab-style li {
-    padding: 8px 12%;
-  }
 }
 
 @media (max-width: 400px) {
@@ -207,7 +203,7 @@
   }
 
   .hero h1 {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .technology-text h3 {
