@@ -84,3 +84,89 @@ body {
   background-color: var(--secondary-color);
   border-radius: 1px;
 }
+
+/* Project Filtering Styles */
+.filter-status {
+  animation: slideDown 0.3s ease-out;
+  color: var(--primary-color);
+  color: var(--text-main);
+  padding: 12px 24px;
+  margin-bottom: 20px;
+  border-radius: "8px";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-family);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-item {
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.5s ease-out;
+  animation-delay: index * 0.1;
+  animation-fill-mode: both;
+}
+
+/* Filter button hover effect */
+.filter-status button:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transform: scale(1.05);
+}
+
+/* Ensure tech tags work with your existing theme */
+.tech-tag {
+  background-color: var(--primary-color);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.tech-tag.tech-tag--selected {
+  box-shadow: 0 0 0 2px var(--accent-color);
+  font-weight: bold;
+}
+
+.filter-status {
+  background-color: var(--primary-color);
+  opacity: 0.8;
+  margin-top: 16px;
+  border-radius: 12px;
+  color: var(--text-main);
+  padding: "12px 24px";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-family);
+}
+
+.filter-status p {
+  margin: 0;
+}

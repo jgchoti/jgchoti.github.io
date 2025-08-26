@@ -1,13 +1,29 @@
 import React from 'react';
 import TechnologyBadge from './TechnologyBadge';
+import ClickableTechTag from './ClickableTechTag';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faDisplay } from '@fortawesome/free-solid-svg-icons'
 import { faMedium } from '@fortawesome/free-brands-svg-icons'
 
-function ProjectContent({ name, description, details, imageUrl, linkUrl, linkTitle, index, githubUrl, webUrl, blogUrl, technologies }) {
+function ProjectContent({
+    name,
+    description,
+    details,
+    imageUrl,
+    linkUrl,
+    linkTitle,
+    index,
+    githubUrl,
+    webUrl,
+    blogUrl,
+    technologies,
+    onTechClick, // Add this prop
+    activeFilter // Optional: to highlight selected tech
+}) {
     const id = name.split(' ').join('').toLowerCase();
     const isEvenProject = index % 2 === 0;
+
     return (
         <div className="container">
             <div className="d-flex flex-column flex-md-row reveal">
@@ -16,17 +32,20 @@ function ProjectContent({ name, description, details, imageUrl, linkUrl, linkTit
                 </div>
                 <div className={`col-lg-6 mt-3 description ${isEvenProject ? 'order-md-last order-sm-last' : 'order-md-first order-sm-last'}`}>
                     <h2 className="project-name">{name}</h2>
+
                     <h3>Technologies Used:</h3>
-                    <div className='project-technologies d-flex justify-content-center'>
-                        {technologies.map((technology, index) => (
-                            <TechnologyBadge
-                                key={index}
+                    <div className='d-flex justify-content-center flex-wrap'>
+                        {technologies.map((technology, techIndex) => (
+                            <ClickableTechTag
+                                key={techIndex}
                                 name={technology.name}
-                                logoUrl={technology.logoUrl}
+                                onClick={onTechClick}
+                                isSelected={activeFilter === technology.name}
                             />
                         ))}
                     </div>
-                    <p>{description}</p>
+                    <p className='mt-4'>{description}</p>
+
                     <a
                         data-bs-toggle="collapse"
                         href={`#${id}`}
@@ -71,4 +90,5 @@ function ProjectContent({ name, description, details, imageUrl, linkUrl, linkTit
         </div>
     );
 }
-export default ProjectContent
+
+export default ProjectContent;

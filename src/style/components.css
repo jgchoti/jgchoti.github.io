@@ -269,6 +269,31 @@ form button:hover,
   background-color: var(--secondary-color);
 }
 
+.tech-tag {
+  background-color: var(--primary-color);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.tech-tag:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.tech-tag--selected {
+  box-shadow: 0 0 0 2px var(--accent-color);
+  font-weight: bold;
+}
+
+.tech-tag .project-count {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
 /* about */
 
 /* 
