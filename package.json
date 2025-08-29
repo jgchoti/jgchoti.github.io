@@ -589,7 +589,7 @@
   "bugs": {
     "url": "https://github.com/jgchoti/jgchoti.github.io/issues"
   },
-  "homepage": "https://github.com/jgchoti/jgchoti.github.io#readme",
+  "homepage": "https://jgchoti.github.io",
   "browserslist": {
     "production": [
       ">0.2%",

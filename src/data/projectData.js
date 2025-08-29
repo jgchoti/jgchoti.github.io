@@ -25,10 +25,10 @@ import dashboardImage from '../assets/images/dashboard_dark.png';
 import dashboardImageAlt from '../assets/images/dashboard_light.png';
 import jakobeWebsiteImage from '../assets/images/jakobeWebsite_light.png'
 import jakobeWebsiteImageAlt from '../assets/images/jakobeWebsite.png'
-import tlaasImage from '../assets/images/tlaas_light.png'
-import tlaasImageAlt from '../assets/images/tlaas_dark.png'
-import sqlImage from '../assets/images/sql_dark.png'
-import sqlImageAlt from '../assets/images/sql_light.png'
+import tlaasImage from '../assets/images/tlaas_dark.png'
+import tlaasImageAlt from '../assets/images/tlaas_light.png'
+import sqlImage from '../assets/images/sql_light.png'
+import sqlImageAlt from '../assets/images/sql_dark.png'
 
 // Importing logos  
 import htmlLogo from '../assets/logos/html.png';
