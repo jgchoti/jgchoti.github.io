@@ -18,8 +18,8 @@ function ProjectContent({
     webUrl,
     blogUrl,
     technologies,
-    onTechClick, // Add this prop
-    activeFilter // Optional: to highlight selected tech
+    onTechClick,
+    activeFilter
 }) {
     const id = name.split(' ').join('').toLowerCase();
     const isEvenProject = index % 2 === 0;

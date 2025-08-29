@@ -10,7 +10,7 @@ function ProjectHeader() {
     return (
         <div className="hero m-0">
             <h1>
-                {isWeb ? 'Pixels & Interaction — Web Projects' : 'Patterns & Insights — Data Lab'}
+                {isWeb ? 'Pixels & Interfaces — Web Projects' : 'Pipelines & Insights — Data Lab'}
             </h1>
             <div className='scroll-text-wrapper'>
                 <FontAwesomeIcon icon={faAnglesDown} />
