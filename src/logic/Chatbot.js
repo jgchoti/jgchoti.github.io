@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 
-const Chatbot = ({ theme = 'web' }) => {
+const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isModalMode, setIsModalMode] = useState(false);
     const [messages, setMessages] = useState([]);
@@ -13,6 +13,7 @@ const Chatbot = ({ theme = 'web' }) => {
         "What's her international experience like?",
     ]);
     const messagesEndRef = useRef(null);
+    const inputRef = useRef(null);
 
     const getApiUrl = () => {
         if (window.location.hostname === 'localhost') {
@@ -33,7 +34,6 @@ const Chatbot = ({ theme = 'web' }) => {
     useEffect(() => {
         scrollToBottom();
     }, [messages]);
-
 
     useEffect(() => {
         const checkApiHealth = async () => {
@@ -60,11 +60,11 @@ const Chatbot = ({ theme = 'web' }) => {
         }
     }, [isOpen, apiStatus]);
 
-    const addMessage = (type, content) => {
+    const addMessage = useCallback((type, content) => {
         setMessages(prev => [...prev, { type, content }]);
-    };
+    }, []);
 
-    const sendMessage = async (overrideMessage) => {
+    const sendMessage = useCallback(async (overrideMessage) => {
         const messageToSend = overrideMessage || inputValue.trim();
         if (!messageToSend) return;
 
@@ -126,14 +126,20 @@ const Chatbot = ({ theme = 'web' }) => {
             }
             addMessage('bot', errorMessage);
         }
-    };
+    }, [inputValue, addMessage, messages, API_BASE_URL]);
 
-    const handleKeyPress = (e) => {
+    const handleKeyDown = useCallback((e) => {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
-            sendMessage();
+            if (!isTyping && inputValue.trim() && apiStatus !== 'error') {
+                sendMessage();
+            }
         }
-    };
+    }, [isTyping, inputValue, apiStatus, sendMessage]);
+
+    const handleInputChange = useCallback((e) => {
+        setInputValue(e.target.value);
+    }, []);
 
     const formatMessage = (content) => {
         return content
@@ -146,113 +152,20 @@ const Chatbot = ({ theme = 'web' }) => {
             .replace(/\[([^\]]*)\]/g, '$1');
     };
 
-    const openModal = () => {
+    const openModal = useCallback(() => {
         setIsModalMode(true);
         setIsOpen(true);
-    };
+    }, []);
 
-    const closeModal = () => {
+    const closeModal = useCallback(() => {
         setIsModalMode(false);
         setIsOpen(false);
-    };
+    }, []);
 
-    const ChatContent = () => (
-        <>
-            <div className={`chatbot-header ${isModalMode ? 'modal-header' : ''} rounded-top p-3 d-flex justify-content-between align-items-center`}>
-                <div>
-                    <h6 className="mb-0 fw-bold">💼 Choti's Agent</h6>
-                    <small className="opacity-75 d-flex align-items-center gap-1">
-                        <span className={`api-status-${apiStatus}`}>●</span>
-                        Powered by Gemini AI
-                    </small>
-                </div>
-                <div className="d-flex align-items-center gap-2">
-                    {/* Mode toggle button - only show in corner mode */}
-                    {!isModalMode && (
-                        <button
-                            onClick={openModal}
-                            className="btn btn-sm text-white opacity-75 hover-opacity-100"
-                            title="Open in full screen"
-                        >
-                            ⛶
-                        </button>
-                    )}
-                    <button
-                        onClick={isModalMode ? closeModal : () => setIsOpen(false)}
-                        className="btn btn-sm text-white opacity-75 hover-opacity-100 close-btn"
-                    >
-                        x
-                    </button>
-                </div>
-            </div>
-
-            {/* Messages */}
-            <div className={`chatbot-messages ${isModalMode ? 'modal-messages' : ''} flex-grow-1 p-3 overflow-auto`}>
-                {messages.map((message, index) => (
-                    <div key={index} className={`mb-3 ${message.type === 'user' ? 'message-user' : 'message-bot'}`}>
-                        <div
-                            className={`d-inline-block px-3 py-2 rounded small message-content ${message.type === 'user'
-                                ? 'user-message rounded-bottom-start-0'
-                                : 'bot-message rounded-bottom-end-0 shadow-sm'
-                                }`}
-                            dangerouslySetInnerHTML={{ __html: formatMessage(message.content) }}
-                        />
-                    </div>
-                ))}
-                {isTyping && (
-                    <div className="mb-3">
-                        <div className="typing-indicator d-inline-block px-3 py-2 rounded">
-                            <div className="d-flex gap-1 align-items-center">
-                                <div className="typing-dot bg-secondary rounded-circle"></div>
-                                <div className="typing-dot bg-secondary rounded-circle"></div>
-                                <div className="typing-dot bg-secondary rounded-circle"></div>
-                            </div>
-                        </div>
-                    </div>
-                )}
-                <div ref={messagesEndRef} />
-            </div>
-
-            <div className={`input-area ${isModalMode ? 'modal-input' : ''} p-3`}>
-                {suggestedQuestions.length > 0 && (
-                    <div className="mb-2 d-flex flex-wrap gap-2">
-                        {suggestedQuestions.map((question, idx) => (
-                            <button
-                                key={idx}
-                                onClick={() => {
-                                    setSuggestedQuestions(prev => prev.filter((_, i) => i !== idx));
-                                    sendMessage(question);
-                                }}
-                                className="btn btn-outline-secondary btn-sm rounded-pill suggested-question"
-                                disabled={isTyping || apiStatus === 'error'}
-                            >
-                                {question}
-                            </button>
-                        ))}
-                    </div>
-                )}
-                <div className="d-flex gap-2">
-                    <input
-                        type="text"
-                        value={inputValue}
-                        onChange={(e) => setInputValue(e.target.value)}
-                        onKeyDown={handleKeyPress}
-                        placeholder={apiStatus === 'error' ? 'Service temporarily unavailable...' : 'Ask about Choti...'}
-                        className="form-control chatbot-input rounded-pill"
-                        disabled={isTyping || apiStatus === 'error'}
-                    />
-                    <button
-                        onClick={() => sendMessage()}
-                        className="btn send-btn rounded-circle d-flex align-items-center justify-content-center"
-                        style={{ width: '45px', height: '45px' }}
-                        disabled={isTyping || !inputValue.trim() || apiStatus === 'error'}
-                    >
-                        {isTyping ? '...' : '➤'}
-                    </button>
-                </div>
-            </div>
-        </>
-    );
+    const handleSuggestedQuestion = useCallback((question, index) => {
+        setSuggestedQuestions(prev => prev.filter((_, i) => i !== index));
+        sendMessage(question);
+    }, [sendMessage]);
 
     return (
         <>
@@ -261,7 +174,7 @@ const Chatbot = ({ theme = 'web' }) => {
                     <div className="d-flex flex-column gap-2 align-items-end">
                         <button
                             onClick={() => setIsOpen(true)}
-                            className="btn chatbot-btn rounded-pill px-4 py-3 fw-bold d-flex align-items-center gap-2 shadow-lg"
+                            className="btn chatbot-btn rounded-pill px-4 py-3 fw-bold d-flex align-items-center gap-2 shadow-lg position-relative"
                         >
                             <span>💼</span>
                             <span>Choti's Agent</span>
@@ -276,23 +189,182 @@ const Chatbot = ({ theme = 'web' }) => {
                 {/* Corner chat window */}
                 {isOpen && !isModalMode && (
                     <div className="chatbot-window rounded shadow-lg d-flex flex-column">
-                        <ChatContent />
+                        <ChatContent
+                            isModalMode={isModalMode}
+                            apiStatus={apiStatus}
+                            openModal={openModal}
+                            closeModal={closeModal}
+                            setIsOpen={setIsOpen}
+                            messages={messages}
+                            isTyping={isTyping}
+                            messagesEndRef={messagesEndRef}
+                            formatMessage={formatMessage}
+                            suggestedQuestions={suggestedQuestions}
+                            handleSuggestedQuestion={handleSuggestedQuestion}
+                            inputRef={inputRef}
+                            inputValue={inputValue}
+                            handleInputChange={handleInputChange}
+                            handleKeyDown={handleKeyDown}
+                            sendMessage={sendMessage}
+                        />
                     </div>
                 )}
-            </div >
+            </div>
 
-            {
-                isModalMode && (
-                    <div className="chatbot-modal-overlay">
-                        <div className="chatbot-modal">
-                            <ChatContent />
-                        </div>
+            {/* Modal overlay */}
+            {isModalMode && (
+                <div className="chatbot-modal-overlay">
+                    <div className="chatbot-modal" style={{
+                        background: 'var(--main-bg-color, white)',
+                        border: '1px solid var(--primary-color, #667eea)'
+                    }}>
+                        <ChatContent
+                            isModalMode={isModalMode}
+                            apiStatus={apiStatus}
+                            openModal={openModal}
+                            closeModal={closeModal}
+                            setIsOpen={setIsOpen}
+                            messages={messages}
+                            isTyping={isTyping}
+                            messagesEndRef={messagesEndRef}
+                            formatMessage={formatMessage}
+                            suggestedQuestions={suggestedQuestions}
+                            handleSuggestedQuestion={handleSuggestedQuestion}
+                            inputRef={inputRef}
+                            inputValue={inputValue}
+                            handleInputChange={handleInputChange}
+                            handleKeyDown={handleKeyDown}
+                            sendMessage={sendMessage}
+                        />
                     </div>
-                )
-            }
-
+                </div>
+            )}
         </>
     );
 };
+
+const ChatContent = React.memo(({
+    isModalMode,
+    apiStatus,
+    openModal,
+    closeModal,
+    setIsOpen,
+    messages,
+    isTyping,
+    messagesEndRef,
+    formatMessage,
+    suggestedQuestions,
+    handleSuggestedQuestion,
+    inputRef,
+    inputValue,
+    handleInputChange,
+    handleKeyDown,
+    sendMessage
+}) => (
+    <>
+        {/* Header */}
+        <div className={`chatbot-header ${isModalMode ? 'modal-header' : ''} rounded-top p-3 d-flex justify-content-between align-items-center`}>
+            <div>
+                <h6 className="mb-0 fw-bold">💼 Choti's Agent</h6>
+                <small className="opacity-75 d-flex align-items-center gap-1">
+                    <span className={`api-status-${apiStatus}`}>●</span>
+                    Powered by Gemini AI
+                </small>
+            </div>
+            <div className="d-flex align-items-center gap-2">
+                {/* Mode toggle button - only show in corner mode */}
+                {!isModalMode && (
+                    <button
+                        onClick={openModal}
+                        className="btn btn-sm text-white opacity-75 hover-opacity-100"
+                        title="Open in full screen"
+                        style={{
+                            background: 'rgba(255, 255, 255, 0.2)',
+                            border: 'none',
+                            borderRadius: '50%',
+                            width: '35px',
+                            height: '35px',
+                            fontSize: '16px'
+                        }}
+                    >
+                        ⛶
+                    </button>
+                )}
+                <button
+                    onClick={isModalMode ? closeModal : () => setIsOpen(false)}
+                    className="btn btn-sm text-white opacity-75 hover-opacity-100 close-btn"
+                >
+                    ×
+                </button>
+            </div>
+        </div>
+
+        {/* Messages */}
+        <div className={`chatbot-messages ${isModalMode ? 'modal-messages' : ''} flex-grow-1 p-3 overflow-auto`}>
+            {messages.map((message, index) => (
+                <div key={index} className={`mb-3 ${message.type === 'user' ? 'message-user' : 'message-bot'}`}>
+                    <div
+                        className={`d-inline-block px-3 py-2 rounded small message-content ${message.type === 'user'
+                            ? 'user-message rounded-bottom-start-0'
+                            : 'bot-message rounded-bottom-end-0 shadow-sm'
+                            }`}
+                        dangerouslySetInnerHTML={{ __html: formatMessage(message.content) }}
+                    />
+                </div>
+            ))}
+            {isTyping && (
+                <div className="mb-3">
+                    <div className="typing-indicator d-inline-block px-3 py-2 rounded">
+                        <div className="d-flex gap-1 align-items-center">
+                            <div className="typing-dot bg-secondary rounded-circle"></div>
+                            <div className="typing-dot bg-secondary rounded-circle"></div>
+                            <div className="typing-dot bg-secondary rounded-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            )}
+            <div ref={messagesEndRef} />
+        </div>
+
+        {/* Input Area */}
+        <div className={`input-area ${isModalMode ? 'modal-input' : ''} p-3`}>
+            {suggestedQuestions.length > 0 && (
+                <div className="mb-2 d-flex flex-wrap gap-2">
+                    {suggestedQuestions.map((question, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => handleSuggestedQuestion(question, idx)}
+                            className="btn btn-outline-secondary btn-sm rounded-pill suggested-question"
+                            disabled={isTyping || apiStatus === 'error'}
+                        >
+                            {question}
+                        </button>
+                    ))}
+                </div>
+            )}
+            <div className="d-flex gap-2">
+                <input
+                    ref={inputRef}
+                    type="text"
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    onKeyDown={handleKeyDown}
+                    placeholder={apiStatus === 'error' ? 'Service temporarily unavailable...' : 'Ask about Choti...'}
+                    className="form-control chatbot-input rounded-pill"
+                    disabled={isTyping || apiStatus === 'error'}
+                    autoComplete="off"
+                />
+                <button
+                    onClick={() => sendMessage()}
+                    className="btn send-btn rounded-circle d-flex align-items-center justify-content-center"
+                    style={{ width: '45px', height: '45px' }}
+                    disabled={isTyping || !inputValue.trim() || apiStatus === 'error'}
+                >
+                    {isTyping ? '...' : '➤'}
+                </button>
+            </div>
+        </div>
+    </>
+));
 
 export default Chatbot;
