@@ -1,6 +1,6 @@
 // Importing project images
-import cvWebsiteImage from '../assets/images/cv_website.png';
-import cvWebsiteImageAlt from '../assets/images/cv_website_light.png';
+import cvWebsiteImage from '../assets/images/cv_website_light.png';
+import cvWebsiteImageAlt from '../assets/images/cv_website.png';
 import weatherImage from '../assets/images/weather.png';
 import weatherImageAlt from '../assets/images/weather_dark.png';
 import weather2Image from '../assets/images/weather2.png';
@@ -19,12 +19,12 @@ import dictionaryImage from '../assets/images/dictionary.png';
 import dictionaryDarkImage from '../assets/images/dictionary_dark.png';
 // import cvImage from '../assets/images/cv.png';
 // import cvDarkImage from '../assets/images/cv_dark.png';
-import gameImage from '../assets/images/game_dark.png';
-import gameImageAlt from '../assets/images/game_light.png';
+import gameImage from '../assets/images/game_light.png';
+import gameImageAlt from '../assets/images/game_dark.png';
 import dashboardImage from '../assets/images/dashboard_dark.png';
 import dashboardImageAlt from '../assets/images/dashboard_light.png';
-import jakobeWebsiteImage from '../assets/images/jakobeWebsite_light.png'
-import jakobeWebsiteImageAlt from '../assets/images/jakobeWebsite.png'
+import jakobeWebsiteImage from '../assets/images/jakobeWebsite.png'
+import jakobeWebsiteImageAlt from '../assets/images/jakobeWebsite_light.png'
 import tlaasImage from '../assets/images/tlaas_dark.png'
 import tlaasImageAlt from '../assets/images/tlaas_light.png'
 import sqlImage from '../assets/images/sql_light.png'
