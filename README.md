@@ -12,8 +12,8 @@ This repository includes projects covering:
 
 ## Technologies & Tools
 
-- Git & GitHub
 - React (for frontend projects)
+- Bootstrap 
 
 ## Contact
 
