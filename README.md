@@ -20,5 +20,5 @@ This repository includes projects covering:
 Feel free to reach out:
 
 - Email: [jgchotirat@gmail.com](mailto:jgchotirat@gmail.com)
-- Portfolio: [https://jgchoti.vercel.app/](https://jgchoti.vercel.app/)
+- Portfolio: [https://jgchoti.github.io](https://jgchoti.github.io/)
 - LinkedIn: [https://www.linkedin.com/in/chotirat](https://www.linkedin.com/in/chotirat)
