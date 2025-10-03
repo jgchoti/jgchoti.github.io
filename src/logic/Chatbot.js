@@ -80,6 +80,7 @@ const Chatbot = () => {
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 30000);
 
+
             const response = await fetch(`${API_BASE_URL}/api/chat-rag`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -89,10 +90,8 @@ const Chatbot = () => {
                 }),
                 signal: controller.signal
             });
-
-
-
             clearTimeout(timeoutId);
+
             console.log('API response status:', response.status);
 
             if (!response.ok) {
@@ -162,8 +161,8 @@ const Chatbot = () => {
             '<a href="mailto:$1" class="text-primary" target="_blank" rel="noopener noreferrer">$1</a>'
         );
         content = content.replace(
-            /(^|[^"'>])(https?:\/\/[^\s<>"]+)($|[^<])/g,
-            '$1<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary">$2</a>$3'
+            /(https?:\/\/[^\s<>"]+)/g,
+            '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-primary">$1</a>'
         );
         content = content.replace(/\]\(/g, '').replace(/\[([^\]]*)\]/g, '$1');
         return content;
