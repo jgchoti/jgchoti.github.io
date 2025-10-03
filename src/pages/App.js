@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import Hero from '../component/Hero.js';
 import Footer from '../component/Footer.js';
 import ContactBox from '../component/ContactBox.js';
@@ -16,6 +17,17 @@ function App() {
 
   return (
     <div>
+      <Helmet>
+        <title>Chotirat Jonggit (Choti / jgchoti) – Portfolio</title>
+        <meta
+          name="description"
+          content="Portfolio of Chotirat Jonggit (Choti / jgchoti) showcasing projects, web development work, and technical skills."
+        />
+        <meta
+          name="keywords"
+          content="Chotirat Jonggit, Choti, jgchoti, web developer, portfolio, projects, React, data, full-stack"
+        />
+      </Helmet>
       <Hero />
       <Content projectData={projectData} />
       <ContactBox />
