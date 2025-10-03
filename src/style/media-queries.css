@@ -26,11 +26,6 @@
     text-align: center;
   }
 
-  .content-container img {
-    width: 70%;
-    margin: 0 auto;
-  }
-
   .content-container .btn-branding {
     margin: 0 auto;
   }
@@ -55,6 +50,11 @@
 
 /* Media Queries for max-width: 950px */
 @media (max-width: 950px) {
+  .content-container img {
+    width: 70%;
+    margin: 0 auto;
+  }
+
   .contact-box {
     padding: 24px;
     margin: 12px 24px;
