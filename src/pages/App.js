@@ -7,9 +7,11 @@ import '../style/index.css';
 import Content from '../component/Content.js';
 import { projectData } from '../data/projectData.js';
 import { useTheme } from '../logic/Theme.js';
+import useClarity from "../logic/useClarity.js";
 
 function App() {
   const { theme } = useTheme();
+  useClarity();
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
