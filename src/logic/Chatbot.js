@@ -62,18 +62,21 @@ const Chatbot = () => {
 
     const addMessage = useCallback((type, content) => {
         setMessages(prev => [...prev, { type, content }]);
+        return { type, content };
     }, []);
 
     const sendMessage = useCallback(async (overrideMessage) => {
         const messageToSend = overrideMessage || inputValue.trim();
         if (!messageToSend) return;
 
+        const userMessage = { type: 'user', content: messageToSend };
+
         addMessage('user', messageToSend);
         setInputValue('');
         setIsTyping(true);
 
         try {
-            console.log('Sending request:', `${API_BASE_URL}/api/chat-rag`);
+            const conversationHistory = [...messages, userMessage].slice(-6);
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 30000);
 
@@ -82,10 +85,12 @@ const Chatbot = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     message: messageToSend,
-                    conversationHistory: messages.slice(-6)
+                    conversationHistory: conversationHistory
                 }),
                 signal: controller.signal
             });
+
+
 
             clearTimeout(timeoutId);
             console.log('API response status:', response.status);
