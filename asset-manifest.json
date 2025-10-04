@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d8a05dd6.css",
-    "main.js": "/static/js/main.3c521b64.js",
+    "main.css": "/static/css/main.06d94954.css",
+    "main.js": "/static/js/main.862b03b2.js",
     "static/media/studio_ghibli.png": "/static/media/studio_ghibli.db7f075aacbd9f62f22e.png",
     "static/media/studio_ghibli_light.png": "/static/media/studio_ghibli_light.de235751ef6b2737fd6f.png",
     "static/media/weather_dark.png": "/static/media/weather_dark.5bbdb08db0262f2b3b60.png",
@@ -36,8 +36,8 @@
     "static/media/squarespace.png": "/static/media/squarespace.399101b7b87b7d952254.png",
     "static/media/render.png": "/static/media/render.89f1138f5e3e2b764482.png",
     "static/media/python.png": "/static/media/python.da4558f6bdeb07be2e24.png",
-    "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.0ae4e6254fc19607c79e.woff2",
-    "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.e7461d69dbbff1310a5c.woff2",
+    "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.8ae0d37556ff1e685de2.woff2",
+    "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.1c5c7716b05754cb4eab.woff2",
     "static/media/leaflet.png": "/static/media/leaflet.587332f02816208852c7.png",
     "static/media/github.png": "/static/media/github.7eea27e972efca6999dd.png",
     "static/media/bootstrap.png": "/static/media/bootstrap.428579c74fd75c1ff366.png",
@@ -45,20 +45,20 @@
     "static/media/database.png": "/static/media/database.ea4aaee733da7b939ce1.png",
     "static/media/seo.png": "/static/media/seo.4eda299339b47548ff58.png",
     "static/media/nodejs.png": "/static/media/nodejs.e328955d6bbbf3ebc72b.png",
-    "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.1f38a564cd9eae27ebc3.woff2",
+    "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.6f05ca9ab7b5345dbc07.woff2",
     "static/media/gemini.svg": "/static/media/gemini.b60079fb21481bbb37b8eb65c1ee07e4.svg",
-    "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.661bd6b7245d5205d3e1.woff2",
+    "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.e4340c52a50e727c6afa.woff2",
     "static/media/langchain.svg": "/static/media/langchain.eb6c913126d16edb13f5c8e6254f726a.svg",
     "static/media/flask.svg?asset": "/static/media/flask.3361aadfecab0af931a90d11d242be71.svg",
     "static/media/sqlalchemy.svg": "/static/media/sqlalchemy.b3ab4bf55b751f5b3d3654e24d6a25fa.svg",
     "static/media/Chart.js_logo.svg": "/static/media/Chart.js_logo.609a2dc9742df4252749dc4bb2fb9350.svg",
     "index.html": "/index.html",
     "static/media/mui.svg": "/static/media/mui.fd510ed8518b192069590b04e2e6348a.svg",
-    "main.d8a05dd6.css.map": "/static/css/main.d8a05dd6.css.map",
-    "main.3c521b64.js.map": "/static/js/main.3c521b64.js.map"
+    "main.06d94954.css.map": "/static/css/main.06d94954.css.map",
+    "main.862b03b2.js.map": "/static/js/main.862b03b2.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8a05dd6.css",
-    "static/js/main.3c521b64.js"
+    "static/css/main.06d94954.css",
+    "static/js/main.862b03b2.js"
   ]
 }
