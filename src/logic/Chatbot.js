@@ -235,7 +235,6 @@ const Chatbot = () => {
                 )}
             </div>
 
-            {/* Modal overlay */}
             {isModalMode && (
                 <div className="chatbot-modal-overlay">
                     <div className="chatbot-modal" style={{
