@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.06d94954.css",
-    "main.js": "/static/js/main.862b03b2.js",
+    "main.css": "/static/css/main.d1dbca37.css",
+    "main.js": "/static/js/main.30b47dff.js",
     "static/media/studio_ghibli.png": "/static/media/studio_ghibli.db7f075aacbd9f62f22e.png",
     "static/media/studio_ghibli_light.png": "/static/media/studio_ghibli_light.de235751ef6b2737fd6f.png",
     "static/media/weather_dark.png": "/static/media/weather_dark.5bbdb08db0262f2b3b60.png",
@@ -51,14 +51,14 @@
     "static/media/langchain.svg": "/static/media/langchain.eb6c913126d16edb13f5c8e6254f726a.svg",
     "static/media/flask.svg?asset": "/static/media/flask.3361aadfecab0af931a90d11d242be71.svg",
     "static/media/sqlalchemy.svg": "/static/media/sqlalchemy.b3ab4bf55b751f5b3d3654e24d6a25fa.svg",
-    "static/media/Chart.js_logo.svg": "/static/media/Chart.js_logo.609a2dc9742df4252749dc4bb2fb9350.svg",
     "index.html": "/index.html",
+    "static/media/Chart.js_logo.svg": "/static/media/Chart.js_logo.609a2dc9742df4252749dc4bb2fb9350.svg",
     "static/media/mui.svg": "/static/media/mui.fd510ed8518b192069590b04e2e6348a.svg",
-    "main.06d94954.css.map": "/static/css/main.06d94954.css.map",
-    "main.862b03b2.js.map": "/static/js/main.862b03b2.js.map"
+    "main.d1dbca37.css.map": "/static/css/main.d1dbca37.css.map",
+    "main.30b47dff.js.map": "/static/js/main.30b47dff.js.map"
   },
   "entrypoints": [
-    "static/css/main.06d94954.css",
-    "static/js/main.862b03b2.js"
+    "static/css/main.d1dbca37.css",
+    "static/js/main.30b47dff.js"
   ]
 }
