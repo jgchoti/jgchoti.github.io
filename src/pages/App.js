@@ -60,7 +60,7 @@ function App() {
             en: {
               consentModal: {
                 title: '🍪 Hey there!',
-                description: 'I use cookies to see which projects you love and make this portfolio even better. No ads, no creepy tracking—just helpful insights!',
+                description: 'I use cookies to make this portfolio even better. No ads, no creepy tracking—just helpful insights!',
                 acceptAllBtn: 'Sure, go ahead! ✨',
                 acceptNecessaryBtn: 'Just the essentials',
                 showPreferencesBtn: 'Tell me more',
@@ -74,7 +74,7 @@ function App() {
                 sections: [
                   {
                     title: '🤔 Why cookies?',
-                    description: 'I LOVE data (and cookies)! They help me see what you like, how long you stick around, and what could be improved. Basically, they make this portfolio more fun!',
+                    description: 'I LOVE data (and cookies 🍪)! They help me see what you like, how long you stick around, and what could be improved. Basically, they make this portfolio more fun!',
                   },
                   {
                     title: '🔧 Essential cookies',
