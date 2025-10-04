@@ -145,28 +145,36 @@ const Chatbot = () => {
         setInputValue(e.target.value);
     }, []);
 
+
     const formatMessage = (content) => {
-        content = content.replace(
-            /(https?:\/\/[^\s<>]+?)([.,!?;:])(\s|$)/g,
-            '$1 $2$3'
-        );
-        content = content.replace(
+        let processed = content;
+        processed = processed.replace(/(https?:\/\/[^\s<>]+?)([.,!?;:])(\s|$)/g, '$1 $2$3');
+        processed = processed.replace(
             /\[([^\]]+)\]\(([^)]+)\)/g,
             '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary">$1</a>'
         );
-        content = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-        content = content.replace(/\n/g, '<br>');
-        content = content.replace(
+        processed = processed.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        processed = processed.replace(
             /(jgchotirat@gmail\.com)/g,
             '<a href="mailto:$1" class="text-primary" target="_blank" rel="noopener noreferrer">$1</a>'
         );
-        content = content.replace(
-            /(https?:\/\/[^\s<>"]+)/g,
-            '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-primary">$1</a>'
-        );
-        content = content.replace(/\]\(/g, '').replace(/\[([^\]]*)\]/g, '$1');
-        return content;
+        const parts = processed.split(/(<a[^>]*>.*?<\/a>)/);
+        processed = parts.map(part => {
+            if (part.startsWith('<a')) {
+                return part;
+            }
+            return part.replace(
+                /(https?:\/\/[^\s<>"]+)/g,
+                '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-primary">$1</a>'
+            );
+        }).join('');
+        processed = processed.replace(/\n/g, '<br>');
+        processed = processed.replace(/\]\(/g, '').replace(/\[([^\]]*)\]/g, '$1');
+
+        return processed;
     };
+
+
 
     const openModal = useCallback(() => {
         setIsModalMode(true);
