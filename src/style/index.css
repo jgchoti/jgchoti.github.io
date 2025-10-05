@@ -18,6 +18,8 @@
 [data-theme="web"] {
   --primary-color: darkolivegreen;
   --main-bg-color: #f7f1e1;
+  --primary-dark: #415124;
+  --primary-darkest: #3a4920;
 }
 
 [data-theme="data"] {
@@ -25,4 +27,6 @@
   --main-bg-color: #fceaeb;
   --text-main: #fceaeb;
   --secondary-color: #552205;
+  --primary-dark: #361603;
+  --primary-darkest: #230e02;
 }

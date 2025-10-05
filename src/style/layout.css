@@ -170,3 +170,11 @@ body {
 .filter-status p {
   margin: 0;
 }
+
+.journey-card {
+  background-color: var(--main-bg-color);
+}
+
+.journey-card-dark {
+  background-color: var(--primary-color);
+}

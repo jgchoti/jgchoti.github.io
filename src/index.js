@@ -13,6 +13,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Project from './pages/Project';
 import Blog from './pages/Blog';
+import Journey from './pages/Journey';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +28,7 @@ root.render(
             <Route path="data" element={<Project />} />
             <Route path="blog" element={<Blog />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="journey" element={<Journey />} />
           </Route>
         </Routes>
       </ThemeProvider>

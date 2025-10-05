@@ -8,6 +8,7 @@
 @import "./typography.css";
 @import "./layout.css";
 @import "./utilities.css";
+@import "./animation.css";
 
 svg {
   margin-right: 30px;

@@ -5,6 +5,7 @@
   font-family: var(--head-font-family);
   color: var(--secondary-color);
 }
+h1,
 .hero h1,
 .description h2,
 .hero h2,
@@ -151,4 +152,37 @@ footer .copyright {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+strong.text-info {
+  color: var(--primary-color) !important;
+  font-family: var(--head-font-family);
+  font-size: 18px;
+}
+
+.journey-heading {
+  color: var(--primary-color) !important;
+  font-family: var(--head-font-family);
+  font-size: 46px;
+}
+
+.journey-subheading {
+  color: var(--main-bg-color) !important;
+  font-size: 28px;
+}
+
+.journey-subheading-dark {
+  color: var(--primary-color) !important;
+  font-size: 28px;
+}
+
+.journey-pop {
+  color: var(--primary-color) !important;
+  font-family: var(--head-font-family);
+  font-size: 100px;
+}
+
+.text-info-light {
+  color: var(--main-bg-color) !important;
+  font-family: var(--head-font-family);
+  font-size: 18px;
 }

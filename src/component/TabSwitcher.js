@@ -18,7 +18,7 @@ export default function TabSwitcher() {
     }, [selectedTab, setTheme]);
 
     return (
-        <div className="container tab-container">
+        <div className="container tab-container mt-5">
             <ul className="nav justify-content-center tab-style">
                 {tabs.map((tab) => (
                     <motion.li

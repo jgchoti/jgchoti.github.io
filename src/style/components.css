@@ -79,7 +79,8 @@ form input:focus {
 
 form button,
 .reset-button,
-.btn-branding {
+.btn-branding,
+.btn-branding-hero {
   background-color: var(--secondary-color);
   border: 2px solid var(--secondary-color);
   border-radius: 10px;
@@ -151,6 +152,14 @@ form button:hover,
 .btn-branding-outline:hover {
   color: #fff;
   background-color: var(--secondary-color);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+  text-decoration: none !important;
+}
+
+.btn-branding-hero:hover {
+  color: var(--secondary-color);
+  background-color: var(--main-bg-color);
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
   text-decoration: none !important;

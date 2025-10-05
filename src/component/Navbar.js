@@ -52,6 +52,7 @@ export default function Navbar() {
                                 variants={navVariants}
                             >
                                 <NavItem to="/" title="Home" onClick={() => setIsOpen(false)} />
+                                <NavItem to="/journey" title="Journey" onClick={() => setIsOpen(false)} />
                                 <NavItem to="/data" title="Data Lab" onClick={() => setIsOpen(false)} />
                                 <NavItem to="/project" title="Web Works" onClick={() => setIsOpen(false)} />
                                 <NavItem to="/blog" title="Blog" onClick={() => setIsOpen(false)} />

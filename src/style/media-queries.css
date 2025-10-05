@@ -46,6 +46,9 @@
   a.btn-mobile {
     font-size: 14px !important;
   }
+  .hide-on-mobile {
+    display: none;
+  }
 }
 
 /* Media Queries for max-width: 950px */
@@ -140,7 +143,7 @@
   }
 
   .btn-branding {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   .btn-branding-outline {
