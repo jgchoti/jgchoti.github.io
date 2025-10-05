@@ -173,7 +173,7 @@ export default function Journey() {
                     transition={{ delay: 2, duration: 1 }}
                     style={{ marginTop: '50px' }}
                 >
-                    <div className='scroll-text-wrapper'>
+                    <div className='scroll-text-wrapper text-center'>
                         <p>scroll <FontAwesomeIcon icon={faAnglesDown} /></p>
                     </div>
                 </motion.div>
