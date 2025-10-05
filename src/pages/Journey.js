@@ -506,8 +506,8 @@ export default function Journey() {
                             <h2 className="journey-heading mb-4">What's Next?</h2>
                             <p className="fs-6 fs-md-5 mb-5 mx-auto px-3"
                                 style={{ maxWidth: '700px' }}>
-                                After 5 years in Antwerp building my tech foundation,
-                                I'm looking for opportunities to apply my unique blend of
+                                Having built a solid tech foundation in Antwerp,
+                                I'm now looking for opportunities to apply my unique blend of
                                 international experience, data engineering skills, and adaptability
                                 to solve real-world problems.
                             </p>
