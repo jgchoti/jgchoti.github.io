@@ -41,14 +41,14 @@
   cursor: pointer;
   position: relative;
   border: 0;
-  padding: 8px 24px;
+  padding: 12px 24px;
   min-width: 240px;
   text-align: center;
   margin: 0;
   line-height: 24px;
   font-family: var(--head-font-family);
-  font-weight: 500;
-  font-size: 14px;
+  font-weight: 300;
+  font-size: 18px;
   background: none;
   outline: none;
   color: var(--text-main);
@@ -137,4 +137,19 @@
       color: var(--success);
     }
   }
+}
+
+.button:hover {
+  --plane-x: 4;
+  --plane-y: -2;
+  --rotate: 15;
+  --text-opacity: 1;
+  transition: --plane-x 0.3s ease, --plane-y 0.3s ease, --rotate 0.3s ease,
+    color 0.3s ease;
+}
+
+.button:hover span.success {
+  --success-scale: 1;
+  --success-opacity: 1;
+  transition: --success-scale 0.3s ease, --success-opacity 0.3s ease;
 }
