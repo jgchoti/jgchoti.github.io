@@ -11,12 +11,53 @@ import 'vanilla-cookieconsent/dist/cookieconsent.css';
 import * as CookieConsent from 'vanilla-cookieconsent';
 import '../style/index.css';
 import '../style/CookieConsent.css';
+
 function App() {
   const { theme } = useTheme();
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
+
+  // Initialize Google Tag Manager
+  const initGTM = () => {
+    if (window.gtmInitialized) return;
+
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-5JH37KJQ");
+
+    window.gtmInitialized = true;
+    console.log('Google Tag Manager initialized');
+  };
+
+  // Initialize Google Analytics
+  const initGA = () => {
+    if (window.gaInitialized) return;
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-F7CJYGN10Z';
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-F7CJYGN10Z');
+
+    window.gaInitialized = true;
+    console.log('Google Analytics initialized');
+  };
 
   useEffect(() => {
     console.log('Initializing CookieConsent...');
@@ -62,13 +103,14 @@ function App() {
                 title: '🍪 Hey there!',
                 description: 'I use cookies to make this portfolio even better. No ads, no creepy tracking—just helpful insights!',
                 acceptAllBtn: 'Sure, go ahead! ✨',
-                acceptNecessaryBtn: 'Just the essentials',
+                acceptNecessaryBtn: 'No cookies, thanks',
                 showPreferencesBtn: 'Tell me more',
+                closeIconLabel: 'Close',
               },
               preferencesModal: {
                 title: 'Cookie settings',
                 acceptAllBtn: 'Yes, all the cookies 🍪',
-                acceptNecessaryBtn: 'Only the basics',
+                acceptNecessaryBtn: 'Reject all',
                 savePreferencesBtn: 'Save my choice',
                 closeIconLabel: 'Close',
                 sections: [
@@ -100,8 +142,10 @@ function App() {
             analytics_consent: cookie.categories.includes('analytics') ? 'granted' : 'denied',
           });
 
-          // Initialize Clarity if analytics accepted
+          // Initialize analytics tools if consent granted
           if (cookie.categories.includes('analytics')) {
+            initGTM();
+            initGA();
             initClarity();
           }
         },
@@ -114,11 +158,13 @@ function App() {
             analytics_consent: cookie.categories.includes('analytics') ? 'granted' : 'denied',
           });
 
-          // Initialize Clarity if user grants analytics consent
+          // Initialize analytics if user grants consent
           if (cookie.categories.includes('analytics')) {
+            initGTM();
+            initGA();
             initClarity();
           } else {
-            // User revoked consent - Clarity will stop automatically due to cookie clearing
+            // User revoked consent - tools will stop automatically due to cookie clearing
             console.log('Analytics consent revoked');
           }
         },
