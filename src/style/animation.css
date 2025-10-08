@@ -42,7 +42,7 @@
   position: relative;
   border: 0;
   padding: 12px 24px;
-  min-width: 240px;
+  min-width: 50px;
   text-align: center;
   margin: 0;
   line-height: 24px;
@@ -51,7 +51,7 @@
   font-size: 18px;
   background: none;
   outline: none;
-  color: var(--text-main);
+  color: var(--primary-color);
   transform: rotate(calc(var(--rotate) * 1deg)) translateZ(0);
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;

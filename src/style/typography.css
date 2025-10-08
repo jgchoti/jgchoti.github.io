@@ -186,3 +186,23 @@ strong.text-info {
   font-family: var(--head-font-family);
   font-size: 18px;
 }
+
+.hero-fly-button {
+  color: var(--primary-color) !important;
+  font-family: var(--head-font-family);
+  font-size: 36px;
+  letter-spacing: -2px;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+  font-weight: 800;
+}
+
+.hero-fly-button:hover {
+  transform: rotate(10deg) translateY(-10px);
+}
+
+.hero-fly-button.clicked {
+  opacity: 0;
+  transform: translateY(-50px) scale(0.5);
+}

@@ -96,6 +96,10 @@
     margin: 80px auto 0;
   }
 
+  .hero-fly-button {
+    font-size: 28px;
+  }
+
   svg {
     font-size: 20px;
   }

@@ -4,10 +4,13 @@ import { useNavigate } from "react-router-dom";
 
 const FlyingButton = () => {
   const buttonRef = useRef(null);
+  const textRef = useRef(null);
+  const containerRef = useRef(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const button = buttonRef.current;
+    const text = textRef.current;
 
     const getVar = (variable) => getComputedStyle(button).getPropertyValue(variable);
 
@@ -15,7 +18,7 @@ const FlyingButton = () => {
       if (button.classList.contains("active")) return;
       button.classList.add("active");
 
-      // Wings folding animation
+      // Animate button wings
       gsap.to(button, {
         keyframes: [
           {
@@ -76,8 +79,10 @@ const FlyingButton = () => {
             "--plane-opacity": 0,
             duration: 0.3,
             onComplete() {
+              // Reset button after animation
               setTimeout(() => {
                 button.removeAttribute("style");
+                text.removeAttribute("style");
                 gsap.fromTo(
                   button,
                   { opacity: 0, y: -8 },
@@ -98,7 +103,7 @@ const FlyingButton = () => {
         ],
       });
 
-
+      // Animate button color & text
       gsap.to(button, {
         keyframes: [
           {
@@ -126,16 +131,38 @@ const FlyingButton = () => {
           },
         ],
       });
+
+      // Animate text flying away
+      gsap.to(text, {
+        y: -200,
+        opacity: 0,
+        rotation: 20,
+        duration: 1,
+        ease: "power2.in",
+      });
     };
 
-    button.addEventListener("click", handleClick);
-    return () => button.removeEventListener("click", handleClick);
+    const container = containerRef.current;
+    container.addEventListener("click", handleClick);
+
+    return () => container.removeEventListener("click", handleClick);
   }, [navigate]);
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
+    <div
+      ref={containerRef}
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        marginTop: "2rem",
+        gap: "1rem",
+        alignItems: "center",
+        cursor: "pointer",
+      }}
+    >
+      <span ref={textRef} className="hero-fly-button">More About Me</span>
       <button ref={buttonRef} className="button">
-        <span className="default">My Journey</span>
+        <span className="default">.</span>
         <div className="left"></div>
         <div className="right"></div>
       </button>
