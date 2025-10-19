@@ -528,20 +528,7 @@ export default function Journey() {
             {
                 selectedCountry && (
                     <>
-                        <div style={{
-                            position: 'fixed',
-                            top: '50%',
-                            left: '50%',
-                            transform: 'translate(-50%, -50%)',
-                            backgroundColor: 'white',
-                            padding: '30px',
-                            borderRadius: '10px',
-                            maxWidth: '500px',
-                            maxHeight: '80vh',
-                            overflow: 'auto',
-                            zIndex: 1000,
-                            boxShadow: '0 10px 40px rgba(0,0,0,0.2)'
-                        }}>
+                        <div className='country-model'>
                             <button
                                 onClick={() => setSelectedCountry(null)}
                                 style={{
