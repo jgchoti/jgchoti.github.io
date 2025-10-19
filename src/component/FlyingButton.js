@@ -134,11 +134,9 @@ const FlyingButton = () => {
 
       // Animate text flying away
       gsap.to(text, {
-        y: -200,
         opacity: 0,
-        rotation: 20,
-        duration: 1,
-        ease: "power2.in",
+        duration: 0.4,
+        ease: "power2.out",
       });
     };
 
