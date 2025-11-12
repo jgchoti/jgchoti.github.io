@@ -432,74 +432,87 @@ export default function Journey() {
                             </div>
                         </StorySection>
                     </div>
-                    <div className="col-md-6">
-                        <StorySection delay={0.3}>
-                            <div className="p-2 journey-card rounded shadow-sm m-2">
-                                <div className="card-body p-5 text-center">
-                                    <h1 className="display-3 mb-3">🏆</h1>
-                                    <h4>Hackathon Winner</h4>
-                                    <p className="mb-0">
-                                        Tech4Positive Futures Challenge 2024<br />
-                                        Capgemini Belgium<br />
-                                        AI coral reef monitoring solution
-                                    </p>
-                                </div>
-                            </div>
-                        </StorySection>
-                    </div>
-                </div>
-            </section >
-
-            {/* Data Engineering Now */}
-            < section className="container py-2" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center' }}>
-                <div className="row align-items-center">
-                    <div className="col-md-6 order-md-2">
+                    <div className="col-md-6 ">
                         <StorySection>
-                            <div>
-                                <h2 className="journey-heading mt-3">From Web to Data Pipelines</h2>
-                                <p className="lead text-muted">May 2025 - Present</p>
-                                <p className="fs-6">
+                            <div className="p-4 journey-card-dark rounded shadow-sm">
+                                <h2 className="journey-subheading mt-3">From Web to Data Pipelines</h2>
+                                <p className="lead text-white">May 2025 - Present</p>
+                                <p className="fs-6 text-white">
+                                    <br />
                                     Now specializing in Data Engineering at BeCode. Building ETL pipelines
                                     with Python, Airflow, and Azure. Working with real data from Orange Belgium.
                                     That 2016 Big Data seed has finally grown into a career.
                                 </p>
-                                <div className="mt-4">
-                                    <strong className="text-info">Current Tech Stack:</strong>
-                                    <div className="d-flex flex-wrap gap-2 mt-3">
-                                        {['Python', 'SQL', 'Apache Airflow', 'Azure', 'AWS', 'Power BI', 'FastAPI', 'ETL'].map(tech => (
-                                            <span key={tech} className="tech-tag fs-6 px-3 py-1 mx-1 mb-2 rounded-full">{tech}</span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </StorySection>
-                    </div>
-                    <div className="col-md-6 order-md-1">
-                        <StorySection delay={0.3}>
-                            <div className="p-4 journey-card-dark rounded shadow-sm m-2">
-                                <div className="p-4">
-                                    <h3 className="journey-subheading mb-3">Recent Work</h3>
-                                    <div className="mb-3">
-                                        <strong className="text-info-light">📊 Orange Belgium Dashboard</strong>
-                                        <p className="mb-0 small text-info-light">Monthly Power BI customer experience monitoring</p>
-                                    </div>
-                                    <div>
-                                        <strong className="text-info-light">🤖 Portfolio RAG Bot</strong>
-                                        <p className="mb-0 small text-info-light">AI-powered Q&A using Gemini AI</p>
-                                    </div>
-                                </div>
                             </div>
                         </StorySection>
                     </div>
                 </div>
             </section >
 
-            {/* Call to Action */}
+            {/* Awards & Recognition */}
+            <section className="container py-5" style={{
+                minHeight: '60vh',
+                display: 'flex',
+                alignItems: 'center',
+                backgroundColor: 'var(--main-bg-color)',
+                position: 'relative',
+                zIndex: 10
+            }}>
+                <div className="row w-100">
+                    <div className="col-12 text-center mb-4">
+                        <StorySection>
+                            <h2 className="journey-heading">Awards & Recognition</h2>
+                            <p className="lead text-muted">2 wins out of 3 hackathons</p>
+                        </StorySection>
+                    </div>
+
+                    <div className="col-12">
+                        <StorySection delay={0.2}>
+                            <div className="d-flex flex-wrap justify-content-center gap-3">
+                                {/* Win 1 */}
+                                <div className="award-card p-4 rounded shadow-sm" style={{ maxWidth: '350px' }}>
+                                    <div className="text-center">
+                                        <h1 className="display-4 mb-2">🏆</h1>
+                                        <h5 className="journey-subheading-dark mb-2">Tech4Positive Futures</h5>
+                                        <p className="small text-muted mb-1">Capgemini Belgium • 2024</p>
+                                        <p className="small">AI coral reef monitoring</p>
+                                    </div>
+                                </div>
+
+                                {/* Win 2 */}
+                                <div className="award-card p-4 rounded shadow-sm" style={{ maxWidth: '350px' }}>
+                                    <div className="text-center">
+                                        <h1 className="display-4 mb-2">🏆</h1>
+                                        <h5 className="journey-subheading-dark mb-2">Deepfake Detection</h5>
+                                        <p className="small text-muted mb-1">Orange Belgium • 2024</p>
+                                        <p className="small">AI media authentication system</p>
+                                    </div>
+                                </div>
+
+                                {/* Placeholder for future wins - comment out or keep for easy adding */}
+                                {/* 
+                    <div className="award-card p-4 rounded shadow-sm" style={{ maxWidth: '350px' }}>
+                        <div className="text-center">
+                            <h1 className="display-4 mb-2">🏆</h1>
+                            <h5 className="journey-subheading-dark mb-2">Future Win</h5>
+                            <p className="small text-muted mb-1">Company • Year</p>
+                            <p className="small">Description</p>
+                        </div>
+                    </div>
+                    */}
+                            </div>
+                        </StorySection>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA */}
             < section className="container py-2 justify-content-center" style={{
                 minHeight: '90vh', display: 'flex', alignItems: 'center', backgroundColor: 'white',
                 position: 'relative',
                 zIndex: 10
-            }}>
+            }
+            }>
                 <div className="row">
                     <div className="col-12 text-center">
                         <StorySection>

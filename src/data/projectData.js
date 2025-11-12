@@ -29,6 +29,8 @@ import tlaasImage from '../assets/images/tlaas_dark.png'
 import tlaasImageAlt from '../assets/images/tlaas_light.png'
 import sqlImage from '../assets/images/sql_light.png'
 import sqlImageAlt from '../assets/images/sql_dark.png'
+import rejectionImage from '../assets/images/rejection_dark.png'
+import rejectionImageAlt from '../assets/images/rejection_light.png'
 
 // Importing logos  
 import htmlLogo from '../assets/logos/html.png';
@@ -54,7 +56,12 @@ import muiLogo from '../assets/logos/mui.svg'
 import langChainLogo from '../assets/logos/langchain.svg'
 import geminiLogo from '../assets/logos/gemini.svg'
 import sqlalchemyLogo from '../assets/logos/sqlalchemy.svg'
-
+import streamlitLogo from '../assets/logos/streamlit.svg'
+import nltkLogo from '../assets/logos/nltk.webp'
+import huggingfaceLogo from '../assets/logos/hugging-face.svg'
+import shapLogo from '../assets/logos/shap.webp'
+import plotlyLogo from '../assets/logos/plotly.svg'
+import pandasLogo from '../assets/logos/pandas.svg'
 
 export const projectData = [
     {
@@ -238,8 +245,8 @@ export const projectData = [
         type: "data",
         description: "A data visualization tool designed to monitor coral health using data from Smart Buoy sensors.",
         details: "Developed as part of Tech4Sustainable Futures Challenge's presentation, this dashboard leverages Chart.js for real-time data visualization and Leaflet.js for interactive mapping. It provides insights into key coral health metrics like temperature and pH levels, helping communities and researchers make informed decisions to protect coral reefs.",
-        imageUrl: dashboardImage,
-        alternate_image: dashboardImageAlt,
+        imageUrl: dashboardImageAlt,
+        alternate_image: dashboardImage,
         linkUrl: "https://coral-game.netlify.app/map",
         githubUrl: "https://github.com/jgchoti/coral-game",
         linkTitle: "Explore the Coral Reef Monitoring Dashboard",
@@ -312,8 +319,28 @@ export const projectData = [
             { name: 'Render', logoUrl: renderLogo },
             { name: 'GitHub', logoUrl: gitHubLogo }
         ]
+    },
+    {
+        name: "The Language of Rejection",
+        type: "data",
+        description: "NLP analysis revealing how language shapes emotional tone in job rejection emails and what makes some feel warm while others feel cold.",
+        details: "Analyzed real rejection emails using multi-model sentiment analysis (VADER, RoBERTa, TextBlob, AFINN) combined with emotion lexicons and SHAP explainability. Built interactive Streamlit dashboard for data exploration and real-time email analysis. Featured comprehensive visualizations with Plotly and research-backed findings extending communication ratio theory.",
+        imageUrl: rejectionImageAlt,
+        alternate_image: rejectionImage,
+        linkUrl: "https://language-of-rejection.streamlit.app/",
+        githubUrl: "https://github.com/jgchoti/job_rejection_analysis",
+        linkTitle: "Live Dashboard & Explore",
+        shortDescription: "Quantifying what makes rejection emails feel 'warm' or 'cold' using NLP, emotion analysis, and explainable AI.",
+        technologies: [
+            { name: 'Python', logoUrl: pythonLogo },
+            { name: 'Streamlit', logoUrl: streamlitLogo },
+            { name: 'VADER', logoUrl: nltkLogo },
+            { name: 'RoBERTa', logoUrl: huggingfaceLogo },
+            { name: 'SHAP', logoUrl: shapLogo },
+            { name: 'Plotly', logoUrl: plotlyLogo },
+            { name: 'Pandas', logoUrl: pandasLogo }
+        ]
     }
-
 
 
 ].reverse();
