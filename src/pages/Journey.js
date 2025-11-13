@@ -484,7 +484,7 @@ export default function Journey() {
                                     <div className="text-center">
                                         <h1 className="display-4 mb-2">🏆</h1>
                                         <h5 className="journey-subheading-dark mb-2">Deepfake Detection</h5>
-                                        <p className="small text-muted mb-1">Orange Belgium • 2024</p>
+                                        <p className="small text-muted mb-1">Orange Belgium • 2025</p>
                                         <p className="small">AI media authentication system</p>
                                     </div>
                                 </div>
